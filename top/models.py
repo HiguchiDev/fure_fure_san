@@ -17,11 +17,18 @@ class Choice(models.Model):
         return self.text
 
     def save(self, *args, **kwargs):
+        COMBI_QTY_MAX = 2  # 選択肢によって回答が変化する最大個数
+        SELECT_QTY_MAX = 8  # ユーザが選択できる最大個数
+
+        choice_list = Choice.objects.exclude(text='Any')
+
+        # 規定個数以上は登録不可
+        if len(choice_list) >= SELECT_QTY_MAX:
+            raise Exception(f"エラー：選択肢を登録できるのは{SELECT_QTY_MAX}個までです。")
+
         super().save(*args, **kwargs)
         choice_list = Choice.objects.exclude(text='Any')
 
-        COMBI_QTY_MAX = 2  # 選択肢によって回答が変化する最大個数
-        SELECT_QTY_MAX = 8  # ユーザが選択できる最大個数
         pair_list = []
         
         # 1～COMBI_QTY_MAX個選択時の全パターンを取得
