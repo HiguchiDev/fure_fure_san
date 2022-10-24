@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from top.views import AnswerViewSet, TopPageView
-import hello.views as hello
 
 
 defaultRouter = routers.DefaultRouter()
@@ -28,5 +27,4 @@ urlpatterns = [
     path('top/', TopPageView.as_view()),
     # defaultRouter をinclude する
     path('api/',include(defaultRouter.urls)),
-    path('hello/', hello.index),
 ]
