@@ -7,7 +7,6 @@ from .serializer import AnswerSerializer
 
 
 class TopPageView(ListView):
-    template_name: str = "top.html"
     model = Choice
 
     def get_queryset(self, **kwargs):
