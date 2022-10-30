@@ -5,6 +5,11 @@ from django.db import models
 from django.db import models
 import itertools
 
+from top.utils.const_max_qty import MAX_QTY
+from top.utils.get_all_choice_pattern import get_all_choice_pattern_combinations
+from top.utils.get_model_field_qty import get_model_field_qty
+from django.db.models import Q
+
 
 # Create your models here.
 class Choice(models.Model):
@@ -17,32 +22,24 @@ class Choice(models.Model):
         return self.text
 
     def save(self, *args, **kwargs):
+        SELECT_QTY_MAX = get_model_field_qty(Answer, "choice")
+        choice_list = Choice.objects.exclude(text='Any')
+
+        # 規定個数以上は登録不可
+        if len(choice_list) >= SELECT_QTY_MAX:
+            raise Exception(f"エラー：選択肢を登録できるのは{SELECT_QTY_MAX}個までです。")
+
         super().save(*args, **kwargs)
         choice_list = Choice.objects.exclude(text='Any')
 
-        COMBI_QTY_MAX = 2  # 選択肢によって回答が変化する最大個数
-        SELECT_QTY_MAX = 8  # ユーザが選択できる最大個数
-        pair_list = []
-        
-        # 1～COMBI_QTY_MAX個選択時の全パターンを取得
-        for i in range(1, COMBI_QTY_MAX + 1):
-            for pair in itertools.combinations(choice_list, i):
-                pair = list(pair)  # 後でappendする可能性があるのでリストにする
+        pair_list = get_all_choice_pattern_combinations(choice_list, Answer)
 
-                if len(pair) < SELECT_QTY_MAX:
-                    for j in range(SELECT_QTY_MAX - len(pair)):
-                        pair.append(None)
-                print(pair)
-
-                pair_list.append(pair)
-
-
-        # COMBI_QTY_MAX + 1個選んだ場合は選択肢にかかわらず回答が一定のため、ダミーのAny選択肢を入れる
+        # MAX_QTY.COMBI_QTY_MAX + 1個選んだ場合は選択肢にかかわらず回答が一定のため、ダミーのAny選択肢を入れる
         any_chioce = Choice.objects.filter(text="Any")[0]  #1個しか取れないはずなので0番目を取得
         any_choice_list = []
 
         for i in range(SELECT_QTY_MAX):
-            if (i + 1) <= (COMBI_QTY_MAX + 1):
+            if (i + 1) <= (MAX_QTY.COMBI_QTY_MAX + 1):
                 any_choice_list.append(any_chioce)
             else:
                 any_choice_list.append(None)
@@ -99,6 +96,19 @@ class Answer(models.Model):
     choice8 = models.ForeignKey(Choice, verbose_name="選択肢8", on_delete=models.CASCADE ,related_name='choice8', null=True)
 
     text = models.CharField(verbose_name="回答", max_length=100, null=True)
+
+    @classmethod
+    def get_choice_query(self, param_list):
+        return Q(
+            choice1__id=param_list[0],
+            choice2__id=param_list[1],
+            choice3__id=param_list[2],
+            choice4__id=param_list[3],
+            choice5__id=param_list[4],
+            choice6__id=param_list[5],
+            choice7__id=param_list[6],
+            choice8__id=param_list[7],
+        )
 
     def __str__(self):
         return str(self.text)

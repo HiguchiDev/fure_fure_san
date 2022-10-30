@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  {% block head %}{% endblock %}
+  {% block title %}TOP{% endblock %}
+</head>
+
+<body>
+  <div>{% block header %}{% endblock header %}</div>
+  {% block contents %}
+
+
+  {% for choice in object_list %}
+  <li>{{ choice.text }}</li>
+  {% endfor %}
+
+  <div>
+    <p>（これはテスト画像です→）
+      <img class="bg_img" src="https://eizone.info/wp-content/uploads/VirtualBox7.0-EFI-013.png" alt="===">
+    </p>
+
+    <!-- CSSファイルはまだ適用していない -->
+    <p>
+      <img class="bg_img" src="{% static '../fure_fure_san/static_local/bg_img.png' %}" alt="表示されない">
+    </p>
+    <p>
+      <img class="group_168" src="../fure_fure_san/static_local/group_168.png" alt="表示されない">
+    </p>
+    <p>
+      <img class="art_board_22" src="../fure_fure_san/static_local/art_board_22.png" alt="表示されない">
+    </p>
+    <p>
+      <img class="art_board_26_1" src="../fure_fure_san/static_local/art_board_26_1.png" alt="表示されない">
+    </p>
+    <p>
+      <img class="art_board_27" src="../fure_fure_san/static_local/art_board_27.png" alt="表示されない">
+    </p>
+    <p>
+      <img class="art_board_28" src="../fure_fure_san/static_local/art_board_28.png" alt="表示されない">
+    </p>
+    <p>
+      <img class="art_board_30_1" src="../fure_fure_san/static_local/art_board_30_1.png" alt="表示されない">
+    </p>
+    <p>
+      <img class="art_board_31" src="../fure_fure_san/static_local/art_board_31.png" alt="表示されない">
+    </p>
+    <p>
+      <img class="art_board_26_1" src="../fure_fure_san/static_local/art_board_26_1.png" alt="表示されない">
+    </p>
+    <p>
+      <img class="art_board_32" src="../fure_fure_san/static_local/art_board_32.png" alt="表示されない">
+    </p>
+    <p>
+      <img class="art_board_24_2" src="../fure_fure_san/static_local/art_board_24_2.png" alt="表示されない">
+    </p>
+  </div>
+
+
+  {% endblock contents %}
+</body>
+
+</html>

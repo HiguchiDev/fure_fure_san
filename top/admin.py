@@ -4,10 +4,18 @@ from top.models import Answer, Choice
 
 # Register your models here.
 class ChoiceAdmin(admin.ModelAdmin):
-    pass
+    readonly_fields = (
+        'id',
+    )
+
+    list_display = (
+        'id',
+        'text',
+    )
 
 class AnswerAdmin(admin.ModelAdmin):
     readonly_fields = (
+        'id',
         'choice1',
         'choice2',
         'choice3',
@@ -19,6 +27,7 @@ class AnswerAdmin(admin.ModelAdmin):
     )
 
     list_display = (
+        'id',
         'text',
         'choice1',
         'choice2',

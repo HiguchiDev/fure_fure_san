@@ -1,12 +1,12 @@
 /* bg_img */
-.bg-img {
+.bg_img {
     position: absolute;
     width: 1281px;
     height: 574px;
     left: 0px;
     top: 0px;
 
-    background: url(fure_fure_san/fure_fure_san/media_local/bg_img.png);
+    background: url(fure_fure_san/fure_fure_san/static_local/bg_img.png);
 }
 
 
