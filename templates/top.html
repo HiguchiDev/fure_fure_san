@@ -20,14 +20,16 @@
 
   <div>
     <p>（これはテスト画像です→）
-      <img class="bg_img" src="https://eizone.info/wp-content/uploads/VirtualBox7.0-EFI-013.png" alt="===">
+      <img class="" src="https://eizone.info/wp-content/uploads/VirtualBox7.0-EFI-013.png" alt="===">
     </p>
 
     <!-- CSSファイルはまだ適用していない -->
-    <p>
-      <img class="bg_img" src="{% static '../fure_fure_san/static_local/bg_img.png' %}" alt="表示されない">
-    </p>
-    <p>
+    <img src="{% static 'bg_img.png' %}" alt="a">
+    <img src="{% static " header_bar.png" %}" alt="b" class="img-fluid h-100">
+    <div class="col-2 d-none d-md-block" id="site_icon">
+      <img src="{% static 'bg_img.png' %}" alt="c" class="img-fluid" id="site_icon_img">
+    </div>
+    <!-- <p>
       <img class="group_168" src="../fure_fure_san/static_local/group_168.png" alt="表示されない">
     </p>
     <p>
@@ -56,7 +58,7 @@
     </p>
     <p>
       <img class="art_board_24_2" src="../fure_fure_san/static_local/art_board_24_2.png" alt="表示されない">
-    </p>
+    </p> -->
   </div>
 
 
