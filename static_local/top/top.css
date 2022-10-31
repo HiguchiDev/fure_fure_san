@@ -1,0 +1,237 @@
+/* bg_img */
+.bg_img {
+    /* position: absolute;
+    width: 1281px;
+    height: 574px; */
+    left: 0px;
+    top: 0px;
+
+    background: url(top/bg_img.png);
+}
+
+/* Group 168 */
+.group_168 {
+    position: absolute;
+    width: 712px;
+    height: 361.17px;
+    left: 349px;
+    top: 64px;
+}
+
+/* アートボード 22 */
+.art_board_22 {
+    position: absolute;
+    width: 95px;
+    height: 82.56px;
+    left: 117px;
+    top: 31px;
+
+    background: url();
+}
+
+/* アートボード 26_1 */
+.art_board_26_1 {
+    position: absolute;
+    width: 70px;
+    height: 60.83px;
+    left: 75.13px;
+    top: 169px;
+
+    background: url();
+    transform: rotate(26.48deg);
+}
+
+/* アートボード 27 */
+.art_board_27 {
+    position: absolute;
+    width: 70px;
+    height: 60.83px;
+    left: 102px;
+    top: 480.43px;
+
+    background: url();
+    transform: rotate(-24.86deg);
+}
+
+/* アートボード 28 */
+.art_board_28 {
+    position: absolute;
+    width: 85px;
+    height: 73.87px;
+    left: 111px;
+    top: 326.26px;
+
+    background: url();
+    transform: rotate(-20.13deg);
+}
+
+/* アートボード 30 1 */
+art_board_30_1 {
+    position: absolute;
+    width: 760px;
+    height: 100.67px;
+    left: 260px;
+    top: 395px;
+
+    background: url();
+}
+
+/* アートボード 31 */
+.art_board_31 {
+    position: absolute;
+    width: 95px;
+    height: 82.56px;
+    left: 1164px;
+    top: 275px;
+
+    background: url();
+}
+
+/* アートボード 26_1 */
+.art_board_26_1 {
+    position: absolute;
+    width: 70px;
+    height: 60.83px;
+    left: 1136px;
+    top: 484.37px;
+
+    background: url();
+    transform: rotate(-31.31deg);
+}
+
+/* アートボード 32 */
+.art_board_32 {
+    position: absolute;
+    width: 70px;
+    height: 60.83px;
+    left: 1161px;
+    top: 104.14px;
+
+    background: url();
+    transform: rotate(-2.57deg);
+}
+
+/* アートボード 24 2 */
+.art_board_24_2 {
+    position: absolute;
+    width: 95px;
+    height: 82.56px;
+    left: 994px;
+    top: 23px;
+
+    background: url();
+}
+
+/* Rectangle 178 */
+.rectangle_178 {
+    position: absolute;
+    width: 1280px;
+    height: 1000px;
+
+    background: #56D9D6;
+}
+
+/* Rectangle 189 */
+.rectangle_189 {
+    position: absolute;
+    width: 1062px;
+    height: 286px;
+
+    background: #3ACFCB;
+    border-radius: 16px;
+}
+
+
+
+/* あなたに、当てはまるものはありますか？ */
+.anatani {
+    position: absolute;
+    width: 684px;
+    height: 48px;
+}
+
+/* Display Large */
+.display_large {
+    font-family: 'Rounded Mplus 1c';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 48px;
+}
+
+/* identical to box height, or 133% */
+.identical_to_box_height {
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+/* Question */
+.question {
+    position: absolute;
+    width: 112px;
+    height: 32px;
+}
+
+
+/* Headline Large */
+
+font-family: 'Rounded Mplus 1c';
+font-style: normal;
+font-weight: 900;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height, or 133% */
+
+display: flex;
+align-items: center;
+
+color: #FFE000;
+
+
+
+/* Frame 3 */
+/* Auto layout */
+.auto_layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px 120px;
+    gap: 10px;
+
+    position: relative;
+    width: 456px;
+    height: 84px;
+
+    background: #FFE000;
+    border-radius: 100px;
+}
+
+/* Group 185 */
+.group_185 {
+    position: absolute;
+    width: 856px;
+    height: 48px;
+}
+
+/* Group 186 */
+.group_186 {
+    position: absolute;
+    width: 707px;
+    height: 48px;
+}
+
+/* Group 187 */
+.group_187 {
+    position: absolute;
+    width: 428px;
+    height: 48px;
+}
+
+/* Group 211 */
+.group_211 {
+    position: absolute;
+    width: 1062px;
+    height: 184px;
+}

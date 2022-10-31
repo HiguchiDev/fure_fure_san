@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
+{% block meta_title %}フレフレさん|トップ{% endblock %}
+
 {% load static %}
+
+{% block css %}
+<link href="{% static 'top/top.css' %}" rel="stylesheet">
+{% endblock %}
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -13,14 +19,14 @@
   <div>{% block header %}{% endblock header %}</div>
   {% block contents %}
 
-
   <!-- {% for choice in object_list %}
-  <li>{{ choice.text }}</li>
-  {% endfor %} -->
+    <li>{{ choice.text }}</li>
+    {% endfor %} -->
 
   <div>
-    <!-- CSSファイルはまだ適用していない -->
-    <img src="{% static 'top/bg_img.png' %}" alt="">
+    <div class="container-fluid">Always 100% wide
+      <img class="bg_img container-fluid" src="{% static 'top/bg_img.png' %}" alt="">
+    </div>
     <div>
       <img class="group_168" src="{% static 'top/group_168.png' %}" alt="">
     </div>
@@ -53,6 +59,39 @@
     </div>
   </div>
 
+
+  <!-- <div>
+    <div>
+      <img class="frame_3 auto_layout" src="{% static 'top/frame_3.png' %}" alt="">
+    </div>
+    <div>
+      <img class="group_185" src="{% static 'top/group_185.png' %}" alt="">
+    </div>
+    <div>
+      <img class="group_186" src="{% static 'top/group_186.png' %}" alt="">
+    </div>
+    <div>
+      <img class="group_187" src="{% static 'top/group_187.png' %}" alt="">
+    </div>
+    <div>
+      <img class="group_211" src="{% static 'top/group_211.png' %}" alt="">
+    </div>
+    <div>
+      <img class="question" src="{% static 'top/question.png' %}" alt="">
+    </div>
+    <div>
+      <img class="rectangle_178" src="{% static 'top/rectangle_178.png' %}" alt="">
+    </div>
+    <div>
+      <img class="rectangle_189" src="{% static 'top/rectangle_189.png' %}" alt="">
+    </div>
+    <div>
+      <img class="anatani display_large identical_to_box_height" src="{% static 'top/anatani.png' %}" alt="">
+    </div>
+  </div> -->
+
+  {% block footer %}
+  {% endblock %}
 
   {% endblock contents %}
 </body>
