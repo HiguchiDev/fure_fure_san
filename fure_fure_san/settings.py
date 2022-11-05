@@ -73,8 +73,8 @@ TEMPLATES = [
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static_local" ]
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / "media_local"
+STATIC_ROOT = '/usr/share/nginx/html/static'
+MEDIA_ROOT = '/usr/share/nginx/html/media'
 
 LANGUAGE_CODE = 'ja'
 
