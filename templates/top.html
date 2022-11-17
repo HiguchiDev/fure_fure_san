@@ -5,7 +5,7 @@
 
 {% block css %}
 <link href="{% static 'top/top_pc.css' %}" rel="stylesheet" media="screen and (min-width:751px)">
-<!-- <link href="{% static 'top/top_sp.css' %}" rel="stylesheet" media="screen and (max-width:750px)"> -->
+<link href="{% static 'top/top_sp.css' %}" rel="stylesheet" media="screen and (max-width:750px)">
 {% endblock %}
 
 <!DOCTYPE html>
@@ -23,26 +23,33 @@
   <div class="wrap">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 px-0">
-          <div>
+          <div class="col-12 px-0">
             <!-- <img srcset="{% static 'top/sp_img/sp_Bg_mosaic.png' %} 750w {% static 'top/pc_img/Bg_mosaic.png' %}, " class="Bg_mosaic"> -->
-            <picture>
-              <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_mosaic.png' %}">
-              <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Bg_mosaic.png' %}">
-              <img src="{% static 'top/pc_img/Bg_mosaic.png' %}" class="Bg_mosaic">
-            </picture>
-          </div>
-
-          <div class="">
-            <picture>
-              <!-- <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}"> -->
-              <!-- TODO:SPサイズ時の黄色いアイコンを表示する -->
-              <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_272.png' %}">
-              <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_272.png' %}">
-              <img src="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}" class="Bg_yellow_icon-small">
-            </picture>
-          </div>
-
+            <div id="mosaic">
+              <picture>
+                <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_mosaic.png' %}">
+                <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Bg_mosaic.png' %}">
+                <img src="{% static 'top/sp_img/sp_Bg_mosaic.png' %}" class="Bg_mosaic">
+              </picture>
+              <div id="yellow_icon_left">
+                <picture>
+                  <!-- <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}"> -->
+                  <!-- TODO:SPサイズ時の黄色いアイコンを表示する -->
+                  <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_272.png' %}">
+                  <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_272.png' %}">
+                  <img src="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}" class="Bg_yellow_icon_small_left">
+                </picture>
+              </div>
+              <div id="yellow_icon_right">
+                <picture>
+                  <!-- <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}"> -->
+                  <!-- TODO:SPサイズ時の黄色いアイコンを表示する -->
+                  <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_274.png' %}">
+                  <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_274.png' %}">
+                  <img src="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}" class="Bg_yellow_icon_small_right">
+                </picture>
+              </div>
+            </div>
           <div class="">
             <!-- <picture>
               <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg-green.png' %}">

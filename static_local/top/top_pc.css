@@ -12,7 +12,18 @@
 .Bg_yellow_icon-small {
     position: absolute;
     width: 100%;
+    left: 0px;
+    top: 0px;
 }
+
+/* トップページタイトルの背景の黄色いアイコングループ */
+.Bg_yellow_icon-small2 {
+    position: absolute;
+    width: 100%;
+    right: 0px;
+    top: 0px;
+}
+
 
 /* トップページボディの背景 */
 .Bg-green {
