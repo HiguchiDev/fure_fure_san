@@ -29,15 +29,13 @@
               <picture>
                 <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_mosaic.png' %}">
                 <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Bg_mosaic.png' %}">
-                <img src="{% static 'top/sp_img/sp_Bg_mosaic.png' %}" class="Bg_mosaic">
+                <img class="Bg_mosaic">
               </picture>
               <div id="yellow_icon_left">
                 <picture>
-                  <!-- <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}"> -->
                   <!-- TODO:SPサイズ時の黄色いアイコンを表示する -->
                   <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_272.png' %}">
-                  <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_272.png' %}">
-                  <img src="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}" class="Bg_yellow_icon_small_left">
+                  <img class="Bg_yellow_icon_small_left">
                 </picture>
               </div>
               <div id="yellow_icon_right">
@@ -45,8 +43,15 @@
                   <!-- <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}"> -->
                   <!-- TODO:SPサイズ時の黄色いアイコンを表示する -->
                   <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_274.png' %}">
-                  <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_274.png' %}">
-                  <img src="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}" class="Bg_yellow_icon_small_right">
+                  <img class="Bg_yellow_icon_small_right">
+                </picture>
+              </div>
+              <div id="yellow_icon_pc">
+                <picture>
+                  <!-- <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}"> -->
+                  <!-- TODO:SPサイズ時の黄色いアイコンを表示する -->
+                  <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}">
+                  <img src="" class="Bg_yellow_icon_small">
                 </picture>
               </div>
             </div>

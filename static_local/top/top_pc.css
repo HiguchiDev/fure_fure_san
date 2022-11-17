@@ -2,12 +2,6 @@
     position: absolute;
 }
 
-/* トップページタイトルの背景 */
-.Bg_mosaic {
-    position: relative;
-    width: 100%;
-}
-
 /* トップページタイトルの背景の黄色いアイコングループ */
 .Bg_yellow_icon-small {
     position: absolute;
