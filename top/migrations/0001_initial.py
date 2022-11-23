@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Choice',
+            name='Feeling',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('text', models.CharField(max_length=100)),
@@ -24,9 +24,9 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('text', models.CharField(max_length=100)),
-                ('choice1', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='choice1', to='top.choice')),
-                ('choice2', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='choice2', to='top.choice')),
-                ('choice3', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='choice3', to='top.choice')),
+                ('feeling1', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='feeling1', to='top.feeling')),
+                ('feeling2', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='feeling2', to='top.feeling')),
+                ('feeling3', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='feeling3', to='top.feeling')),
             ],
         ),
     ]

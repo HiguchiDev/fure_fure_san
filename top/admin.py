@@ -1,9 +1,18 @@
 from django.contrib import admin
 
-from top.models import Answer, Choice
+from top.models import Answer, Category, Feeling
 
-# Register your models here.
-class ChoiceAdmin(admin.ModelAdmin):
+class CategoryAdmin(admin.ModelAdmin):
+    readonly_fields = (
+        'id',
+    )
+
+    list_display = (
+        'id',
+        'text',
+    )
+
+class FeelingAdmin(admin.ModelAdmin):
     readonly_fields = (
         'id',
     )
@@ -16,29 +25,18 @@ class ChoiceAdmin(admin.ModelAdmin):
 class AnswerAdmin(admin.ModelAdmin):
     readonly_fields = (
         'id',
-        'choice1',
-        'choice2',
-        'choice3',
-        'choice4',
-        'choice5',
-        'choice6',
-        'choice7',
-        'choice8',
+        'category',
+        'feeling',
     )
 
     list_display = (
         'id',
         'text',
-        'choice1',
-        'choice2',
-        'choice3',
-        'choice4',
-        'choice5',
-        'choice6',
-        'choice7',
-        'choice8',
+        'category',
+        'feeling',
     )
 
 
-admin.site.register(Choice, ChoiceAdmin)
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Feeling, FeelingAdmin)
 admin.site.register(Answer, AnswerAdmin)
