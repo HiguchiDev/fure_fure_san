@@ -4,7 +4,8 @@
 {% load static %}
 
 {% block css %}
-<link href="{% static 'top/top.css' %}" rel="stylesheet">
+<link href="{% static 'top/top_pc.css' %}" rel="stylesheet" media="screen and (min-width:751px)">
+<!-- <link href="{% static 'top/top_sp.css' %}" rel="stylesheet" media="screen and (max-width:750px)"> -->
 {% endblock %}
 
 <!DOCTYPE html>
@@ -19,49 +20,53 @@
   <div>{% block header %}{% endblock header %}</div>
   {% block contents %}
 
-  <!-- {% for choice in object_list %}
-    <li>{{ choice.text }}</li>
-    {% endfor %} -->
-
-  <div>
-    <div class="d-flex justify-content-center">
-      <div class="content-center">
-        <div><img src="{% static 'top/furefure_img_top_1/Bg_mosaic.png' %}" class="Bg_mosaic">
-          <div><img src="{% static 'top/furefure_img_top_1/Bg_yellow_icon-small.png' %}" class="Bg_yellow_icon-small">
+  <div class="wrap">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 px-0">
+          <div>
+            <!-- <img srcset="{% static 'top/sp_img/sp_Bg_mosaic.png' %} 750w {% static 'top/pc_img/Bg_mosaic.png' %}, " class="Bg_mosaic"> -->
+            <picture>
+              <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_mosaic.png' %}">
+              <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Bg_mosaic.png' %}">
+              <img src="{% static 'top/pc_img/Bg_mosaic.png' %}" class="Bg_mosaic">
+            </picture>
           </div>
-          <div><img src="{% static 'top/furefure_img_top_1/text.png' %}" class="text"></div>
-          <div><img src="{% static 'top/furefure_img_top_1/top_main.png' %}" class="top_main"></div>
-        </div>
 
-        <div><img src="{% static 'top/furefure_img_top_2/Bg_mosaic.png' %}" class="Bg_mosaic_body">
-          <div><img src="{% static 'top/furefure_img_top_2/Bg-green.png' %}" class="Bg-green"></div>
-          <div><img src="{% static 'top/furefure_img_top_2/button_cta.png' %}" class="button_cta"></div>
-          <div><img src="{% static 'top/furefure_img_top_2/Choice_bg-1.png' %}" class="Choice_bg-1"></div>
-          <div><img src="{% static 'top/furefure_img_top_2/Choice_bg.png' %}" class="Choice_bg"></div>
-          <div><img src="{% static 'top/furefure_img_top_2/Choice_title-1.png' %}" class="Choice_title-1"></div>
-          <div><img src="{% static 'top/furefure_img_top_2/Choice_title.png' %}" class="Choice_title"></div>
-          <div><img src="{% static 'top/furefure_img_top_2/Choise_radio-1.png' %}" class="Choise_radio-1"></div>
-          <div><img src="{% static 'top/furefure_img_top_2/Choise_radio-2.png' %}" class="Choise_radio-2"></div>
-          <div><img src="{% static 'top/furefure_img_top_2/Choise_radio.png' %}" class="Choise_radio"></div>
-          <div><img src="{% static 'top/furefure_img_top_2/Question.png' %}"
-              class="Question Headline_Large identical_to_box_height_2"></div>
-          <div><img src="{% static 'top/furefure_img_top_2/Tell_me.png' %}"
-              class="Tell_me Display_Large identical_to_box_height_1"></div>
-        </div>
+          <div class="">
+            <picture>
+              <!-- <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}"> -->
+              <!-- TODO:SPサイズ時の黄色いアイコンを表示する -->
+              <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_272.png' %}">
+              <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_272.png' %}">
+              <img src="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}" class="Bg_yellow_icon-small">
+            </picture>
+          </div>
 
-        <div><img src="{% static 'top/furefure_img_top_3/Bg_color #F7FDFD.png' %}" class="Bg_color_D">
-          <div><img src="{% static 'top/furefure_img_top_3/Bg_icon.png' %}" class="Bg_icon"></div>
-          <div><img src="{% static 'top/furefure_img_top_3/Footer.png' %}" class="Footer"></div>
-          <div><img src="{% static 'top/furefure_img_top_3/Group 262.png' %}" class="Group_262"></div>
-          <div><img src="{% static 'top/furefure_img_top_3/icon_loading.png' %}" class="icon_loading"></div>
+          <div class="">
+            <!-- <picture>
+              <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg-green.png' %}">
+              <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Bg-green.png' %}">
+              <img src="{% static 'top/pc_img/Bg-green.png' %}" class="Bg-green">
+            </picture> -->
+          </div>
         </div>
       </div>
     </div>
 
-    {% block footer %}
-    {% endblock %}
+    <!-- <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 px-0 top-title">
+        </div>
+      </div>
+    </div> -->
 
-    {% endblock contents %}
+  </div>
+
+  {% block footer %}
+  {% endblock %}
+
+  {% endblock contents %}
 </body>
 
 </html>

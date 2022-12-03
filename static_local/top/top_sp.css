@@ -1,0 +1,27 @@
+/* Bg_mosaic */
+.Bg_mosaic {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+
+/* Bg_yellow_icon-small */
+.Bg_yellow_icon-small {
+    position: absolute;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+
+    /* mix-blend-mode: normal; */
+}
+
+
+.sp_Group_272 {
+    position: absolute;
+    /* width: 100%; */
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
