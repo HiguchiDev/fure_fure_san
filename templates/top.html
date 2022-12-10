@@ -2,6 +2,7 @@
 {% block meta_title %}フレフレさん|トップ{% endblock %}
 
 {% load static %}
+{% load mathfilters %}
 
 {% block css %}
 <link href="{% static 'top/top_pc.css' %}" rel="stylesheet" media="screen and (min-width:751px)">
@@ -28,163 +29,124 @@
   <div class="container-fluid">
     <div id="question_row" class="row">
       <div class="col-12">
-        <div id="question_body">
-          <div id="question_contents">
-            <div id="question_bg_mosaic">
-              <picture>
-                <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/bg_question_mosaic.png' %}">
-                <img src="" id="question_bg_mosaic_img">
-              </picture>
-            </div>
-            <div class="row">
-              <div class="col-12 text-center">
-                <div id="question_logo">Question</div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 text-center">
-                <div id="question_about_you">あなたのことを教えてください</div>
-              </div>
-            </div>
-            <div class="row" id="category_title">
-              <div class="col-12 text-center">
-                <img src="{% static 'top/common_img/choice_title.png' %}" class="choice_title">
-                <span id="choice_title_new_line" class="d-block d-sm-none">
-                  <br>
-                </span>
-                当てはまる"状況"はありますか？
-              </div>
-            </div>
-            <div class="row" id="category_choice">
-              <div class="category_choice_margin_top"></div>
-              <!--SP用 -->
-              <div class="d-block d-sm-none">
-                <div class="row">
-                  <div class="col-1 sp_category_choice_checkbox">
-                    <label class="check-box">
-                      <input type="checkbox" id="category_choice1" class="category_choice1"><span class="text category"></span>
-                    </label>
-                  </div>
-                  <div class="col-10">
-                    <label class="check-box" for="category_choice1">
-                      <span class="text category" >何もしてないのに壊れた</span>
-                    </label>
-                  </div>
-                  <div class="col-1"></div>
-                </div>
-                <div class="row">
-                  <div class="col-1 sp_category_choice_checkbox">
-                    <label class="check-box">
-                      <input type="checkbox" id="category_choice2" class="category_choice2"><span class="text category"></span>
-                    </label>
-                  </div>
-                  <div class="col-10">
-                    <label class="check-box" for="category_choice2">
-                      <span class="text category" >ある事象を完全に理解した</span>
-                    </label>
-                  </div>
-                  <div class="col-1"></div>
-                </div>
-                <div class="row">
-                  <div class="col-1 sp_category_choice_checkbox">
-                    <label class="check-box">
-                      <input type="checkbox" id="category_choice3" class="category_choice3"><span class="text category"></span>
-                    </label>
-                  </div>
-                  <div class="col-10">
-                    <label class="check-box" for="category_choice3">
-                      <span class="text category" >今日も真理を探している</span>
-                    </label>
-                  </div>
-                  <div class="col-1"></div>
-                </div>
-                <div class="row">
-                  <div class="col-1 sp_category_choice_checkbox">
-                    <label class="check-box">
-                      <input type="checkbox" id="category_choice4" class="category_choice4"><span class="text category"></span>
-                    </label>
-                  </div>
-                  <div class="col-10">
-                    <label class="check-box" for="category_choice4">
-                      <span class="text category" >モチベーションにムラがあります＞＜</span>
-                    </label>
-                  </div>
-                  <div class="col-1"></div>
-                </div>
-                <div class="row">
-                  <div class="col-1 sp_category_choice_checkbox">
-                    <label class="check-box">
-                      <input type="checkbox" id="category_choice5" class="category_choice5"><span class="text category"></span>
-                    </label>
-                  </div>
-                  <div class="col-10">
-                    <label class="check-box" for="category_choice5">
-                      <span class="text category" >今日も真理を探している</span>
-                    </label>
-                  </div>
-                  <div class="col-1"></div>
-                </div>
-                <div class="row">
-                  <div class="col-1 sp_category_choice_checkbox">
-                    <label class="check-box">
-                      <input type="checkbox" id="category_choice6" class="category_choice6"><span class="text category"></span>
-                    </label>
-                  </div>
-                  <div class="col-10">
-                    <label class="check-box" for="category_choice6">
-                      <span class="text category" >当てはまるものはない</span>
-                    </label>
-                  </div>
-                  <div class="col-1"></div>
-                </div>
-                <div class="category_choice_margin_bottom"></div>
-              </div>
-
-              <!--PC用 -->
-              <div class="d-none d-sm-block">
-                <div class="row">
-                  <div class="col-4 text-center">
-                    <label class="check-box">
-                      <input type="checkbox" class="category_choice1"><span class="text category">何もしてないのに壊れた</span>
-                    </label>
-                  </div>
-                  <div class="col-4 text-center">
-                    <label class="check-box">
-                      <input type="checkbox" class="category_choice2"><span class="text category">ある事象を完全に理解した</span>
-                    </label>
-                  </div>
-                  <div class="col-4 text-center">
-                    <label class="check-box">
-                      <input type="checkbox" class="category_choice3"><span class="text category">今日も真理を探している</span>
-                    </label>
-                  </div>
-                </div>
-
-                <div class="category_choice_margin_bottom"></div>
-
-                <div class="row">
-                  <div class="col-4 text-center">
-                    <label class="check-box">
-                      <input type="checkbox" class="category_choice4"><span class="text category">モチベーションにムラがあります＞＜</span>
-                    </label>
-                  </div>
-                  <div class="col-4 text-center">
-                    <label class="check-box">
-                      <input type="checkbox" class="category_choice5"><span class="text category">今日も真理を探している</span>
-                    </label>
-                  </div>
-                  <div class="col-4 text-center">
-                    <label class="check-box">
-                      <input type="checkbox" class="category_choice6"><span class="text category">当てはまるものはない</span>
-                    </label>
-                  </div>
-                </div>
-                <div class="category_choice_margin_bottom"></div>
-              </div>
-
-            </div>
+        <div id="question_bg_mosaic">
+          <picture>
+            <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/bg_question_mosaic.png' %}">
+            <img src="" id="question_bg_mosaic_img">
+          </picture>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <div id="question_logo">Question</div>
           </div>
-        </div>          
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <div id="question_about_you">あなたのことを教えてください</div>
+          </div>
+        </div>
+        <div class="row choice_title">
+          <div class="col-12 text-center">
+            <img src="{% static 'top/common_img/choice_title.png' %}" class="choice_title_icon">
+            <span class="d-block d-sm-none choice_title_new_line">
+              <br>
+            </span>
+            当てはまる"状況"はありますか？
+          </div>
+        </div>
+        <div class="row choice_row">
+          <!--SP用 -->
+          <div class="d-block d-sm-none">
+            {% for c in categories %}
+              <div class="row inner_choice_row_sp">
+                <div class="col-1 choice_checkbox_sp">
+                  <label class="check-box">
+                    <input type="checkbox" id="category_choice{{ forloop.counter }}" class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span class="text choice_text"></span>
+                  </label>
+                </div>
+                <div class="col-10">
+                  <label class="check-box" for="category_choice{{ forloop.counter }}">
+                    <span class="text choice_text" >{{ c.text }}</span>
+                  </label>
+                </div>
+                <div class="col-1"></div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <!--PC用 -->
+          <div class="d-none d-sm-block">
+            <div class="row">
+            {% for c in categories %}
+                <div class="col-4 text-center">
+                  <label class="check-box">
+                    <input type="checkbox" class="category_choice{{ forloop.counter }}"><span class="text choice_text" >{{ c.text }}</span>
+                  </label>
+                </div>
+              {% if forloop.counter|mod:3 == 0 and forloop.counter != categories|length %}
+              </div> <!-- row -->
+              <div class="row choice_inner_row">
+              {% endif %}
+            {% endfor %}
+            </div> <!-- row -->
+          </div>
+        </div>
+
+        <div class="row choice_title">
+          <div class="col-12 text-center">
+            <img src="{% static 'top/common_img/choice_title.png' %}" class="choice_title_icon">
+            <span class="d-block d-sm-none choice_title_new_line">
+              <br>
+            </span>
+            当てはまる"気持ち"はありますか？
+          </div>
+        </div>
+        <div class="row choice_row">
+          <!--SP用 -->
+          <div class="d-block d-sm-none">
+            {% for f in feelings %}
+              <div class="row inner_choice_row_sp">
+                <div class="col-1 choice_checkbox_sp">
+                  <label class="check-box">
+                    <input type="checkbox" id="feeling_choice{{ forloop.counter }}" class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span class="text choice_text"></span>
+                  </label>
+                </div>
+                <div class="col-10">
+                  <label class="check-box" for="feeling_choice{{ forloop.counter }}">
+                    <span class="text choice_text" >{{ f.text }}</span>
+                  </label>
+                </div>
+                <div class="col-1"></div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <!--PC用 -->
+          <div class="d-none d-sm-block">
+            <div class="row">
+            {% for f in feelings %}
+                <div class="col-4 text-center">
+                  <label class="check-box">
+                    <input type="checkbox" class="feeling_choice{{ forloop.counter }}"><span class="text choice_text" >{{ f.text }}</span>
+                  </label>
+                </div>
+              {% if forloop.counter|mod:3 == 0 and forloop.counter != feelings|length %}
+              </div> <!-- row -->
+              <div class="row">
+              {% endif %}
+            {% endfor %}
+            </div> <!-- row -->
+          </div>
+        </div>   
+      </div>
+    </div>
+    <div id="answer_row" class="row">
+      <div class="col-12">
+        a<br>
+        a<br>
+        a<br>
+        a<br>
+        a<br>
       </div>
     </div>
   </div>
@@ -221,11 +183,38 @@ function get_category_choice_class_name(elem) {
   return res;
 }
 
+function get_feeling_choice_class_name(elem) {
+  const class_list = elem.attr('class').split(" ");
+  let res = null;
+
+  class_list.forEach(function(elem, index) {
+    if(elem.match(/feeling_choice/)) {
+      res = elem;
+      return;
+    }
+  });
+
+  return res;
+}
+
 $(document).ready( function(){
   $("[class^='category_choice']").on("click", function() {
     const clicked_category_class_name = get_category_choice_class_name($(this));
     $("[class^='category_choice']").each(function() {
       const category_class_name = get_category_choice_class_name($(this));
+      if(clicked_category_class_name == category_class_name) {
+        $(this).prop('checked', true);
+      }
+      else {
+        $(this).prop('checked', false);
+      }
+    });
+  });
+
+  $("[class^='feeling_choice']").on("click", function() {
+    const clicked_category_class_name = get_feeling_choice_class_name($(this));
+    $("[class^='feeling_choice']").each(function() {
+      const category_class_name = get_feeling_choice_class_name($(this));
       if(clicked_category_class_name == category_class_name) {
         $(this).prop('checked', true);
       }

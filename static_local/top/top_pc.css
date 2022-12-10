@@ -1,6 +1,9 @@
-#category_choice {
+.choice_row {
     background: #20C9C5;
     border-radius: 16px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 32px;
     margin-left: 100px;
     margin-right: 100px;
 }
