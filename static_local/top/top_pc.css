@@ -1,34 +1,40 @@
-.content-center {
-    position: relative;
+.top-title {
+    position: absolute;
 }
 
-/* Bg_mosaic */
-.Bg_mosaic {
-    position: relative;
-    width: 1280px;
-    height: 570px;
-    left: 0px;
-    top: 0px;
-}
-
-/* background: url(アートボード 16.png); */
-
-
-/* Bg_yellow_icon-small */
+/* トップページタイトルの背景の黄色いアイコングループ */
 .Bg_yellow_icon-small {
     position: absolute;
-    width: 1281px;
-    height: 570px;
+    width: 100%;
     left: 0px;
     top: 0px;
-
-    mix-blend-mode: normal;
 }
+
+/* トップページタイトルの背景の黄色いアイコングループ */
+.Bg_yellow_icon-small2 {
+    position: absolute;
+    width: 100%;
+    right: 0px;
+    top: 0px;
+}
+
+
+/* トップページボディの背景 */
+.Bg-green {
+    position: absolute;
+    width: 100%;
+    /* background: #56D9D6; */
+}
+
+
+
+
+
 
 
 /* top_main */
 .top_main {
-    position: absolute;
+    /* position: relative; */
     width: 688.53px;
     height: 338.41px;
     left: 295.47px;
@@ -46,17 +52,6 @@
 }
 
 
-/* Bg-green */
-.Bg-green {
-    position: absolute;
-    width: 1280px;
-    height: 967px;
-    left: 0px;
-    top: 570px;
-    z-index: 10;
-
-    background: #56D9D6;
-}
 
 
 /* Bg_mosaic_body */

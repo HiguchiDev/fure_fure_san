@@ -1,0 +1,50 @@
+/* Bg_mosaic */
+#mosaic {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+.Bg_mosaic {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Bg_yellow_icon-small */
+#yellow_icon_left {
+    position: absolute;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+
+    /* mix-blend-mode: normal; */
+}
+
+.Bg_yellow_icon_small_left {
+    height: 100%;
+}
+
+.Bg_yellow_icon_small_right {
+    height: 100%;
+}
+
+/* Bg_yellow_icon-small */
+#yellow_icon_right {
+    position: absolute;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+
+    /* mix-blend-mode: normal; */
+}
+
+.sp_Group_272 {
+    position: absolute;
+    /* width: 100%; */
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
