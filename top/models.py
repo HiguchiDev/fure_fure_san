@@ -55,18 +55,5 @@ class Answer(models.Model):
     text = models.CharField(verbose_name="回答", max_length=100, null=True)
     image_no = models.IntegerField(verbose_name="回答時に表示する画像番号", choices=[(1, 1), (2, 2), (3, 3)], default=1, null=False)
 
-    @classmethod
-    def get_feeling_query(self, param_list):
-        return Q(
-            feeling1__id=param_list[0],
-            feeling2__id=param_list[1],
-            feeling3__id=param_list[2],
-            feeling4__id=param_list[3],
-            feeling5__id=param_list[4],
-            feeling6__id=param_list[5],
-            feeling7__id=param_list[6],
-            feeling8__id=param_list[7],
-        )
-
     def __str__(self):
         return str(self.text)
