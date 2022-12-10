@@ -34,6 +34,7 @@ class AnswerAdmin(admin.ModelAdmin):
         'text',
         'category',
         'feeling',
+        'image_no',
     )
 
 
