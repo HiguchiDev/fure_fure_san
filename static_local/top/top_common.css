@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;900&display=swap');
+
+#question_row {
+    position: relative;
+    background-color: #56D9D6;
+}
+
+#question_bg_mosaic {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+#question_bg_mosaic_img {
+    width: 100%;
+}
+
+#question_logo {
+    padding-top: 88px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    
+    color: #FFE000;
+}
+
+#question_about_you {
+    padding-top: 8px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 48px;
+
+    color: #FFFFFF;
+
+}
+
+#category_title {
+    padding-top: 80px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    
+    color: #FFFFFF;
+}
+
+#choice_title_new_line {
+    padding-top: -10px;
+    padding-bottom: -10px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+.choice_title {
+    padding-bottom: 5px;
+    width: 27px;
+}
+
+.check-box {
+    cursor: pointer;
+}
+  
+.check-box input {
+    display: none;
+}
+
+.check-box input + .text:before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin: 0 5px 0 0;
+    background-image: none, url("/static/top/common_img/checkbox_not_selected.png");
+    background-size: 100% auto, 100%;
+    background-position: top 50% left 50%, 0 0;
+    background-repeat: no-repeat, no-repeat;
+    width: 19px;
+    height: 18px;
+}
+
+.check-box input:checked + .text:before {
+background-image: url("/static/top/common_img/checkbox_selected.png");
+}
+
+.category_choice_margin_top {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.category_choice_margin_bottom {
+    margin-bottom: 30px;
+}
+
+.category {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+
+    color: #FFFFFF;
+
+}
+
+.sp_category_choice_checkbox {
+    margin-left: 20px;
+}

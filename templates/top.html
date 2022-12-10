@@ -6,6 +6,10 @@
 {% block css %}
 <link href="{% static 'top/top_pc.css' %}" rel="stylesheet" media="screen and (min-width:751px)">
 <link href="{% static 'top/top_sp.css' %}" rel="stylesheet" media="screen and (max-width:750px)">
+<link href="{% static 'top/top_common.css' %}" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;900&display=swap" rel="stylesheet">
 {% endblock %}
 
 <!DOCTYPE html>
@@ -20,60 +24,160 @@
   <div>{% block header %}{% endblock header %}</div>
   {% block contents %}
 
-  <div class="wrap">
-    <div class="container-fluid">
-      <div class="row">
-          <div class="col-12 px-0">
-            <!-- <img srcset="{% static 'top/sp_img/sp_Bg_mosaic.png' %} 750w {% static 'top/pc_img/Bg_mosaic.png' %}, " class="Bg_mosaic"> -->
-            <div id="mosaic">
+
+  <div class="container-fluid">
+    <div id="question_row" class="row">
+      <div class="col-12">
+        <div id="question_body">
+          <div id="question_contents">
+            <div id="question_bg_mosaic">
               <picture>
-                <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_mosaic.png' %}">
-                <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Bg_mosaic.png' %}">
-                <img class="Bg_mosaic">
+                <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/bg_question_mosaic.png' %}">
+                <img src="" id="question_bg_mosaic_img">
               </picture>
-              <div id="yellow_icon_left">
-                <picture>
-                  <!-- TODO:SPサイズ時の黄色いアイコンを表示する -->
-                  <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_272.png' %}">
-                  <img class="Bg_yellow_icon_small_left">
-                </picture>
-              </div>
-              <div id="yellow_icon_right">
-                <picture>
-                  <!-- <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}"> -->
-                  <!-- TODO:SPサイズ時の黄色いアイコンを表示する -->
-                  <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Group_274.png' %}">
-                  <img class="Bg_yellow_icon_small_right">
-                </picture>
-              </div>
-              <div id="yellow_icon_pc">
-                <picture>
-                  <!-- <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}"> -->
-                  <!-- TODO:SPサイズ時の黄色いアイコンを表示する -->
-                  <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg_yellow_icon-small.png' %}">
-                  <img src="" class="Bg_yellow_icon_small">
-                </picture>
+            </div>
+            <div class="row">
+              <div class="col-12 text-center">
+                <div id="question_logo">Question</div>
               </div>
             </div>
-          <div class="">
-            <!-- <picture>
-              <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg-green.png' %}">
-              <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Bg-green.png' %}">
-              <img src="{% static 'top/pc_img/Bg-green.png' %}" class="Bg-green">
-            </picture> -->
+            <div class="row">
+              <div class="col-12 text-center">
+                <div id="question_about_you">あなたのことを教えてください</div>
+              </div>
+            </div>
+            <div class="row" id="category_title">
+              <div class="col-12 text-center">
+                <img src="{% static 'top/common_img/choice_title.png' %}" class="choice_title">
+                <span id="choice_title_new_line" class="d-block d-sm-none">
+                  <br>
+                </span>
+                当てはまる"状況"はありますか？
+              </div>
+            </div>
+            <div class="row" id="category_choice">
+              <div class="category_choice_margin_top"></div>
+
+              <!--SP用 -->
+              <div class="d-block d-sm-none">
+                <div class="row">
+                  <div class="col-1 sp_category_choice_checkbox">
+                    <label class="check-box">
+                      <input type="checkbox"><span class="text category"></span>
+                    </label>
+                  </div>
+                  <div class="col-10">
+                    <span class="text category">何もしてないのに壊れた</span>
+                  </div>
+                  <div class="col-1"></div>
+                </div>
+                <div class="row">
+                  <div class="col-1 sp_category_choice_checkbox">
+                    <label class="check-box">
+                      <input type="checkbox"><span class="text category"></span>
+                    </label>
+                  </div>
+                  <div class="col-10">
+                    <span class="text category">ある事象を完全に理解した</span>
+                  </div>
+                  <div class="col-1"></div>
+                </div>
+                <div class="row">
+                  <div class="col-1 sp_category_choice_checkbox">
+                    <label class="check-box">
+                      <input type="checkbox"><span class="text category"></span>
+                    </label>
+                  </div>
+                  <div class="col-10">
+                    <span class="text category">今日も真理を探している</span>
+                  </div>
+                  <div class="col-1"></div>
+                </div>
+                <div class="row">
+                  <div class="col-1 sp_category_choice_checkbox">
+                    <label class="check-box">
+                      <input type="checkbox"><span class="text category"></span>
+                    </label>
+                  </div>
+                  <div class="col-10">
+                    <span class="text category">モチベーションにムラがあります＞＜</span>
+                  </div>
+                  <div class="col-1"></div>
+                </div>
+                <div class="row">
+                  <div class="col-1 sp_category_choice_checkbox">
+                    <label class="check-box">
+                      <input type="checkbox"><span class="text category"></span>
+                    </label>
+                  </div>
+                  <div class="col-10">
+                    <span class="text category">今日も真理を探している</span>
+                  </div>
+                  <div class="col-1"></div>
+                </div>
+                <div class="row">
+                  <div class="col-1 sp_category_choice_checkbox">
+                    <label class="check-box">
+                      <input type="checkbox"><span class="text category"></span>
+                    </label>
+                  </div>
+                  <div class="col-10">
+                    <span class="text category">当てはまるものはない</span>
+                  </div>
+                  <div class="col-1"></div>
+                </div>
+                <div class="category_choice_margin_bottom"></div>
+              </div>
+
+              <!--PC用 -->
+              <div class="d-none d-sm-block">
+                <div class="row">
+                  <div class="col-4 text-center">
+                    <label class="check-box">
+                      <input type="checkbox"><span class="text category">何もしてないのに壊れた</span>
+                    </label>
+                  </div>
+                  <div class="col-4 text-center">
+                    <label class="check-box">
+                      <input type="checkbox"><span class="text category">ある事象を完全に理解した</span>
+                    </label>
+                  </div>
+                  <div class="col-4 text-center">
+                    <label class="check-box">
+                      <input type="checkbox"><span class="text category">今日も真理を探している</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="category_choice_margin_bottom"></div>
+
+                <div class="row">
+                  <div class="col-4 text-center">
+                    <label class="check-box">
+                      <input type="checkbox"><span class="text category">モチベーションにムラがあります＞＜</span>
+                    </label>
+                  </div>
+                  <div class="col-4 text-center">
+                    <label class="check-box">
+                      <input type="checkbox"><span class="text category">今日も真理を探している</span>
+                    </label>
+                  </div>
+                  <div class="col-4 text-center">
+                    <label class="check-box">
+                      <input type="checkbox"><span class="text category">当てはまるものはない</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="category_choice_margin_bottom"></div>
+              </div>
+
+            </div>
           </div>
-        </div>
+        </div>          
       </div>
     </div>
-
-    <!-- <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 px-0 top-title">
-        </div>
-      </div>
-    </div> -->
-
   </div>
+
 
   {% block footer %}
   {% endblock %}
