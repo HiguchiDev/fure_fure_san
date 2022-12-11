@@ -43,7 +43,8 @@ class Feeling(models.Model):
         for c in category:
             Answer.objects.create(
                 category=c,
-                feeling=self
+                feeling=self,
+                image_no=1,
             )
 
 class Answer(models.Model):
