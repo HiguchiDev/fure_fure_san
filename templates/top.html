@@ -294,6 +294,10 @@ $(document).ready( function(){
       console.log(response);
       console.log(response[0]["text"]);
       const answer_text = response[0]["text"];
+
+      $(".answer_text").each(function (){
+        $(this).text(answer_text);
+      });
       // jqueryでcenterにスクロールするのが面倒だったのでピュアjsで実装
       document.getElementsByClassName("answer_text")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
       document.getElementsByClassName("answer_text")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
