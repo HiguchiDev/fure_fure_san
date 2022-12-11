@@ -5,8 +5,8 @@
 {% load mathfilters %}
 
 {% block css %}
-<link href="{% static 'top/top_pc.css' %}" rel="stylesheet" media="screen and (min-width:751px)">
-<link href="{% static 'top/top_sp.css' %}" rel="stylesheet" media="screen and (max-width:750px)">
+<link href="{% static 'top/top_pc.css' %}" rel="stylesheet" media="screen and (min-width:769px)">
+<link href="{% static 'top/top_sp.css' %}" rel="stylesheet" media="screen and (max-width:768px)">
 <link href="{% static 'top/top_common.css' %}" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,6 @@
   <div class="container-fluid">
     <div id="question_row" class="row">
       <div class="col-12">
-
         <div class="row">
           <div class="col-12 text-center">
             <div id="question_logo">Question</div>
@@ -43,7 +42,7 @@
         <div class="row choice_title">
           <div class="col-12 text-center">
             <img src="{% static 'top/common_img/choice_title.png' %}" class="choice_title_icon">
-            <span class="d-block d-sm-none choice_title_new_line">
+            <span class="d-block d-md-none choice_title_new_line">
               <br>
             </span>
             当てはまる"状況"はありますか？
@@ -51,7 +50,7 @@
         </div>
         <div class="row choice_row">
           <!--SP用 -->
-          <div class="d-block d-sm-none">
+          <div class="d-block d-md-none">
             {% for c in categories %}
               <div class="row inner_choice_row_sp">
                 <div class="col-1 choice_checkbox_sp">
@@ -70,7 +69,7 @@
           </div>
 
           <!--PC用 -->
-          <div class="d-none d-sm-block">
+          <div class="d-none d-md-block">
             <div class="row">
             {% for c in categories %}
                 <div class="col-4 text-center">
@@ -90,7 +89,7 @@
         <div class="row choice_title">
           <div class="col-12 text-center">
             <img src="{% static 'top/common_img/choice_title.png' %}" class="choice_title_icon">
-            <span class="d-block d-sm-none choice_title_new_line">
+            <span class="d-block d-md-none choice_title_new_line">
               <br>
             </span>
             当てはまる"気持ち"はありますか？
@@ -98,7 +97,7 @@
         </div>
         <div class="row choice_row">
           <!--SP用 -->
-          <div class="d-block d-sm-none">
+          <div class="d-block d-md-none">
             {% for f in feelings %}
               <div class="row inner_choice_row_sp">
                 <div class="col-1 choice_checkbox_sp">
@@ -117,7 +116,7 @@
           </div>
 
           <!--PC用 -->
-          <div class="d-none d-sm-block">
+          <div class="d-none d-md-block">
             <div class="row">
             {% for f in feelings %}
                 <div class="col-4 text-center">
@@ -150,40 +149,54 @@
       </div>
     </div>
     <div id="furefure_msg_row" class="row">
-      <div class="col-12 text-center">
+      <div class="col-12">
         <div class="row" id="furefure_msg_title">
           <div class="col-12 text-center">
             フレフレさんからの
-            <span class="d-block d-sm-none furefure_msg_title_new_line">
+            <span class="d-block d-md-none furefure_msg_title_new_line">
               <br>
             </span>
             メッセージ
           </div>
         </div>
-        <div class="row" id="furefure_msg_body">
+        <div class="row" id="furefure_msg_body_loading">
           <div class="col-12 text-center">
             <div class="spinner-border" role="status" id="fure_fure_msg_loading">
               <span class="visually-hidden">Loading...</span>
             </div>
           </div>
-          <div class="col-2 text-right">
-            <img src="{% static 'top/common_img/answer1.png' %}" id="answer_img">
+        </div>
+        <div class="row" id="furefure_msg_body_answer">
+          <div class="d-block d-md-none">
+            <div class="row">
+              <div class="col-12 text-center">
+                <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img">
+              </div>
+              <div class="col-12 text-center">
+                aaaaa<br>
+                aaaaa<br>
+                aaaaa<br>
+                aaaaa<br>
+              </div>
+            </div>
           </div>
-          <div class="col-10">
-            aaaaaaaaaaaaaa<br>
-            aaaaaaaaaaaaaa<br>
-            aaaaaaaaaaaaaa<br>
-            aaaaaaaaaaaaaa<br>
-            aaaaaaaaaaaaaa<br>
-            aaaaaaaaaaaaaa<br>
-            aaaaaaaaaaaaaa<br>
-            aaaaaaaaaaaaaa<br>
+          <div class="d-none d-md-block">
+            <div class="row">
+              <div class="col-4 text-end">
+                <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img">
+              </div>
+              <div class="col-8 text-left">
+                bbbbb<br>
+                aaaaa<br>
+                aaaaa<br>
+                aaabaa<br>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 
   {% block footer %}
   {% endblock %}

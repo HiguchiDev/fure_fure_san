@@ -150,7 +150,10 @@
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
+}
 
+#furefure_msg_title {
+    margin-bottom: 55px;
 }
 
 #fure_fure_msg_loading {
@@ -164,7 +167,12 @@
     margin-bottom: -20px;
 }
 
-#answer_img {
+#furefure_msg_body_loading {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.answer_img {
     width: 265px;
     height: 240px;
 }
