@@ -29,12 +29,7 @@
   <div class="container-fluid">
     <div id="question_row" class="row">
       <div class="col-12">
-        <div id="question_bg_mosaic">
-          <picture>
-            <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/bg_question_mosaic.png' %}">
-            <img src="" id="question_bg_mosaic_img">
-          </picture>
-        </div>
+
         <div class="row">
           <div class="col-12 text-center">
             <div id="question_logo">Question</div>
@@ -137,16 +132,54 @@
             {% endfor %}
             </div> <!-- row -->
           </div>
-        </div>   
+        </div>
+        <div class="row" id="reception_msg_row">
+          <div class="col-12 text-center">
+            <button type="button" class="btn" id="reception_msg_btn">メッセージをもらう</button>
+          </div>
+        </div>
       </div>
     </div>
     <div id="answer_row" class="row">
       <div class="col-12">
-        a<br>
-        a<br>
-        a<br>
-        a<br>
-        a<br>
+        <div class="row" id="answer_title">
+          <div class="col-12 text-center">
+            Answer
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="furefure_msg_row" class="row">
+      <div class="col-12 text-center">
+        <div class="row" id="furefure_msg_title">
+          <div class="col-12 text-center">
+            フレフレさんからの
+            <span class="d-block d-sm-none furefure_msg_title_new_line">
+              <br>
+            </span>
+            メッセージ
+          </div>
+        </div>
+        <div class="row" id="furefure_msg_body">
+          <div class="col-12 text-center">
+            <div class="spinner-border" role="status" id="fure_fure_msg_loading">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <div class="col-2 text-right">
+            <img src="{% static 'top/common_img/answer1.png' %}" id="answer_img">
+          </div>
+          <div class="col-10">
+            aaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaa<br>
+            aaaaaaaaaaaaaa<br>
+          </div>
+        </div>
       </div>
     </div>
   </div>

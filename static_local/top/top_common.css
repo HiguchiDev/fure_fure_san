@@ -1,21 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;900&display=swap');
 
 #question_row {
-    position: relative;
     background-color: #56D9D6;
     z-index: 0;
-}
-
-#question_bg_mosaic {
-    position: absolute;
-    width: 100%;
-    left: 0px;
-    top: 0px;
-    z-index: -1;
-}
-
-#question_bg_mosaic_img {
-    width: 100%;
+    background-image: url("/static/top/pc_img/bg_question_mosaic.png");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
 }
 
 #question_logo {
@@ -88,7 +80,7 @@
 }
 
 .check-box input:checked + .text:before {
-background-image: url("/static/top/common_img/checkbox_selected.png");
+    background-image: url("/static/top/common_img/checkbox_selected.png");
 }
 
 .choice_text {
@@ -115,7 +107,7 @@ background-image: url("/static/top/common_img/checkbox_selected.png");
 }
 
 .choice_inner_row {
-    margin-top: 20px;
+    margin-top: 32px;
 }
 
 
@@ -125,10 +117,54 @@ background-image: url("/static/top/common_img/checkbox_selected.png");
     z-index: 0;
 }
 
-#question_bg_mosaic {
-    position: absolute;
-    width: 100%;
-    left: 0px;
-    top: 0px;
-    z-index: -1;
+#answer_title {
+    margin-top: 88px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 36px;
+    
+    color: #00C1C3;
+}
+
+#furefure_msg_title {
+    margin-top: 8px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 48px;
+    
+    color: #2B2F36;
+}
+
+#answer_row {
+    background: #F7FDFD;
+}
+
+#furefure_msg_row {
+    z-index: 0;
+    background: #F7FDFD;
+    background-image: url("/static/top/common_img/bg_answer.png");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+#fure_fure_msg_loading {
+    color: #89E4E2;
+}
+
+.furefure_msg_title_new_line {
+    padding-top: -20px;
+    padding-bottom: -20px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+#answer_img {
+    width: 265px;
+    height: 240px;
 }
