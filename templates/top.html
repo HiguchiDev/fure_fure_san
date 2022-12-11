@@ -74,7 +74,7 @@
             {% for c in categories %}
                 <div class="col-4 text-center">
                   <label class="check-box">
-                    <input type="checkbox" class="category_choice{{ forloop.counter }}"><span class="text choice_text" >{{ c.text }}</span>
+                    <input type="checkbox" class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span class="text choice_text" >{{ c.text }}</span>
                   </label>
                 </div>
               {% if forloop.counter|mod:3 == 0 and forloop.counter != categories|length %}
@@ -121,7 +121,7 @@
             {% for f in feelings %}
                 <div class="col-4 text-center">
                   <label class="check-box">
-                    <input type="checkbox" class="feeling_choice{{ forloop.counter }}"><span class="text choice_text" >{{ f.text }}</span>
+                    <input type="checkbox" class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span class="text choice_text" >{{ f.text }}</span>
                   </label>
                 </div>
               {% if forloop.counter|mod:3 == 0 and forloop.counter != feelings|length %}
@@ -173,10 +173,7 @@
                 <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img">
               </div>
               <div class="col-12 text-center">
-                aaaaa<br>
-                aaaaa<br>
-                aaaaa<br>
-                aaaaa<br>
+                <div class="answer_text"></div>
               </div>
             </div>
           </div>
@@ -186,10 +183,7 @@
                 <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img">
               </div>
               <div class="col-8 text-left">
-                bbbbb<br>
-                aaaaa<br>
-                aaaaa<br>
-                aaabaa<br>
+                <div class="answer_text"></div>
               </div>
             </div>
           </div>
@@ -209,10 +203,9 @@
 
 {% block js %}
 <script
-src="https://code.jquery.com/jquery-3.6.1.slim.js"
-integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk="
-crossorigin="anonymous">
-</script>
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
 <script>
 
 function get_category_choice_class_name(elem) {
@@ -269,6 +262,50 @@ $(document).ready( function(){
       }
     });
   });
+
+  $("#reception_msg_btn").on("click", function(){
+    let category_id = null;
+    $("[class^='category_choice']").each(function() {
+      if($(this).prop('checked') == true) {
+        category_id = $(this).attr('value');
+        return
+      }
+    });
+
+    let feeling_id = null;
+    $("[class^='feeling_choice']").each(function() {
+      if($(this).prop('checked') == true) {
+        feeling_id = $(this).attr('value');
+        return
+      }
+    });
+
+    $.ajax({
+      type: 'GET',
+      url: 'http://localhost:8000/api/answer/',
+      data: {
+          category_id: category_id,
+          feeling_id: feeling_id
+      },
+      cache: false, //cacheを使うかどうか
+      dataType:'json', //data type scriptなどデータタイプの指定
+    })
+    .done(function(response) { //通信が成功したときのコールバックの処理を書く
+      console.log(response);
+      console.log(response[0]["text"]);
+      const answer_text = response[0]["text"];
+      // jqueryでcenterにスクロールするのが面倒だったのでピュアjsで実装
+      document.getElementsByClassName("answer_text")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
+      document.getElementsByClassName("answer_text")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
+    })
+    .fail(function(xhr) { //通信が失敗したときのコールバックの処理を書く
+
+    })
+    .always(function(xhr, msg) { //通信結果にかかわらず実行する処理を書く
+
+    });
+  });
+
 });
 </script>
 {% endblock %}
