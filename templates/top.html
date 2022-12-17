@@ -2,11 +2,15 @@
 {% block meta_title %}フレフレさん|トップ{% endblock %}
 
 {% load static %}
+{% load mathfilters %}
 
 {% block css %}
-<link href="{% static 'top/top_wide.css' %}" rel="stylesheet" media="screen and (min-width:570px)">
-<link href="{% static 'top/top_normal.css' %}" rel="stylesheet" media="screen and (max-width:569px)">
-<link href="{% static 'top/top_sp.css' %}" rel="stylesheet" media="screen and (max-width:425px)">
+<link href="{% static 'top/top_pc.css' %}" rel="stylesheet" media="screen and (min-width:769px)">
+<link href="{% static 'top/top_sp.css' %}" rel="stylesheet" media="screen and (max-width:768px)">
+<link href="{% static 'top/top_common.css' %}" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;900&display=swap" rel="stylesheet">
 {% endblock %}
 
 <!DOCTYPE html>
@@ -21,42 +25,295 @@
   <div>{% block header %}{% endblock header %}</div>
   {% block contents %}
 
-  <div class="wrap">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 px-0">
-          <div id="">
-            <picture>
-              <source media="(min-width: 570px)" srcset="{% static 'top/pc_img/bg_header_wide.png' %}">
-              <source media="(min-width: 426px)" srcset="{% static 'top/pc_img/bg_header_normal.png' %}">
-              <source media="(max-width: 425px)" srcset="{% static 'top/sp_img/bg_header_sp.png' %}">
-              <img src="top/sp_img/bg_header_sp.png" class="bg_header">
-            </picture>
+
+  <div class="container-fluid">
+    <div id="question_row" class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12 text-center">
+            <div id="question_logo">Question</div>
           </div>
-          <div class="">
-            <!-- <picture>
-              <source media="(min-width: 751px)" srcset="{% static 'top/pc_img/Bg-green.png' %}">
-              <source media="(max-width: 750px)" srcset="{% static 'top/sp_img/sp_Bg-green.png' %}">
-              <img src="{% static 'top/pc_img/Bg-green.png' %}" class="Bg-green">
-            </picture> -->
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <div id="question_about_you">あなたのことを教えてください</div>
+          </div>
+        </div>
+        <div class="row choice_title">
+          <div class="col-12 text-center">
+            <img src="{% static 'top/common_img/choice_title.png' %}" class="choice_title_icon">
+            <span class="d-block d-md-none choice_title_new_line">
+              <br>
+            </span>
+            当てはまる"状況"はありますか？
+          </div>
+        </div>
+        <div class="row choice_row">
+          <!--SP用 -->
+          <div class="d-block d-md-none">
+            {% for c in categories %}
+            <div class="row inner_choice_row_sp">
+              <div class="col-1 choice_checkbox_sp">
+                <label class="check-box">
+                  <input type="checkbox" id="category_choice{{ forloop.counter }}"
+                    class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span
+                    class="text choice_text"></span>
+                </label>
+              </div>
+              <div class="col-10">
+                <label class="check-box" for="category_choice{{ forloop.counter }}">
+                  <span class="text choice_text">{{ c.text }}</span>
+                </label>
+              </div>
+              <div class="col-1"></div>
+            </div>
+            {% endfor %}
+          </div>
+
+          <!--PC用 -->
+          <div class="d-none d-md-block">
+            <div class="row">
+              {% for c in categories %}
+              <div class="col-4 text-center">
+                <label class="check-box">
+                  <input type="checkbox" class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span
+                    class="text choice_text">{{ c.text }}</span>
+                </label>
+              </div>
+              {% if forloop.counter|mod:3 == 0 and forloop.counter != categories|length %}
+            </div> <!-- row -->
+            <div class="row choice_inner_row">
+              {% endif %}
+              {% endfor %}
+            </div> <!-- row -->
+          </div>
+        </div>
+
+        <div class="row choice_title">
+          <div class="col-12 text-center">
+            <img src="{% static 'top/common_img/choice_title.png' %}" class="choice_title_icon">
+            <span class="d-block d-md-none choice_title_new_line">
+              <br>
+            </span>
+            当てはまる"気持ち"はありますか？
+          </div>
+        </div>
+        <div class="row choice_row">
+          <!--SP用 -->
+          <div class="d-block d-md-none">
+            {% for f in feelings %}
+            <div class="row inner_choice_row_sp">
+              <div class="col-1 choice_checkbox_sp">
+                <label class="check-box">
+                  <input type="checkbox" id="feeling_choice{{ forloop.counter }}"
+                    class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span
+                    class="text choice_text"></span>
+                </label>
+              </div>
+              <div class="col-10">
+                <label class="check-box" for="feeling_choice{{ forloop.counter }}">
+                  <span class="text choice_text">{{ f.text }}</span>
+                </label>
+              </div>
+              <div class="col-1"></div>
+            </div>
+            {% endfor %}
+          </div>
+
+          <!--PC用 -->
+          <div class="d-none d-md-block">
+            <div class="row">
+              {% for f in feelings %}
+              <div class="col-4 text-center">
+                <label class="check-box">
+                  <input type="checkbox" class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span
+                    class="text choice_text">{{ f.text }}</span>
+                </label>
+              </div>
+              {% if forloop.counter|mod:3 == 0 and forloop.counter != feelings|length %}
+            </div> <!-- row -->
+            <div class="row choice_inner_row">
+              {% endif %}
+              {% endfor %}
+            </div> <!-- row -->
+          </div>
+        </div>
+        <div class="row" id="reception_msg_row">
+          <div class="col-12 text-center">
+            <button type="button" class="btn" id="reception_msg_btn">メッセージをもらう</button>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 px-0 top-title">
+    <div id="answer_row" class="row">
+      <div class="col-12">
+        <div class="row" id="answer_title">
+          <div class="col-12 text-center">
+            Answer
+          </div>
         </div>
       </div>
-    </div> -->
-
+    </div>
+    <div id="furefure_msg_row" class="row">
+      <div class="col-12">
+        <div class="row" id="furefure_msg_title">
+          <div class="col-12 text-center">
+            フレフレさんからの
+            <span class="d-block d-md-none furefure_msg_title_new_line">
+              <br>
+            </span>
+            メッセージ
+          </div>
+        </div>
+        <div class="row" id="furefure_msg_body_loading">
+          <div class="col-12 text-center">
+            <div class="spinner-border" role="status" id="fure_fure_msg_loading">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+        <div class="row" id="furefure_msg_body_answer">
+          <div class="d-block d-md-none">
+            <div class="row">
+              <div class="col-12 text-center">
+                <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img">
+              </div>
+              <div class="col-12 text-center">
+                <div class="answer_text"></div>
+              </div>
+            </div>
+          </div>
+          <div class="d-none d-md-block">
+            <div class="row">
+              <div class="col-4 text-end">
+                <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img">
+              </div>
+              <div class="col-8 text-left">
+                <div class="answer_text"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   {% block footer %}
   {% endblock %}
 
   {% endblock contents %}
+
 </body>
 
 </html>
+
+{% block js %}
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+
+  function get_category_choice_class_name(elem) {
+    const class_list = elem.attr('class').split(" ");
+    let res = null;
+
+    class_list.forEach(function (elem, index) {
+      if (elem.match(/category_choice/)) {
+        res = elem;
+        return;
+      }
+    });
+
+    return res;
+  }
+
+  function get_feeling_choice_class_name(elem) {
+    const class_list = elem.attr('class').split(" ");
+    let res = null;
+
+    class_list.forEach(function (elem, index) {
+      if (elem.match(/feeling_choice/)) {
+        res = elem;
+        return;
+      }
+    });
+
+    return res;
+  }
+
+  $(document).ready(function () {
+    $("[class^='category_choice']").on("click", function () {
+      const clicked_category_class_name = get_category_choice_class_name($(this));
+      $("[class^='category_choice']").each(function () {
+        const category_class_name = get_category_choice_class_name($(this));
+        if (clicked_category_class_name == category_class_name) {
+          $(this).prop('checked', true);
+        }
+        else {
+          $(this).prop('checked', false);
+        }
+      });
+    });
+
+    $("[class^='feeling_choice']").on("click", function () {
+      const clicked_category_class_name = get_feeling_choice_class_name($(this));
+      $("[class^='feeling_choice']").each(function () {
+        const category_class_name = get_feeling_choice_class_name($(this));
+        if (clicked_category_class_name == category_class_name) {
+          $(this).prop('checked', true);
+        }
+        else {
+          $(this).prop('checked', false);
+        }
+      });
+    });
+
+    $("#reception_msg_btn").on("click", function () {
+      let category_id = null;
+      $("[class^='category_choice']").each(function () {
+        if ($(this).prop('checked') == true) {
+          category_id = $(this).attr('value');
+          return
+        }
+      });
+
+      let feeling_id = null;
+      $("[class^='feeling_choice']").each(function () {
+        if ($(this).prop('checked') == true) {
+          feeling_id = $(this).attr('value');
+          return
+        }
+      });
+
+      $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8000/api/answer/',
+        data: {
+          category_id: category_id,
+          feeling_id: feeling_id
+        },
+        cache: false, //cacheを使うかどうか
+        dataType: 'json', //data type scriptなどデータタイプの指定
+      })
+        .done(function (response) { //通信が成功したときのコールバックの処理を書く
+          console.log(response);
+          console.log(response[0]["text"]);
+          const answer_text = response[0]["text"];
+
+          $(".answer_text").each(function () {
+            $(this).text(answer_text);
+          });
+          // jqueryでcenterにスクロールするのが面倒だったのでピュアjsで実装
+          document.getElementsByClassName("answer_text")[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+          document.getElementsByClassName("answer_text")[1].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .fail(function (xhr) { //通信が失敗したときのコールバックの処理を書く
+
+        })
+        .always(function (xhr, msg) { //通信結果にかかわらず実行する処理を書く
+
+        });
+    });
+
+  });
+</script>
+{% endblock %}

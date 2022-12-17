@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;900&display=swap');
+
+#question_row {
+    background-color: #56D9D6;
+    z-index: 0;
+    background-image: url("/static/top/pc_img/bg_question_mosaic.png");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+#question_logo {
+    padding-top: 88px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    
+    color: #FFE000;
+}
+
+#question_about_you {
+    padding-top: 8px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 48px;
+
+    color: #FFFFFF;
+
+}
+
+.choice_title {
+    padding-top: 80px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    
+    color: #FFFFFF;
+}
+
+.choice_title_new_line {
+    padding-top: -10px;
+    padding-bottom: -10px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+.choice_title_icon {
+    padding-bottom: 5px;
+    width: 27px;
+}
+
+.check-box {
+    cursor: pointer;
+}
+  
+.check-box input {
+    display: none;
+}
+
+.check-box input + .text:before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin: 0 5px 0 0;
+    background-image: url("/static/top/common_img/checkbox_not_selected.png");
+    background-size: 100% auto, 100%;
+    background-position: top 50% left 50%, 0 0;
+    background-repeat: no-repeat, no-repeat;
+    width: 19px;
+    height: 18px;
+}
+
+.check-box input:checked + .text:before {
+    background-image: url("/static/top/common_img/checkbox_selected.png");
+}
+
+.choice_text {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+
+    color: #FFFFFF;
+
+}
+
+.choice_checkbox_sp {
+    margin-left: 20px;
+}
+
+.inner_choice_row_sp {
+    margin-bottom: 20px;
+}
+
+.choice_row_gap {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.choice_inner_row {
+    margin-top: 32px;
+}
+
+
+#answer_row {
+    position: relative;
+    background-color: #F7FDFD;
+    z-index: 0;
+}
+
+#answer_title {
+    margin-top: 88px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 36px;
+    
+    color: #00C1C3;
+}
+
+#furefure_msg_title {
+    margin-top: 8px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 48px;
+    
+    color: #2B2F36;
+}
+
+#answer_row {
+    background: #F7FDFD;
+}
+
+#furefure_msg_row {
+    z-index: 0;
+    background: #F7FDFD;
+    background-image: url("/static/top/common_img/bg_answer.png");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#furefure_msg_title {
+    margin-bottom: 55px;
+}
+
+#fure_fure_msg_loading {
+    color: #89E4E2;
+}
+
+.furefure_msg_title_new_line {
+    padding-top: -20px;
+    padding-bottom: -20px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+#furefure_msg_body_loading {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.answer_img {
+    width: 265px;
+    height: 240px;
+}

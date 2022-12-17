@@ -22,7 +22,8 @@ class Category(models.Model):
         for f in feeling:
             Answer.objects.create(
                 category=self,
-                feeling=f
+                feeling=f,
+                image_no=1,
             )
 
 # Create your models here.
@@ -42,7 +43,8 @@ class Feeling(models.Model):
         for c in category:
             Answer.objects.create(
                 category=c,
-                feeling=self
+                feeling=self,
+                image_no=1,
             )
 
 class Answer(models.Model):
@@ -52,19 +54,7 @@ class Answer(models.Model):
     category = models.ForeignKey(Category, verbose_name="カテゴリ", on_delete=models.CASCADE ,related_name='category', default="", null=False)
     feeling = models.ForeignKey(Feeling, verbose_name="気持ち", on_delete=models.CASCADE ,related_name='feeling', default="", null=False)
     text = models.CharField(verbose_name="回答", max_length=100, null=True)
-
-    @classmethod
-    def get_feeling_query(self, param_list):
-        return Q(
-            feeling1__id=param_list[0],
-            feeling2__id=param_list[1],
-            feeling3__id=param_list[2],
-            feeling4__id=param_list[3],
-            feeling5__id=param_list[4],
-            feeling6__id=param_list[5],
-            feeling7__id=param_list[6],
-            feeling8__id=param_list[7],
-        )
+    image_no = models.IntegerField(verbose_name="回答時に表示する画像番号", choices=[(1, 1), (2, 2), (3, 3)], default=1, null=False)
 
     def __str__(self):
         return str(self.text)

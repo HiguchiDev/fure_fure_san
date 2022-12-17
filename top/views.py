@@ -1,13 +1,12 @@
-from django.views.generic import ListView
-from .models import Answer, Feeling
+from django.views.generic import TemplateView
+from .models import Answer, Category, Feeling
 from rest_framework import viewsets
 from .serializer import AnswerSerializer
 from django.db.models import Q
 
 
-class TopPageView(ListView):
+class TopPageView(TemplateView):
     template_name: str = "top.html"
-    model = Feeling
 
     def get_queryset(self, **kwargs):
         queryset = super().get_queryset(**kwargs)
@@ -15,6 +14,9 @@ class TopPageView(ListView):
 
     def get_context_data(self):
         ctx = super().get_context_data()
+
+        ctx["categories"] = Category.objects.all()
+        ctx["feelings"] = Feeling.objects.all()
         return ctx
 
 
