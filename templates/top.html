@@ -52,7 +52,16 @@
           <!--SP用 -->
           <div class="d-block d-md-none">
             {% for c in categories %}
+              {% if forloop.counter == 1 %}
+              <div class="row inner_choice_row_sp choice_error_label_pos">
+                <span class="choice_error_label category_choice_error_label">
+                  <img class="exclamation_mark" src="{% static 'top/common_img/exclamation_mark.png' %}">
+                  "状況"の回答を選んでください！
+                  <span class="choice_error_label_sub"></span>
+                </span>
+              {% else %}
               <div class="row inner_choice_row_sp">
+              {% endif %}
                 <div class="col-1 choice_checkbox_sp">
                   <label class="check-box">
                     <input type="checkbox" id="category_choice{{ forloop.counter }}" class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span class="text choice_text"></span>
@@ -108,7 +117,16 @@
           <!--SP用 -->
           <div class="d-block d-md-none">
             {% for f in feelings %}
+              {% if forloop.counter == 1 %}
+              <div class="row inner_choice_row_sp choice_error_label_pos">
+                <span class="choice_error_label feeling_choice_error_label">
+                  <img class="exclamation_mark" src="{% static 'top/common_img/exclamation_mark.png' %}">
+                  "状況"の回答を選んでください！
+                  <span class="choice_error_label_sub"></span>
+                </span>
+              {% else %}
               <div class="row inner_choice_row_sp">
+              {% endif %}
                 <div class="col-1 choice_checkbox_sp">
                   <label class="check-box">
                     <input type="checkbox" id="feeling_choice{{ forloop.counter }}" class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span class="text choice_text"></span>
@@ -158,6 +176,18 @@
       </div>
     </div>
     <div id="answer_row" class="row">
+      <div class="d-block d-md-none">
+        <img src="{% static 'top/sp_img/speech_bubble1.png' %}" class="speech_bubble1 speech_bubble">
+        <img src="{% static 'top/sp_img/speech_bubble2.png' %}" class="speech_bubble2 speech_bubble">
+        <img src="{% static 'top/sp_img/speech_bubble3.png' %}" class="speech_bubble3 speech_bubble">
+        <img src="{% static 'top/sp_img/speech_bubble4.png' %}" class="speech_bubble4 speech_bubble">
+      </div>
+      <div class="d-none d-md-block">
+        <img src="{% static 'top/pc_img/speech_bubble1.png' %}" class="speech_bubble1 speech_bubble">
+        <img src="{% static 'top/pc_img/speech_bubble2.png' %}" class="speech_bubble2 speech_bubble">
+        <img src="{% static 'top/pc_img/speech_bubble3.png' %}" class="speech_bubble3 speech_bubble">
+        <img src="{% static 'top/pc_img/speech_bubble4.png' %}" class="speech_bubble4 speech_bubble">
+      </div>
       <div class="col-12">
         <div class="row" id="answer_title">
           <div class="col-12 text-center">
@@ -165,49 +195,59 @@
           </div>
         </div>
       </div>
-    </div>
-    <div id="furefure_msg_row" class="row">
-      <div class="col-12">
-        <div class="row" id="furefure_msg_title">
-          <div class="col-12 text-center">
-            フレフレさんからの
-            <span class="d-block d-md-none furefure_msg_title_new_line">
-              <br>
-            </span>
-            メッセージ
-          </div>
+      <div id="furefure_msg_row" class="row">
+        <div class="d-block d-md-none">
+          <img src="{% static 'top/sp_img/sp_bg_answer_left.png' %}" class="bg_answer_left">
+          <img src="{% static 'top/sp_img/sp_bg_answer_right.png' %}" class="bg_answer_right">
         </div>
-        <div class="row" id="furefure_msg_body_loading">
-          <div class="col-12 text-center">
-            <div class="spinner-border" role="status" id="fure_fure_msg_loading">
-              <span class="visually-hidden">Loading...</span>
+        <!-- <div class="d-none d-md-block">
+          <img src="{% static 'top/pc_img/speech_bubble1.png' %}" class="speech_bubble1 speech_bubble">
+          <img src="{% static 'top/pc_img/speech_bubble2.png' %}" class="speech_bubble2 speech_bubble">
+          <img src="{% static 'top/pc_img/speech_bubble3.png' %}" class="speech_bubble3 speech_bubble">
+          <img src="{% static 'top/pc_img/speech_bubble4.png' %}" class="speech_bubble4 speech_bubble">
+        </div> -->
+        <div class="col-12">
+          <div class="row" id="furefure_msg_title">
+            <div class="col-12 text-center">
+              フレフレさんからの
+              <span class="d-block d-md-none furefure_msg_title_new_line">
+                <br>
+              </span>
+              メッセージ
             </div>
           </div>
-        </div>
-        <div class="row" id="furefure_msg_body_answer">
-          <div class="d-block d-md-none">
-            <div class="row">
-              <div class="col-12 text-center answer_img_class">
-                <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
-                <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
-                <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
-              </div>
-              <div class="col-12 text-center">
-                <div class="answer_text text-break"></div>
+          <div class="row" id="furefure_msg_body_loading">
+            <div class="col-12 text-center">
+              <div class="spinner-border" role="status" id="fure_fure_msg_loading">
+                <span class="visually-hidden">Loading...</span>
               </div>
             </div>
           </div>
-          <div class="d-none d-md-block">
-            <div class="row">
-              <div class="col-4 text-end answer_img_class">
-                <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
-                <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
-                <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
+          <div class="row" id="furefure_msg_body_answer">
+            <div class="d-block d-md-none">
+              <div class="row">
+                <div class="col-12 text-center answer_img_class">
+                  <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
+                  <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
+                  <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
+                </div>
+                <div class="col-12 text-center">
+                  <div class="answer_text text-break"></div>
+                </div>
               </div>
-              <div class="col-6 text-left">
-                <div class="answer_text text-break"></div>
-              </div>
-              <div class="col-2">
+            </div>
+            <div class="d-none d-md-block">
+              <div class="row">
+                <div class="col-4 text-end answer_img_class">
+                  <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
+                  <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
+                  <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
+                </div>
+                <div class="col-6 text-left">
+                  <div class="answer_text text-break"></div>
+                </div>
+                <div class="col-2">
+                </div>
               </div>
             </div>
           </div>
@@ -216,7 +256,11 @@
     </div>
 
     <div id="sns_share_row" class="row">
-
+aaaaaaaaaaaaaaaaaaa<br>
+aaaaaaaaaaaaaaaaaaa<br>
+aaaaaaaaaaaaaaaaaaa<br>
+aaaaaaaaaaaaaaaaaaa<br>
+aaaaaaaaaaaaaaaaaaa<br>
     </div>
   </div>
 
@@ -294,14 +338,6 @@ $(document).ready( function(){
   $("#reception_msg_btn").on("click", function(){
     $(".choice_error_label").hide();
 
-    let category_id = null;
-    $("[class^='category_choice']").each(function() {
-      if($(this).prop('checked') == true) {
-        category_id = $(this).attr('value');
-        return
-      }
-    });
-
     let feeling_id = null;
     $("[class^='feeling_choice']").each(function() {
       if($(this).prop('checked') == true) {
@@ -310,18 +346,13 @@ $(document).ready( function(){
       }
     });
 
-    if(category_id == null) {
-      $(".category_choice_error_label").show();
-      // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
-      setTimeout( function () {
-        if(document.getElementsByClassName("category_choice_error_label")[0]){
-          document.getElementsByClassName("category_choice_error_label")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
-        }
-        else if(document.getElementsByClassName("category_choice_error_label")[1]){
-          document.getElementsByClassName("category_choice_error_label")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
-        }
-      }, 100 ) ;
-    }
+    let category_id = null;
+    $("[class^='category_choice']").each(function() {
+      if($(this).prop('checked') == true) {
+        category_id = $(this).attr('value');
+        return
+      }
+    });
 
     if(feeling_id == null) {
       $(".feeling_choice_error_label").show();
@@ -330,13 +361,28 @@ $(document).ready( function(){
         if(document.getElementsByClassName("feeling_choice_error_label")[0]){
           document.getElementsByClassName("feeling_choice_error_label")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
         }
-        else if(document.getElementsByClassName("feeling_choice_error_label")[1]){
+        if(document.getElementsByClassName("feeling_choice_error_label")[1]){
           document.getElementsByClassName("feeling_choice_error_label")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
         }
       }, 100 ) ;
     }
 
-    if(category_id == null || feeling_id == null) {
+    if(category_id == null) {
+      $(".category_choice_error_label").show();
+      // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
+      setTimeout( function () {
+        if(document.getElementsByClassName("category_choice_error_label")[0]){
+          document.getElementsByClassName("category_choice_error_label")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+        if(document.getElementsByClassName("category_choice_error_label")[1]){
+          document.getElementsByClassName("category_choice_error_label")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+      }, 100 ) ;
+    }
+
+    if(feeling_id == null || category_id == null) {
+      console.log(feeling_id);
+      console.log(category_id);
       return;
     }
 

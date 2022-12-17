@@ -77,3 +77,112 @@
 .answer_img_class {
     margin-bottom: 56px;
 }
+
+.speech_bubble1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 20%;
+    height: auto;
+
+    z-index: 1;
+}
+
+.speech_bubble2 {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 27%;
+    height: auto;
+
+    z-index: 1;
+}
+
+.speech_bubble3 {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 17%;
+    height: auto;
+
+    z-index: 1;
+}
+
+.speech_bubble4 {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 27%;
+    height: auto;
+
+    z-index: 1;
+}
+
+#furefure_msg_row {
+    background: #F7FDFD;
+    padding-bottom: 100px;
+    position: relative;
+    display: none;
+}
+
+.bg_answer_left {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 17%;
+    height: auto;
+
+    z-index: 0;
+}
+
+.bg_answer_right {
+    position: absolute;
+    right: -11px;
+    top: 0px;
+    width: 17%;
+    height: auto;
+
+    z-index: 0;
+}
+
+.answer_text {
+    position: relative;
+    z-index: 999;
+}
+
+.choice_error_label {
+    position: absolute;
+    left:  -0px;
+    top: -50px;
+    z-index: 1;
+    background: #FCEFF4;
+    border-radius: 8px;
+    padding: 8px 14px;
+    display: none;
+
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 156% */
+    
+    letter-spacing: 0.02em;
+    
+    color: #FF055F;
+}
+
+.choice_error_label_sub {
+    content: "";
+    position: absolute;
+    margin: 0;
+    bottom: -10px;
+    z-index: -1;
+    left: 45%;
+    width: 0;
+    height: 0;
+    border-top: 40px solid #FCEFF4;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    transform: rotate(15deg);
+}
