@@ -8,5 +8,5 @@ class AnswerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Answer
         # json で出力するフィールド
-        fields = ('id', 'text')
+        fields = ('id', 'text', 'image_no')
         

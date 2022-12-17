@@ -68,6 +68,12 @@
     font-size: 24px;
     line-height: 36px;
     padding: 24px 30px;
+
+    transform: rotate(0.03deg); 
     
     color: #2B2F36;
+}
+
+.answer_img_class {
+    margin-bottom: 56px;
 }

@@ -53,7 +53,7 @@ class Answer(models.Model):
     """
     category = models.ForeignKey(Category, verbose_name="カテゴリ", on_delete=models.CASCADE ,related_name='category', default="", null=False)
     feeling = models.ForeignKey(Feeling, verbose_name="気持ち", on_delete=models.CASCADE ,related_name='feeling', default="", null=False)
-    text = models.CharField(verbose_name="回答", max_length=100, null=True)
+    text = models.CharField(verbose_name="回答", max_length=150, null=True)
     image_no = models.IntegerField(verbose_name="回答時に表示する画像番号", choices=[(1, 1), (2, 2), (3, 3)], default=1, null=False)
 
     def __str__(self):

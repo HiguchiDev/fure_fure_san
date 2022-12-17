@@ -5,7 +5,7 @@
 {% load mathfilters %}
 
 {% block css %}
-<link href="{% static 'top/top_pc.css' %}" rel="stylesheet" media="screen and (min-width:769px)">
+<link href="{% static 'top/top_pc.css' %}" rel="stylesheet" media="screen and (min-width:768px)">
 <link href="{% static 'top/top_sp.css' %}" rel="stylesheet" media="screen and (max-width:768px)">
 <link href="{% static 'top/top_common.css' %}" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,11 +72,20 @@
           <div class="d-none d-md-block">
             <div class="row">
             {% for c in categories %}
-                <div class="col-4 text-center">
-                  <label class="check-box">
-                    <input type="checkbox" class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span class="text choice_text" >{{ c.text }}</span>
-                  </label>
-                </div>
+              {% if forloop.counter == 3 %}
+              <div class="col-4 text-center choice_error_label_pos">
+                <span class="choice_error_label category_choice_error_label">
+                  <img class="exclamation_mark" src="{% static 'top/common_img/exclamation_mark.png' %}">
+                  "状況"の回答を選んでください！
+                  <span class="choice_error_label_sub"></span>
+                </span>
+              {% else %}
+              <div class="col-4 text-center">
+              {% endif %}
+                <label class="check-box">
+                  <input type="checkbox" class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span class="text choice_text" >{{ c.text }}</span>
+                </label>
+              </div>
               {% if forloop.counter|mod:3 == 0 and forloop.counter != categories|length %}
               </div> <!-- row -->
               <div class="row choice_inner_row">
@@ -119,11 +128,20 @@
           <div class="d-none d-md-block">
             <div class="row">
             {% for f in feelings %}
-                <div class="col-4 text-center">
-                  <label class="check-box">
-                    <input type="checkbox" class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span class="text choice_text" >{{ f.text }}</span>
-                  </label>
-                </div>
+              {% if forloop.counter == 3 %}
+              <div class="col-4 text-center choice_error_label_pos">
+                <span class="choice_error_label feeling_choice_error_label">
+                  <img class="exclamation_mark" src="{% static 'top/common_img/exclamation_mark.png' %}">
+                  "気持ち"の回答を選んでください！
+                  <span class="choice_error_label_sub"></span>
+                </span>
+              {% else %}
+              <div class="col-4 text-center">
+              {% endif %}
+                <label class="check-box">
+                  <input type="checkbox" class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span class="text choice_text" >{{ f.text }}</span>
+                </label>
+              </div>
               {% if forloop.counter|mod:3 == 0 and forloop.counter != feelings|length %}
               </div> <!-- row -->
               <div class="row choice_inner_row">
@@ -169,26 +187,36 @@
         <div class="row" id="furefure_msg_body_answer">
           <div class="d-block d-md-none">
             <div class="row">
-              <div class="col-12 text-center">
-                <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img">
+              <div class="col-12 text-center answer_img_class">
+                <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
+                <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
+                <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
               </div>
               <div class="col-12 text-center">
-                <div class="answer_text"></div>
+                <div class="answer_text text-break"></div>
               </div>
             </div>
           </div>
           <div class="d-none d-md-block">
             <div class="row">
-              <div class="col-4 text-end">
-                <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img">
+              <div class="col-4 text-end answer_img_class">
+                <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
+                <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
+                <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
               </div>
-              <div class="col-8 text-left">
-                <div class="answer_text"></div>
+              <div class="col-6 text-left">
+                <div class="answer_text text-break"></div>
+              </div>
+              <div class="col-2">
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <div id="sns_share_row" class="row">
+
     </div>
   </div>
 
@@ -264,6 +292,8 @@ $(document).ready( function(){
   });
 
   $("#reception_msg_btn").on("click", function(){
+    $(".choice_error_label").hide();
+
     let category_id = null;
     $("[class^='category_choice']").each(function() {
       if($(this).prop('checked') == true) {
@@ -280,37 +310,94 @@ $(document).ready( function(){
       }
     });
 
+    if(category_id == null) {
+      $(".category_choice_error_label").show();
+      // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
+      setTimeout( function () {
+        if(document.getElementsByClassName("category_choice_error_label")[0]){
+          document.getElementsByClassName("category_choice_error_label")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+        else if(document.getElementsByClassName("category_choice_error_label")[1]){
+          document.getElementsByClassName("category_choice_error_label")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+      }, 100 ) ;
+    }
+
+    if(feeling_id == null) {
+      $(".feeling_choice_error_label").show();
+      // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
+      setTimeout( function () {
+        if(document.getElementsByClassName("feeling_choice_error_label")[0]){
+          document.getElementsByClassName("feeling_choice_error_label")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+        else if(document.getElementsByClassName("feeling_choice_error_label")[1]){
+          document.getElementsByClassName("feeling_choice_error_label")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+      }, 100 ) ;
+    }
+
+    if(category_id == null || feeling_id == null) {
+      return;
+    }
+
     let url = location.href.replace(location.pathname, "");
     url += "/api/answer/";
 
-    $.ajax({
-      type: 'GET',
-      url: url,
-      data: {
-          category_id: category_id,
-          feeling_id: feeling_id
-      },
-      cache: false, //cacheを使うかどうか
-      dataType:'json', //data type scriptなどデータタイプの指定
-    })
-    .done(function(response) { //通信が成功したときのコールバックの処理を書く
-      console.log(response);
-      console.log(response[0]["text"]);
-      const answer_text = response[0]["text"];
+    //スクロール一時禁止
+    function handle(event) {
+      event.preventDefault();
+    }
+    document.addEventListener('touchmove', handle, { passive: false });
+    document.addEventListener('mousewheel', handle, { passive: false });
 
-      $(".answer_text").each(function (){
-        $(this).text(answer_text);
-      });
-      // jqueryでcenterにスクロールするのが面倒だったのでピュアjsで実装
-      document.getElementsByClassName("answer_text")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
-      document.getElementsByClassName("answer_text")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
-    })
-    .fail(function(xhr) { //通信が失敗したときのコールバックの処理を書く
-
-    })
-    .always(function(xhr, msg) { //通信結果にかかわらず実行する処理を書く
-
+    $(".answer_text").each(function (){
+      $(this).text("");
     });
+
+    $("#furefure_msg_body_answer").hide();
+    $(".answer_img").hide();
+    
+    $("#furefure_msg_body_loading").fadeIn();
+    $("#furefure_msg_row").fadeIn();
+    $("#answer_row").fadeIn();
+    // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
+    setTimeout( function () {
+      document.getElementById("furefure_msg_body_loading").scrollIntoView({behavior: 'smooth', block: 'center'});
+    }, 100 ) ;
+
+    setTimeout(function() {
+      $.ajax({
+        type: 'GET',
+        url: url,
+        data: {
+            category_id: category_id,
+            feeling_id: feeling_id
+        },
+        cache: false, //cacheを使うかどうか
+        dataType:'json', //data type scriptなどデータタイプの指定
+      })
+      .done(function(response) { //通信が成功したときのコールバックの処理を書く
+        $("#furefure_msg_body_loading").hide();
+        $("#furefure_msg_body_answer").fadeIn();
+        const answer = response[0];
+
+        $(".answer_text").each(function (){
+          $(this).text(answer["text"]);
+        });
+
+        $(`.answer_img_${answer["image_no"]}`).fadeIn();
+
+        // スクロール禁止解除
+        document.removeEventListener('touchmove', handle, { passive: false });
+        document.removeEventListener('mousewheel', handle, { passive: false });
+      })
+      .fail(function(xhr) { //通信が失敗したときのコールバックの処理を書く
+
+      })
+      .always(function(xhr, msg) { //通信結果にかかわらず実行する処理を書く
+
+      });
+    }, 1000);
   });
 
 });
