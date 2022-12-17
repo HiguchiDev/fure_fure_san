@@ -355,15 +355,15 @@ aaaaaaaaaaaaaaaaaaa<br>
     });
 
     $("#reception_msg_btn").on("click", function () {
-    $(".choice_error_label").hide();
+      $(".choice_error_label").hide();
 
-    let feeling_id = null;
-    $("[class^='feeling_choice']").each(function() {
-      if($(this).prop('checked') == true) {
-        feeling_id = $(this).attr('value');
-        return
-      }
-    });
+      let feeling_id = null;
+      $("[class^='feeling_choice']").each(function() {
+        if($(this).prop('checked') == true) {
+          feeling_id = $(this).attr('value');
+          return
+        }
+      });
 
       let category_id = null;
       $("[class^='category_choice']").each(function () {
@@ -375,62 +375,62 @@ aaaaaaaaaaaaaaaaaaa<br>
 
       if(feeling_id == null) {
         $(".feeling_choice_error_label").show();
-      // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
-      setTimeout( function () {
-        if(document.getElementsByClassName("feeling_choice_error_label")[0]){
-          document.getElementsByClassName("feeling_choice_error_label")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
-        }
-        if(document.getElementsByClassName("feeling_choice_error_label")[1]){
-          document.getElementsByClassName("feeling_choice_error_label")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
-        }
-      }, 100 ) ;
-    }
-
-    if(category_id == null) {
-      $(".category_choice_error_label").show();
-      // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
-      setTimeout( function  () {
-          if (document.getElementsByClassName("category_choice_error_label")[0]){
-          document.getElementsByClassName("category_choice_error_label")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
-        }
-        if(document.getElementsByClassName("category_choice_error_label")[1]){
-          document.getElementsByClassName("category_choice_error_label")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
+        // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
+        setTimeout( function () {
+          if(document.getElementsByClassName("feeling_choice_error_label")[0]){
+            document.getElementsByClassName("feeling_choice_error_label")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
           }
-      }, 100 ) ;
-    }
-
-    if(feeling_id == null || category_id == null) {
-      console.log(feeling_id);
-      console.log(category_id);
-      return;
-    }
-
-    let url = location.href.replace(location.pathname, "");
-      url += "/api/answer/";
-
-    //スクロール一時禁止
-    function handle(event) {
-      event.preventDefault();
+          if(document.getElementsByClassName("feeling_choice_error_label")[1]){
+            document.getElementsByClassName("feeling_choice_error_label")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
+          }
+        }, 100 ) ;
       }
-    document.addEventListener('touchmove', handle, { passive: false });
-    document.addEventListener('mousewheel', handle, { passive: false });
 
-    $(".answer_text").each(function (){
-      $(this).text("");
+      if(category_id == null) {
+        $(".category_choice_error_label").show();
+        // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
+        setTimeout( function  () {
+            if (document.getElementsByClassName("category_choice_error_label")[0]){
+            document.getElementsByClassName("category_choice_error_label")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
+          }
+          if(document.getElementsByClassName("category_choice_error_label")[1]){
+            document.getElementsByClassName("category_choice_error_label")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
+            }
+        }, 100 ) ;
+      }
+
+      if(feeling_id == null || category_id == null) {
+        return;
+      }
+
+      let url = location.href.replace(location.pathname, "");
+        url += "/api/answer/";
+
+      //スクロール一時禁止
+      function handle(event) {
+        event.preventDefault();
+      }
+
+      document.addEventListener('touchmove', handle, { passive: false });
+      document.addEventListener('mousewheel', handle, { passive: false });
+
+      $(".answer_text").each(function (){
+        $(this).text("");
       });
 
-    $("#furefure_msg_body_answer").hide();
-    $(".answer_img").hide();
-    
-    $("#furefure_msg_body_loading").fadeIn();
-    $("#furefure_msg_row").fadeIn();
-    $("#answer_row").fadeIn();
-    // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
-    setTimeout( function () {
-      document.getElementById("furefure_msg_body_loading").scrollIntoView({behavior: 'smooth', block: 'center'});
-    }, 100 ) ;
+      $("#furefure_msg_body_answer").hide();
+      $(".answer_img").hide();
+      
+      $("#furefure_msg_body_loading").fadeIn();
+      $("#furefure_msg_row").fadeIn();
+      $("#answer_row").fadeIn();
 
-    setTimeout(function() {
+      // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
+      setTimeout( function () {
+        document.getElementById("furefure_msg_body_loading").scrollIntoView({behavior: 'smooth', block: 'center'});
+      }, 100 ) ;
+
+      setTimeout(function() {
         $.ajax({
           type: 'GET',
           url: url,
@@ -455,16 +455,15 @@ aaaaaaaaaaaaaaaaaaa<br>
         // スクロール禁止解除
         document.removeEventListener('touchmove', handle, { passive: false });
         document.removeEventListener('mousewheel', handle, { passive: false });
-      })
-      .fail(function(xhr) { //通信が失敗したときのコールバックの処理を書く
+        })
+        .fail(function(xhr) { //通信が失敗したときのコールバックの処理を書く
 
-          })
-          .always(function (xhr, msg) { //通信結果にかかわらず実行する処理を書く
+        })
+        .always(function (xhr, msg) { //通信結果にかかわらず実行する処理を書く
 
-          });
+        });
+      }, 1000);
     });
-    }, 1000);
-
   });
 </script>
 {% endblock %}
