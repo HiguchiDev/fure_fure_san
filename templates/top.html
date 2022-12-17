@@ -280,9 +280,12 @@ $(document).ready( function(){
       }
     });
 
+    let url = location.href.replace(location.pathname, "");
+    url += "/api/answer/";
+
     $.ajax({
       type: 'GET',
-      url: 'http://localhost:8000/api/answer/',
+      url: url,
       data: {
           category_id: category_id,
           feeling_id: feeling_id
