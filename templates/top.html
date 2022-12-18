@@ -27,6 +27,21 @@
 
 
   <div class="container-fluid">
+    <div id="title_row" class="row">
+      <div class="col-12 remove_width_padding">
+        <div class="row" id="title_mosaic">
+          <div class="col-12">
+            <div class="row header_yellow_icon">
+              <img src="{% static 'top/pc_img/yellow_icon_pc.png' %}">
+              <div class="row header_title">
+                <img src="{% static 'top/pc_img/title_pc.png' %}">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="question_row" class="row">
       <div class="col-12">
         <div class="row">
@@ -60,20 +75,22 @@
                   <span class="choice_error_label_sub"></span>
                 </span>
               {% else %}
-              <div class="row inner_choice_row_sp">
+            <div class="row inner_choice_row_sp">
               {% endif %}
-                <div class="col-1 choice_checkbox_sp">
-                  <label class="check-box">
-                    <input type="checkbox" id="category_choice{{ forloop.counter }}" class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span class="text choice_text"></span>
-                  </label>
-                </div>
-                <div class="col-10">
-                  <label class="check-box" for="category_choice{{ forloop.counter }}">
-                    <span class="text choice_text" >{{ c.text }}</span>
-                  </label>
-                </div>
-                <div class="col-1"></div>
+              <div class="col-1 choice_checkbox_sp">
+                <label class="check-box">
+                  <input type="checkbox" id="category_choice{{ forloop.counter }}"
+                    class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span
+                    class="text choice_text"></span>
+                </label>
               </div>
+              <div class="col-10">
+                <label class="check-box" for="category_choice{{ forloop.counter }}">
+                  <span class="text choice_text">{{ c.text }}</span>
+                </label>
+              </div>
+              <div class="col-1"></div>
+            </div>
             {% endfor %}
           </div>
 
@@ -96,10 +113,10 @@
                 </label>
               </div>
               {% if forloop.counter|mod:3 == 0 and forloop.counter != categories|length %}
-              </div> <!-- row -->
-              <div class="row choice_inner_row">
+            </div> <!-- row -->
+            <div class="row choice_inner_row">
               {% endif %}
-            {% endfor %}
+              {% endfor %}
             </div> <!-- row -->
           </div>
         </div>
@@ -125,20 +142,22 @@
                   <span class="choice_error_label_sub"></span>
                 </span>
               {% else %}
-              <div class="row inner_choice_row_sp">
+            <div class="row inner_choice_row_sp">
               {% endif %}
-                <div class="col-1 choice_checkbox_sp">
-                  <label class="check-box">
-                    <input type="checkbox" id="feeling_choice{{ forloop.counter }}" class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span class="text choice_text"></span>
-                  </label>
-                </div>
-                <div class="col-10">
-                  <label class="check-box" for="feeling_choice{{ forloop.counter }}">
-                    <span class="text choice_text" >{{ f.text }}</span>
-                  </label>
-                </div>
-                <div class="col-1"></div>
+              <div class="col-1 choice_checkbox_sp">
+                <label class="check-box">
+                  <input type="checkbox" id="feeling_choice{{ forloop.counter }}"
+                    class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span
+                    class="text choice_text"></span>
+                </label>
               </div>
+              <div class="col-10">
+                <label class="check-box" for="feeling_choice{{ forloop.counter }}">
+                  <span class="text choice_text">{{ f.text }}</span>
+                </label>
+              </div>
+              <div class="col-1"></div>
+            </div>
             {% endfor %}
           </div>
 
@@ -161,10 +180,10 @@
                 </label>
               </div>
               {% if forloop.counter|mod:3 == 0 and forloop.counter != feelings|length %}
-              </div> <!-- row -->
-              <div class="row choice_inner_row">
+            </div> <!-- row -->
+            <div class="row choice_inner_row">
               {% endif %}
-            {% endfor %}
+              {% endfor %}
             </div> <!-- row -->
           </div>
         </div>
@@ -175,6 +194,8 @@
         </div>
       </div>
     </div>
+
+
     <div id="answer_row" class="row">
       <div class="d-block d-md-none">
         <img src="{% static 'top/sp_img/speech_bubble1.png' %}" class="speech_bubble1 speech_bubble">
@@ -274,68 +295,66 @@ aaaaaaaaaaaaaaaaaaa<br>
 </html>
 
 {% block js %}
-<script
-  src="https://code.jquery.com/jquery-3.6.1.min.js"
-  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
 
-function get_category_choice_class_name(elem) {
-  const class_list = elem.attr('class').split(" ");
-  let res = null;
+  function get_category_choice_class_name(elem) {
+    const class_list = elem.attr('class').split(" ");
+    let res = null;
 
-  class_list.forEach(function(elem, index) {
-    if(elem.match(/category_choice/)) {
-      res = elem;
-      return;
-    }
-  });
-
-  return res;
-}
-
-function get_feeling_choice_class_name(elem) {
-  const class_list = elem.attr('class').split(" ");
-  let res = null;
-
-  class_list.forEach(function(elem, index) {
-    if(elem.match(/feeling_choice/)) {
-      res = elem;
-      return;
-    }
-  });
-
-  return res;
-}
-
-$(document).ready( function(){
-  $("[class^='category_choice']").on("click", function() {
-    const clicked_category_class_name = get_category_choice_class_name($(this));
-    $("[class^='category_choice']").each(function() {
-      const category_class_name = get_category_choice_class_name($(this));
-      if(clicked_category_class_name == category_class_name) {
-        $(this).prop('checked', true);
-      }
-      else {
-        $(this).prop('checked', false);
+    class_list.forEach(function (elem, index) {
+      if (elem.match(/category_choice/)) {
+        res = elem;
+        return;
       }
     });
-  });
 
-  $("[class^='feeling_choice']").on("click", function() {
-    const clicked_category_class_name = get_feeling_choice_class_name($(this));
-    $("[class^='feeling_choice']").each(function() {
-      const category_class_name = get_feeling_choice_class_name($(this));
-      if(clicked_category_class_name == category_class_name) {
-        $(this).prop('checked', true);
-      }
-      else {
-        $(this).prop('checked', false);
+    return res;
+  }
+
+  function get_feeling_choice_class_name(elem) {
+    const class_list = elem.attr('class').split(" ");
+    let res = null;
+
+    class_list.forEach(function (elem, index) {
+      if (elem.match(/feeling_choice/)) {
+        res = elem;
+        return;
       }
     });
-  });
 
-  $("#reception_msg_btn").on("click", function(){
+    return res;
+  }
+
+  $(document).ready(function () {
+    $("[class^='category_choice']").on("click", function () {
+      const clicked_category_class_name = get_category_choice_class_name($(this));
+      $("[class^='category_choice']").each(function () {
+        const category_class_name = get_category_choice_class_name($(this));
+        if (clicked_category_class_name == category_class_name) {
+          $(this).prop('checked', true);
+        }
+        else {
+          $(this).prop('checked', false);
+        }
+      });
+    });
+
+    $("[class^='feeling_choice']").on("click", function () {
+      const clicked_category_class_name = get_feeling_choice_class_name($(this));
+      $("[class^='feeling_choice']").each(function () {
+        const category_class_name = get_feeling_choice_class_name($(this));
+        if (clicked_category_class_name == category_class_name) {
+          $(this).prop('checked', true);
+        }
+        else {
+          $(this).prop('checked', false);
+        }
+      });
+    });
+
+    $("#reception_msg_btn").on("click", function () {
     $(".choice_error_label").hide();
 
     let feeling_id = null;
@@ -346,16 +365,16 @@ $(document).ready( function(){
       }
     });
 
-    let category_id = null;
-    $("[class^='category_choice']").each(function() {
-      if($(this).prop('checked') == true) {
-        category_id = $(this).attr('value');
-        return
-      }
-    });
+      let category_id = null;
+      $("[class^='category_choice']").each(function () {
+        if ($(this).prop('checked') == true) {
+          category_id = $(this).attr('value');
+          return
+        }
+      });
 
-    if(feeling_id == null) {
-      $(".feeling_choice_error_label").show();
+      if(feeling_id == null) {
+        $(".feeling_choice_error_label").show();
       // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
       setTimeout( function () {
         if(document.getElementsByClassName("feeling_choice_error_label")[0]){
@@ -370,13 +389,13 @@ $(document).ready( function(){
     if(category_id == null) {
       $(".category_choice_error_label").show();
       // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
-      setTimeout( function () {
-        if(document.getElementsByClassName("category_choice_error_label")[0]){
+      setTimeout( function  () {
+          if (document.getElementsByClassName("category_choice_error_label")[0]){
           document.getElementsByClassName("category_choice_error_label")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
         }
         if(document.getElementsByClassName("category_choice_error_label")[1]){
           document.getElementsByClassName("category_choice_error_label")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
-        }
+          }
       }, 100 ) ;
     }
 
@@ -387,18 +406,18 @@ $(document).ready( function(){
     }
 
     let url = location.href.replace(location.pathname, "");
-    url += "/api/answer/";
+      url += "/api/answer/";
 
     //スクロール一時禁止
     function handle(event) {
       event.preventDefault();
-    }
+      }
     document.addEventListener('touchmove', handle, { passive: false });
     document.addEventListener('mousewheel', handle, { passive: false });
 
     $(".answer_text").each(function (){
       $(this).text("");
-    });
+      });
 
     $("#furefure_msg_body_answer").hide();
     $(".answer_img").hide();
@@ -412,20 +431,20 @@ $(document).ready( function(){
     }, 100 ) ;
 
     setTimeout(function() {
-      $.ajax({
-        type: 'GET',
-        url: url,
-        data: {
+        $.ajax({
+          type: 'GET',
+          url: url,
+          data: {
             category_id: category_id,
             feeling_id: feeling_id
-        },
-        cache: false, //cacheを使うかどうか
-        dataType:'json', //data type scriptなどデータタイプの指定
-      })
-      .done(function(response) { //通信が成功したときのコールバックの処理を書く
-        $("#furefure_msg_body_loading").hide();
-        $("#furefure_msg_body_answer").fadeIn();
-        const answer = response[0];
+          },
+          cache: false, //cacheを使うかどうか
+          dataType: 'json', //data type scriptなどデータタイプの指定
+        })
+          .done(function (response) { //通信が成功したときのコールバックの処理を書く
+            $("#furefure_msg_body_loading").hide();
+            $("#furefure_msg_body_answer").fadeIn();
+            const answer = response[0];
 
         $(".answer_text").each(function (){
           $(this).text(answer["text"]);
@@ -439,13 +458,13 @@ $(document).ready( function(){
       })
       .fail(function(xhr) { //通信が失敗したときのコールバックの処理を書く
 
-      })
-      .always(function(xhr, msg) { //通信結果にかかわらず実行する処理を書く
+          })
+          .always(function (xhr, msg) { //通信結果にかかわらず実行する処理を書く
 
-      });
+          });
+    });
     }, 1000);
-  });
 
-});
+  });
 </script>
 {% endblock %}

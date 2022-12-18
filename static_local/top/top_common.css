@@ -19,7 +19,7 @@
     line-height: 32px;
 
     transform: rotate(0.03deg); 
-    
+
     color: #FFE000;
 }
 
@@ -47,7 +47,7 @@
     margin-bottom: 20px;
 
     transform: rotate(0.03deg); 
-    
+
     color: #FFFFFF;
 }
 
@@ -66,12 +66,12 @@
 .check-box {
     cursor: pointer;
 }
-  
+
 .check-box input {
     display: none;
 }
 
-.check-box input + .text:before {
+.check-box input+.text:before {
     content: "";
     display: inline-block;
     position: relative;
@@ -85,7 +85,7 @@
     height: 18px;
 }
 
-.check-box input:checked + .text:before {
+.check-box input:checked+.text:before {
     background-image: url("/static/top/common_img/checkbox_selected.png");
 }
 
@@ -136,7 +136,7 @@
     line-height: 36px;
 
     transform: rotate(0.03deg); 
-    
+
     color: #00C1C3;
 }
 
@@ -150,7 +150,7 @@
     margin-bottom: 55px;
 
     transform: rotate(0.03deg); 
-    
+
     color: #2B2F36;
 }
 
