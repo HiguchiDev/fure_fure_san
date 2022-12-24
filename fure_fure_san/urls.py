@@ -24,7 +24,7 @@ defaultRouter.register('answer',AnswerViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('top/', TopPageView.as_view()),
+    path('', TopPageView.as_view()),
     # defaultRouter をinclude する
     path('api/',include(defaultRouter.urls)),
 ]
