@@ -202,6 +202,8 @@
     background-image: url("/static/top/common_img/bg_sns_share.png");
     background-size: cover;
     background-repeat: no-repeat;
+
+    display: none;
 }
 
 .choice_error_label_pos {
@@ -259,4 +261,17 @@
 
 .footer_link_icon {
     padding-bottom: 5px;
+}
+
+#footer_sign_row {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 24px;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+    
+    color: #FFFFFF;
 }

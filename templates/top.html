@@ -349,6 +349,10 @@
   }
 
   $(document).ready(function () {
+    const now = new Date(Date.now());
+    
+    $("#year").text(now.getFullYear());
+
     $("[class^='category_choice']").on("click", function () {
       const clicked_category_class_name = get_category_choice_class_name($(this));
       $("[class^='category_choice']").each(function () {
