@@ -145,7 +145,7 @@
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-style: normal;
     font-weight: 900;
-    font-size: 32px; none;
+    font-size: 32px;
     line-height: 48px;
     margin-bottom: 55px;
 
@@ -199,9 +199,10 @@
 
 
 #sns_share_row {
-    position: relative;
-    background-color: #2B2F36;
-    z-index: 100;
+    background-image: url("/static/top/common_img/bg_sns_share.png");
+    background-size: 100% auto, 100%;
+    background-position: top 50% left 50%, 0 0;
+    background-repeat: no-repeat, no-repeat;
 }
 
 .choice_error_label_pos {
@@ -213,4 +214,11 @@
     height: 27px;
     margin-right: 10px;
     margin-bottom: 3px;
+}
+
+.sns_share_box {
+    background: #20C9C5;
+    border-radius: 16px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }

@@ -28,11 +28,11 @@
 
   <div class="container-fluid">
     <div id="title_row" class="row">
-      <div class="col-12 remove_width_padding">
+      <div class="col-12">
         <div class="row" id="title_mosaic">
           <div class="col-12">
             <div class="row header_yellow_icon">
-              <img src="{% static 'top/pc_img/yellow_icon_pc.png' %}">
+              <img class="remove_width_padding" src="{% static 'top/pc_img/yellow_icon_pc.png' %}">
               <div class="row header_title">
                 <img src="{% static 'top/pc_img/title_pc.png' %}">
               </div>
@@ -277,11 +277,13 @@
     </div>
 
     <div id="sns_share_row" class="row">
-aaaaaaaaaaaaaaaaaaa<br>
-aaaaaaaaaaaaaaaaaaa<br>
-aaaaaaaaaaaaaaaaaaa<br>
-aaaaaaaaaaaaaaaaaaa<br>
-aaaaaaaaaaaaaaaaaaa<br>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12 text-center sns_share_box">
+            結果をシェア
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -421,6 +423,7 @@ aaaaaaaaaaaaaaaaaaa<br>
       $("#furefure_msg_body_loading").fadeIn();
       $("#furefure_msg_row").fadeIn();
       $("#answer_row").fadeIn();
+      $("#sns_share_row").fadeIn();
 
       // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
       setTimeout( function () {
