@@ -278,9 +278,32 @@
 
     <div id="sns_share_row" class="row">
       <div class="col-12">
-        <div class="row">
-          <div class="col-12 text-center sns_share_box">
-            結果をシェア
+        <div id="sns_share_box" class="row">
+          <div class="col-12 text-center sns_share_msg_col">
+            <div id="sns_share_msg" class="row">
+              <div class="col-12 text-center sns_share_msg_col">
+                <span id="sns_share_mark_left">＼</span>結果をシェア<span id="sns_share_mark_right">／</span>
+              </div>
+            </div>
+            <div id="sns_share_icon_row" class="row">
+              <div class="col-12 text-center">
+                <span class="sns_share_icon">
+                  <a class="sns_share_link" href="https://twitter.com/share?text=フレフレエンジニア&url=https://engineer.frefre.site/&hashtags=フレフレエンジニア" rel="nofollow noopener" target="_blank">
+                    <img src="{% static 'top/common_img/icon_twitter.png' %}" class="sns_share_icon_img">
+                  </a>
+                </span>
+                <span class="sns_share_icon">
+                  <a class="sns_share_link" href="https://www.facebook.com/share.php?u=https://engineer.frefre.site/" rel="nofollow noopener" target="_blank">
+                    <img src="{% static 'top/common_img/icon_facebook.png' %}" class="sns_share_icon_img">
+                  </a>
+                </span>
+                <span class="sns_share_icon">
+                  <a class="sns_share_link" href="https://social-plugins.line.me/lineit/share?url=https://engineer.frefre.site/" rel="nofollow noopener" target="_blank">
+                    <img src="{% static 'top/common_img/icon_line.png' %}" class="sns_share_icon_img">
+                  </a>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
