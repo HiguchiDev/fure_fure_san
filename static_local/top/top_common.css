@@ -222,6 +222,8 @@
     font-size: 32px;
     line-height: 48px;
 
+    letter-spacing: 0.02em;
+    transform: rotate(0.03deg); 
     color: #2B2F36;
 }
 
@@ -231,4 +233,30 @@
 
 .sns_share_link{
     text-decoration:none
+}
+
+#footer_link_row {
+    background-color: #89E4E2;
+    padding-top: 34px;
+    padding-bottom: 34px;
+}
+
+#footer_sign_row {
+    background-color: #56D9D6;
+}
+
+.footer_link_msg {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+
+    letter-spacing: 0.02em;
+    transform: rotate(0.03deg); 
+    color: #FFFFFF;
+}
+
+.footer_link_icon {
+    padding-bottom: 5px;
 }

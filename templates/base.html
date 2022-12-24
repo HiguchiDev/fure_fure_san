@@ -47,4 +47,38 @@
 
 </body>
 
+<footer>
+  {% block footer %}
+  <div class="container-fluid">
+    <div id="footer_row" class="row">
+      <div class="col-12">
+        <div id="footer_link_row" class="row text-center d-flex align-items-center">
+          <div class="d-block d-md-none">
+            
+            <div class="col-12">
+              <img src="{% static 'top/common_img/link_icon.png' %}" class="footer_link_icon">
+              <span class="footer_link_msg">利用規約</span>
+              
+            </div>
+            <div class="col-12 footer_link_msg">
+              aaaa
+            </div>
+          </div>
+          <div class="d-none d-md-block">
+            <div class="col-12">
+              aaaa
+            </div>
+          </div>
+        </div>
+        <div id="footer_sign_row" class="row">
+          <div class="col-12">
+            aaaa
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</footer>
+
 </html>
