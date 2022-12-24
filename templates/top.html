@@ -28,11 +28,11 @@
 
   <div class="container-fluid">
     <div id="title_row" class="row">
-      <div class="col-12 remove_width_padding">
+      <div class="col-12">
         <div class="row" id="title_mosaic">
           <div class="col-12">
             <div class="row header_yellow_icon">
-              <img src="{% static 'top/pc_img/yellow_icon_pc.png' %}">
+              <img class="remove_width_padding" src="{% static 'top/pc_img/yellow_icon_pc.png' %}">
               <div class="row header_title">
                 <img src="{% static 'top/pc_img/title_pc.png' %}">
               </div>
@@ -277,17 +277,38 @@
     </div>
 
     <div id="sns_share_row" class="row">
-aaaaaaaaaaaaaaaaaaa<br>
-aaaaaaaaaaaaaaaaaaa<br>
-aaaaaaaaaaaaaaaaaaa<br>
-aaaaaaaaaaaaaaaaaaa<br>
-aaaaaaaaaaaaaaaaaaa<br>
+      <div class="col-12">
+        <div id="sns_share_box" class="row">
+          <div class="col-12 text-center sns_share_msg_col">
+            <div id="sns_share_msg" class="row">
+              <div class="col-12 text-center sns_share_msg_col">
+                <span id="sns_share_mark_left">＼</span>結果をシェア<span id="sns_share_mark_right">／</span>
+              </div>
+            </div>
+            <div id="sns_share_icon_row" class="row">
+              <div class="col-12 text-center">
+                <span class="sns_share_icon">
+                  <a class="sns_share_link" href="https://twitter.com/share?text=フレフレエンジニア&url=https://engineer.frefre.site/&hashtags=フレフレエンジニア" rel="nofollow noopener" target="_blank">
+                    <img src="{% static 'top/common_img/icon_twitter.png' %}" class="sns_share_icon_img">
+                  </a>
+                </span>
+                <span class="sns_share_icon">
+                  <a class="sns_share_link" href="https://www.facebook.com/share.php?u=https://engineer.frefre.site/" rel="nofollow noopener" target="_blank">
+                    <img src="{% static 'top/common_img/icon_facebook.png' %}" class="sns_share_icon_img">
+                  </a>
+                </span>
+                <span class="sns_share_icon">
+                  <a class="sns_share_link" href="https://social-plugins.line.me/lineit/share?url=https://engineer.frefre.site/" rel="nofollow noopener" target="_blank">
+                    <img src="{% static 'top/common_img/icon_line.png' %}" class="sns_share_icon_img">
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  {% block footer %}
-  {% endblock %}
-
   {% endblock contents %}
 
 </body>
@@ -328,6 +349,10 @@ aaaaaaaaaaaaaaaaaaa<br>
   }
 
   $(document).ready(function () {
+    const now = new Date(Date.now());
+    
+    $("#year").text(now.getFullYear());
+
     $("[class^='category_choice']").on("click", function () {
       const clicked_category_class_name = get_category_choice_class_name($(this));
       $("[class^='category_choice']").each(function () {
@@ -403,9 +428,6 @@ aaaaaaaaaaaaaaaaaaa<br>
         return;
       }
 
-      let url = location.href.replace(location.pathname, "");
-        url += "/api/answer/";
-
       //スクロール一時禁止
       function handle(event) {
         event.preventDefault();
@@ -424,6 +446,7 @@ aaaaaaaaaaaaaaaaaaa<br>
       $("#furefure_msg_body_loading").fadeIn();
       $("#furefure_msg_row").fadeIn();
       $("#answer_row").fadeIn();
+      $("#sns_share_row").fadeIn();
 
       // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
       setTimeout( function () {
@@ -433,7 +456,7 @@ aaaaaaaaaaaaaaaaaaa<br>
       setTimeout(function() {
         $.ajax({
           type: 'GET',
-          url: url,
+          url: "/api/answer/",
           data: {
             category_id: category_id,
             feeling_id: feeling_id

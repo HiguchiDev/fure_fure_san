@@ -145,7 +145,7 @@
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-style: normal;
     font-weight: 900;
-    font-size: 32px; none;
+    font-size: 32px;
     line-height: 48px;
     margin-bottom: 55px;
 
@@ -199,9 +199,14 @@
 
 
 #sns_share_row {
-    position: relative;
-    background-color: #2B2F36;
-    z-index: 100;
+    background-image: url("/static/top/common_img/bg_sns_share.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    padding-top: 100px;
+    padding-bottom: 90px;
+
+    display: none;
 }
 
 .choice_error_label_pos {
@@ -213,4 +218,63 @@
     height: 27px;
     margin-right: 10px;
     margin-bottom: 3px;
+}
+
+#sns_share_msg {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 48px;
+
+    letter-spacing: 0.02em;
+    transform: rotate(0.03deg); 
+    color: #2B2F36;
+}
+
+#sns_share_icon_row {
+    margin-top: 32px;
+}
+
+.sns_share_link{
+    text-decoration:none
+}
+
+#footer_link_row {
+    background-color: #89E4E2;
+    padding-top: 34px;
+    padding-bottom: 34px;
+}
+
+#footer_sign_row {
+    background-color: #56D9D6;
+}
+
+.footer_link_msg {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+
+    letter-spacing: 0.02em;
+    transform: rotate(0.03deg); 
+    color: #FFFFFF;
+}
+
+.footer_link_icon {
+    padding-bottom: 5px;
+}
+
+#footer_sign_row {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 24px;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+    
+    color: #FFFFFF;
 }

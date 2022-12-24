@@ -136,3 +136,41 @@
     border-right: 24px solid transparent;
     transform: rotate(15deg);
 }
+
+#sns_share_box {
+    background: #EEFBFB;
+    border-radius: 16px;
+    padding-top: 40px;
+    padding-bottom: 48px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 100px;
+    margin-bottom: 90px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.sns_share_icon_img {
+    height: 64px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#sns_share_mark_left {
+    color: #FFE000;
+    margin-right: 10px;
+}
+
+#sns_share_mark_right {
+    color: #FFE000;
+    margin-left: 10px;
+}
+
+.sns_share_msg_col {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.footer_link_msg_terms_col {
+    margin-bottom: 16px;
+}

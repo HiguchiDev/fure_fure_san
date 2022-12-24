@@ -143,3 +143,32 @@
     border-right: 24px solid transparent;
     transform: rotate(15deg);
 }
+
+.sns_share_icon_img {
+    height: 64px;
+    margin-left: 11px;
+    margin-right: 11px;
+}
+
+#sns_share_box {
+    background: #EEFBFB;
+    border-radius: 16px;
+    padding-top: 40px;
+    padding-bottom: 48px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#sns_share_mark_left {
+    color: #FFE000;
+    margin-right: 20px;
+}
+
+#sns_share_mark_right {
+    color: #FFE000;
+    margin-left: 20px;
+}
+
+.footer_link_msg_terms {
+    margin-right: 55px;
+}
