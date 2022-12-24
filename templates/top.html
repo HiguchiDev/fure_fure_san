@@ -403,9 +403,6 @@ aaaaaaaaaaaaaaaaaaa<br>
         return;
       }
 
-      let url = location.href.replace(location.pathname, "");
-        url += "/api/answer/";
-
       //スクロール一時禁止
       function handle(event) {
         event.preventDefault();
@@ -433,7 +430,7 @@ aaaaaaaaaaaaaaaaaaa<br>
       setTimeout(function() {
         $.ajax({
           type: 'GET',
-          url: url,
+          url: "/api/answer/",
           data: {
             category_id: category_id,
             feeling_id: feeling_id
