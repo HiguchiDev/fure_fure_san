@@ -22,11 +22,37 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<body>
-  <div>{% block header %}{% endblock header %}</div>
-  {% block contents %}
-
-
+{% block header %}
+  <header>
+    <div class="container-fluid">
+      <div id="title_row" class="row">
+        <div class="col-12">
+          <div id="title_mosaic" class="row">
+            <div class="col-12">
+              <div class="row">
+                <picture class="remove_width_padding">
+                  <source srcset="{% static 'top/pc_img/yellow_icon_wide.png' %}" media="(min-width: 768px)" />
+                  <source srcset="{% static 'top/sp_img/yellow_icon_sp.png' %}" media="(max-width: 767px)" />
+                  <img src="" alt="" class="header_yellow_icon" />
+                </picture>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="row">
+                <picture class="remove_width_padding">
+                  <source srcset="{% static 'top/pc_img/title_pc.png' %}" media="(min-width: 768px)" />
+                  <source srcset="{% static 'top/sp_img/title_sp.png' %}" media="(max-width: 767px)" />
+                  <img src="" alt="" class="header_title" />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+{% block contents %}
   <div class="container-fluid">
     <div id="question_row" class="row">
       <div class="col-12">
@@ -295,10 +321,7 @@
       </div>
     </div>
   </div>
-  {% endblock contents %}
-
-</body>
-
+{% endblock contents %}
 </html>
 
 {% block js %}
