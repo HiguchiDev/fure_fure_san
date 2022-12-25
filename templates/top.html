@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
-{% block meta_title %}フレフレさん|トップ{% endblock %}
-
 {% load static %}
 {% load mathfilters %}
+
+{% block meta_title %}
+フレフレエンジニア | 応援メッセージが受け取れるWebサービス
+{% endblock %}
 
 {% block css %}
 <link href="{% static 'top/top_pc.css' %}" rel="stylesheet" media="screen and (min-width:768px)">
@@ -13,13 +15,12 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;900&display=swap" rel="stylesheet">
 {% endblock %}
 
+{% block head_block %}
+<meta name="description" content="「フレフレエンジニア」は、選択肢を選ぶと、可愛いエンジニアの犬「フレフレさん」から回答が届く、ほっこりWebサービスです。"/>
+{% endblock %}
+
 <!DOCTYPE html>
 <html lang="ja">
-
-<head>
-  {% block head %}{% endblock %}
-  {% block title %}TOP{% endblock %}
-</head>
 
 <body>
   <div>{% block header %}{% endblock header %}</div>
@@ -288,7 +289,7 @@
             <div id="sns_share_icon_row" class="row">
               <div class="col-12 text-center">
                 <span class="sns_share_icon">
-                  <a class="sns_share_link" href="https://twitter.com/share?text=フレフレエンジニア&url=https://engineer.frefre.site/&hashtags=フレフレエンジニア" rel="nofollow noopener" target="_blank">
+                  <a class="sns_share_link" href="https://twitter.com/share?text=エンジニアのあなたへ、メッセージが届いたワン！%0a応援メッセージが受け取れるWebサービス&url=https://engineer.frefre.site/&hashtags=フレフレエンジニア" rel="nofollow noopener" target="_blank">
                     <img src="{% static 'top/common_img/icon_twitter.png' %}" class="sns_share_icon_img">
                   </a>
                 </span>
