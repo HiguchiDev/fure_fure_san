@@ -1,3 +1,41 @@
+#title_row {
+    position: relative;
+}
+
+#title_mosaic {
+    position: relative;
+    background-image: url("/static/top/sp_img/bg_mosaic_sp.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.remove_width_padding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+    .header_yellow_icon {
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header_title {
+        position: absolute;
+        width: 97%;
+        height: 81%;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
+
 .choice_row {
     background: #20C9C5;
     border-radius: 16px;
@@ -18,7 +56,7 @@
     line-height: 36px;
     padding: 24px 30px;
 
-    transform: rotate(0.03deg); 
+    transform: rotate(0.03deg);
 
     color: #2B2F36;
 }
@@ -102,7 +140,7 @@
 
 .choice_error_label {
     position: absolute;
-    left:  -0px;
+    left: -0px;
     top: -50px;
     z-index: 1;
     background: #FCEFF4;
@@ -116,9 +154,9 @@
     font-size: 18px;
     line-height: 28px;
     /* identical to box height, or 156% */
-    
+
     letter-spacing: 0.02em;
-    
+
     color: #FF055F;
 }
 

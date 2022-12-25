@@ -1,10 +1,8 @@
 #title_row {
-    z-index: 0;
     position: relative;
 }
 
 #title_mosaic {
-    z-index: 0;
     position: relative;
     background-image: url("/static/top/pc_img/bg_mosaic_pc.png");
     background-position: center center;
@@ -17,20 +15,26 @@
     padding-right: 0px;
 }
 
-.header_yellow_icon {
-    position: relative;
-    background-position: left top;
-    background-size: contain;
-    background-repeat: no-repeat;
+@media only screen and (min-width: 768px) {
+    .header_yellow_icon {
+        width: 100%;
+        height: 100%;
+        padding: 25px 0px;
+        background-position: center center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
 }
 
-.header_title {
-    position: absolute;
-    top: 41%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    width: 50%;
-    height: 50%;
+@media only screen and (min-width: 768px) {
+    .header_title {
+        position: absolute;
+        width: 36%;
+        height: 75%;
+        top: 51%;
+        left: 48%;
+        transform: translateY(-50%) translateX(-50%);
+    }
 }
 
 .choice_row {
@@ -55,7 +59,7 @@
     line-height: 36px;
     padding: 24px 120px;
 
-    transform: rotate(0.03deg); 
+    transform: rotate(0.03deg);
 
     color: #2B2F36;
 }
@@ -109,7 +113,7 @@
 
 .choice_error_label {
     position: absolute;
-    left:  -40px;
+    left: -40px;
     top: -80px;
     z-index: 1;
     background: #FCEFF4;
@@ -123,9 +127,9 @@
     font-size: 18px;
     line-height: 28px;
     /* identical to box height, or 156% */
-    
+
     letter-spacing: 0.02em;
-    
+
     color: #FF055F;
 }
 

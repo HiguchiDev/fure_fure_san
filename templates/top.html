@@ -17,31 +17,13 @@
 <html lang="ja">
 
 <head>
-  {% block head %}{% endblock %}
   {% block title %}TOP{% endblock %}
+  {% block head %}{% endblock %}
 </head>
 
 <body>
-  <div>{% block header %}{% endblock header %}</div>
   {% block contents %}
-
-
   <div class="container-fluid">
-    <div id="title_row" class="row">
-      <div class="col-12">
-        <div class="row" id="title_mosaic">
-          <div class="col-12">
-            <div class="row header_yellow_icon">
-              <img class="remove_width_padding" src="{% static 'top/pc_img/yellow_icon_pc.png' %}">
-              <div class="row header_title">
-                <img src="{% static 'top/pc_img/title_pc.png' %}">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div id="question_row" class="row">
       <div class="col-12">
         <div class="row">
@@ -67,241 +49,253 @@
           <!--SP用 -->
           <div class="d-block d-md-none">
             {% for c in categories %}
-              {% if forloop.counter == 1 %}
-              <div class="row inner_choice_row_sp choice_error_label_pos">
-                <span class="choice_error_label category_choice_error_label">
-                  <img class="exclamation_mark" src="{% static 'top/common_img/exclamation_mark.png' %}">
-                  "状況"の回答を選んでください！
-                  <span class="choice_error_label_sub"></span>
-                </span>
+            {% if forloop.counter == 1 %}
+            <div class="row inner_choice_row_sp choice_error_label_pos">
+              <span class="choice_error_label category_choice_error_label">
+                <img class="exclamation_mark" src="{% static 'top/common_img/exclamation_mark.png' %}">
+                "状況"の回答を選んでください！
+                <span class="choice_error_label_sub"></span>
+              </span>
               {% else %}
-            <div class="row inner_choice_row_sp">
-              {% endif %}
-              <div class="col-1 choice_checkbox_sp">
-                <label class="check-box">
-                  <input type="checkbox" id="category_choice{{ forloop.counter }}"
-                    class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span
-                    class="text choice_text"></span>
-                </label>
+              <div class="row inner_choice_row_sp">
+                {% endif %}
+                <div class="col-1 choice_checkbox_sp">
+                  <label class="check-box">
+                    <input type="checkbox" id="category_choice{{ forloop.counter }}"
+                      class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span
+                      class="text choice_text"></span>
+                  </label>
+                </div>
+                <div class="col-10">
+                  <label class="check-box" for="category_choice{{ forloop.counter }}">
+                    <span class="text choice_text">{{ c.text }}</span>
+                  </label>
+                </div>
+                <div class="col-1"></div>
               </div>
-              <div class="col-10">
-                <label class="check-box" for="category_choice{{ forloop.counter }}">
-                  <span class="text choice_text">{{ c.text }}</span>
-                </label>
-              </div>
-              <div class="col-1"></div>
-            </div>
-            {% endfor %}
-          </div>
-
-          <!--PC用 -->
-          <div class="d-none d-md-block">
-            <div class="row">
-            {% for c in categories %}
-              {% if forloop.counter == 3 %}
-              <div class="col-4 text-center choice_error_label_pos">
-                <span class="choice_error_label category_choice_error_label">
-                  <img class="exclamation_mark" src="{% static 'top/common_img/exclamation_mark.png' %}">
-                  "状況"の回答を選んでください！
-                  <span class="choice_error_label_sub"></span>
-                </span>
-              {% else %}
-              <div class="col-4 text-center">
-              {% endif %}
-                <label class="check-box">
-                  <input type="checkbox" class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span class="text choice_text" >{{ c.text }}</span>
-                </label>
-              </div>
-              {% if forloop.counter|mod:3 == 0 and forloop.counter != categories|length %}
-            </div> <!-- row -->
-            <div class="row choice_inner_row">
-              {% endif %}
               {% endfor %}
-            </div> <!-- row -->
-          </div>
-        </div>
-
-        <div class="row choice_title">
-          <div class="col-12 text-center">
-            <img src="{% static 'top/common_img/choice_title.png' %}" class="choice_title_icon">
-            <span class="d-block d-md-none choice_title_new_line">
-              <br>
-            </span>
-            当てはまる"気持ち"はありますか？
-          </div>
-        </div>
-        <div class="row choice_row">
-          <!--SP用 -->
-          <div class="d-block d-md-none">
-            {% for f in feelings %}
-              {% if forloop.counter == 1 %}
-              <div class="row inner_choice_row_sp choice_error_label_pos">
-                <span class="choice_error_label feeling_choice_error_label">
-                  <img class="exclamation_mark" src="{% static 'top/common_img/exclamation_mark.png' %}">
-                  "状況"の回答を選んでください！
-                  <span class="choice_error_label_sub"></span>
-                </span>
-              {% else %}
-            <div class="row inner_choice_row_sp">
-              {% endif %}
-              <div class="col-1 choice_checkbox_sp">
-                <label class="check-box">
-                  <input type="checkbox" id="feeling_choice{{ forloop.counter }}"
-                    class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span
-                    class="text choice_text"></span>
-                </label>
-              </div>
-              <div class="col-10">
-                <label class="check-box" for="feeling_choice{{ forloop.counter }}">
-                  <span class="text choice_text">{{ f.text }}</span>
-                </label>
-              </div>
-              <div class="col-1"></div>
             </div>
-            {% endfor %}
-          </div>
 
-          <!--PC用 -->
-          <div class="d-none d-md-block">
-            <div class="row">
-            {% for f in feelings %}
-              {% if forloop.counter == 3 %}
-              <div class="col-4 text-center choice_error_label_pos">
-                <span class="choice_error_label feeling_choice_error_label">
-                  <img class="exclamation_mark" src="{% static 'top/common_img/exclamation_mark.png' %}">
-                  "気持ち"の回答を選んでください！
-                  <span class="choice_error_label_sub"></span>
-                </span>
-              {% else %}
-              <div class="col-4 text-center">
-              {% endif %}
-                <label class="check-box">
-                  <input type="checkbox" class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span class="text choice_text" >{{ f.text }}</span>
-                </label>
+            <!--PC用 -->
+            <div class="d-none d-md-block">
+              <div class="row">
+                {% for c in categories %}
+                {% if forloop.counter == 3 %}
+                <div class="col-4 text-center choice_error_label_pos">
+                  <span class="choice_error_label category_choice_error_label">
+                    <img class="exclamation_mark" src="{% static 'top/common_img/exclamation_mark.png' %}">
+                    "状況"の回答を選んでください！
+                    <span class="choice_error_label_sub"></span>
+                  </span>
+                  {% else %}
+                  <div class="col-4 text-center">
+                    {% endif %}
+                    <label class="check-box">
+                      <input type="checkbox" class="category_choice{{ forloop.counter }}" value="{{ c.id }}"><span
+                        class="text choice_text">{{ c.text }}</span>
+                    </label>
+                  </div>
+                  {% if forloop.counter|mod:3 == 0 and forloop.counter != categories|length %}
+                </div> <!-- row -->
+                <div class="row choice_inner_row">
+                  {% endif %}
+                  {% endfor %}
+                </div> <!-- row -->
               </div>
-              {% if forloop.counter|mod:3 == 0 and forloop.counter != feelings|length %}
-            </div> <!-- row -->
-            <div class="row choice_inner_row">
-              {% endif %}
-              {% endfor %}
-            </div> <!-- row -->
-          </div>
-        </div>
-        <div class="row" id="reception_msg_row">
-          <div class="col-12 text-center">
-            <button type="button" class="btn" id="reception_msg_btn">メッセージをもらう</button>
-          </div>
-        </div>
-      </div>
-    </div>
+            </div>
+
+            <div class="row choice_title">
+              <div class="col-12 text-center">
+                <img src="{% static 'top/common_img/choice_title.png' %}" class="choice_title_icon">
+                <span class="d-block d-md-none choice_title_new_line">
+                  <br>
+                </span>
+                当てはまる"気持ち"はありますか？
+              </div>
+            </div>
+            <div class="row choice_row">
+              <!--SP用 -->
+              <div class="d-block d-md-none">
+                {% for f in feelings %}
+                {% if forloop.counter == 1 %}
+                <div class="row inner_choice_row_sp choice_error_label_pos">
+                  <span class="choice_error_label feeling_choice_error_label">
+                    <img class="exclamation_mark" src="{% static 'top/common_img/exclamation_mark.png' %}">
+                    "状況"の回答を選んでください！
+                    <span class="choice_error_label_sub"></span>
+                  </span>
+                  {% else %}
+                  <div class="row inner_choice_row_sp">
+                    {% endif %}
+                    <div class="col-1 choice_checkbox_sp">
+                      <label class="check-box">
+                        <input type="checkbox" id="feeling_choice{{ forloop.counter }}"
+                          class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span
+                          class="text choice_text"></span>
+                      </label>
+                    </div>
+                    <div class="col-10">
+                      <label class="check-box" for="feeling_choice{{ forloop.counter }}">
+                        <span class="text choice_text">{{ f.text }}</span>
+                      </label>
+                    </div>
+                    <div class="col-1"></div>
+                  </div>
+                  {% endfor %}
+                </div>
+
+                <!--PC用 -->
+                <div class="d-none d-md-block">
+                  <div class="row">
+                    {% for f in feelings %}
+                    {% if forloop.counter == 3 %}
+                    <div class="col-4 text-center choice_error_label_pos">
+                      <span class="choice_error_label feeling_choice_error_label">
+                        <img class="exclamation_mark" src="{% static 'top/common_img/exclamation_mark.png' %}">
+                        "気持ち"の回答を選んでください！
+                        <span class="choice_error_label_sub"></span>
+                      </span>
+                      {% else %}
+                      <div class="col-4 text-center">
+                        {% endif %}
+                        <label class="check-box">
+                          <input type="checkbox" class="feeling_choice{{ forloop.counter }}" value="{{ f.id }}"><span
+                            class="text choice_text">{{ f.text }}</span>
+                        </label>
+                      </div>
+                      {% if forloop.counter|mod:3 == 0 and forloop.counter != feelings|length %}
+                    </div> <!-- row -->
+                    <div class="row choice_inner_row">
+                      {% endif %}
+                      {% endfor %}
+                    </div> <!-- row -->
+                  </div>
+                </div>
+                <div class="row" id="reception_msg_row">
+                  <div class="col-12 text-center">
+                    <button type="button" class="btn" id="reception_msg_btn">メッセージをもらう</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
-    <div id="answer_row" class="row">
-      <div class="d-block d-md-none">
-        <img src="{% static 'top/sp_img/speech_bubble1.png' %}" class="speech_bubble1 speech_bubble">
-        <img src="{% static 'top/sp_img/speech_bubble2.png' %}" class="speech_bubble2 speech_bubble">
-        <img src="{% static 'top/sp_img/speech_bubble3.png' %}" class="speech_bubble3 speech_bubble">
-        <img src="{% static 'top/sp_img/speech_bubble4.png' %}" class="speech_bubble4 speech_bubble">
-      </div>
-      <div class="d-none d-md-block">
-        <img src="{% static 'top/pc_img/speech_bubble1.png' %}" class="speech_bubble1 speech_bubble">
-        <img src="{% static 'top/pc_img/speech_bubble2.png' %}" class="speech_bubble2 speech_bubble">
-        <img src="{% static 'top/pc_img/speech_bubble3.png' %}" class="speech_bubble3 speech_bubble">
-        <img src="{% static 'top/pc_img/speech_bubble4.png' %}" class="speech_bubble4 speech_bubble">
-      </div>
-      <div class="col-12">
-        <div class="row" id="answer_title">
-          <div class="col-12 text-center">
-            Answer
-          </div>
-        </div>
-      </div>
-      <div id="furefure_msg_row" class="row text-center">
-        <div class="d-block d-md-none">
-          <img src="{% static 'top/sp_img/sp_bg_answer_left.png' %}" class="bg_answer_left">
-          <img src="{% static 'top/sp_img/sp_bg_answer_right.png' %}" class="bg_answer_right">
-        </div>
-        <!-- <div class="d-none d-md-block">
+            <div id="answer_row" class="row">
+              <div class="d-block d-md-none">
+                <img src="{% static 'top/sp_img/speech_bubble1.png' %}" class="speech_bubble1 speech_bubble">
+                <img src="{% static 'top/sp_img/speech_bubble2.png' %}" class="speech_bubble2 speech_bubble">
+                <img src="{% static 'top/sp_img/speech_bubble3.png' %}" class="speech_bubble3 speech_bubble">
+                <img src="{% static 'top/sp_img/speech_bubble4.png' %}" class="speech_bubble4 speech_bubble">
+              </div>
+              <div class="d-none d-md-block">
+                <img src="{% static 'top/pc_img/speech_bubble1.png' %}" class="speech_bubble1 speech_bubble">
+                <img src="{% static 'top/pc_img/speech_bubble2.png' %}" class="speech_bubble2 speech_bubble">
+                <img src="{% static 'top/pc_img/speech_bubble3.png' %}" class="speech_bubble3 speech_bubble">
+                <img src="{% static 'top/pc_img/speech_bubble4.png' %}" class="speech_bubble4 speech_bubble">
+              </div>
+              <div class="col-12">
+                <div class="row" id="answer_title">
+                  <div class="col-12 text-center">
+                    Answer
+                  </div>
+                </div>
+              </div>
+              <div id="furefure_msg_row" class="row text-center">
+                <div class="d-block d-md-none">
+                  <img src="{% static 'top/sp_img/sp_bg_answer_left.png' %}" class="bg_answer_left">
+                  <img src="{% static 'top/sp_img/sp_bg_answer_right.png' %}" class="bg_answer_right">
+                </div>
+                <!-- <div class="d-none d-md-block">
           <img src="{% static 'top/pc_img/speech_bubble1.png' %}" class="speech_bubble1 speech_bubble">
           <img src="{% static 'top/pc_img/speech_bubble2.png' %}" class="speech_bubble2 speech_bubble">
           <img src="{% static 'top/pc_img/speech_bubble3.png' %}" class="speech_bubble3 speech_bubble">
           <img src="{% static 'top/pc_img/speech_bubble4.png' %}" class="speech_bubble4 speech_bubble">
         </div> -->
-        <div class="col-12">
-          <div class="row" id="furefure_msg_title">
-            <div class="col-12 text-center">
-              フレフレさんからの
-              <span class="d-block d-md-none furefure_msg_title_new_line">
-                <br>
-              </span>
-              メッセージ
-            </div>
-          </div>
-          <div class="row" id="furefure_msg_body_loading">
-            <div class="col-12 text-center">
-              <div class="spinner-border" role="status" id="fure_fure_msg_loading">
-                <span class="visually-hidden">Loading...</span>
+                <div class="col-12">
+                  <div class="row" id="furefure_msg_title">
+                    <div class="col-12 text-center">
+                      フレフレさんからの
+                      <span class="d-block d-md-none furefure_msg_title_new_line">
+                        <br>
+                      </span>
+                      メッセージ
+                    </div>
+                  </div>
+                  <div class="row" id="furefure_msg_body_loading">
+                    <div class="col-12 text-center">
+                      <div class="spinner-border" role="status" id="fure_fure_msg_loading">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row" id="furefure_msg_body_answer">
+                    <div class="d-block d-md-none">
+                      <div class="row">
+                        <div class="col-12 text-center answer_img_class">
+                          <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
+                          <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
+                          <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
+                        </div>
+                        <div class="col-12 text-center">
+                          <div class="answer_text text-break"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-none d-md-block">
+                      <div class="row">
+                        <div class="col-4 text-end answer_img_class">
+                          <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
+                          <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
+                          <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
+                        </div>
+                        <div class="col-6 text-left">
+                          <div class="answer_text text-break"></div>
+                        </div>
+                        <div class="col-2">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row" id="furefure_msg_body_answer">
-            <div class="d-block d-md-none">
-              <div class="row">
-                <div class="col-12 text-center answer_img_class">
-                  <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
-                  <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
-                  <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
-                </div>
-                <div class="col-12 text-center">
-                  <div class="answer_text text-break"></div>
-                </div>
-              </div>
-            </div>
-            <div class="d-none d-md-block">
-              <div class="row">
-                <div class="col-4 text-end answer_img_class">
-                  <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
-                  <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
-                  <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
-                </div>
-                <div class="col-6 text-left">
-                  <div class="answer_text text-break"></div>
-                </div>
-                <div class="col-2">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div id="sns_share_row" class="row">
-      <div class="col-12">
-        <div id="sns_share_box" class="row">
-          <div class="col-12 text-center sns_share_msg_col">
-            <div id="sns_share_msg" class="row">
-              <div class="col-12 text-center sns_share_msg_col">
-                <span id="sns_share_mark_left">＼</span>結果をシェア<span id="sns_share_mark_right">／</span>
-              </div>
-            </div>
-            <div id="sns_share_icon_row" class="row">
-              <div class="col-12 text-center">
-                <span class="sns_share_icon">
-                  <a class="sns_share_link" href="https://twitter.com/share?text=フレフレエンジニア&url=https://engineer.frefre.site/&hashtags=フレフレエンジニア" rel="nofollow noopener" target="_blank">
-                    <img src="{% static 'top/common_img/icon_twitter.png' %}" class="sns_share_icon_img">
-                  </a>
-                </span>
-                <span class="sns_share_icon">
-                  <a class="sns_share_link" href="https://www.facebook.com/share.php?u=https://engineer.frefre.site/" rel="nofollow noopener" target="_blank">
-                    <img src="{% static 'top/common_img/icon_facebook.png' %}" class="sns_share_icon_img">
-                  </a>
-                </span>
-                <span class="sns_share_icon">
-                  <a class="sns_share_link" href="https://social-plugins.line.me/lineit/share?url=https://engineer.frefre.site/" rel="nofollow noopener" target="_blank">
-                    <img src="{% static 'top/common_img/icon_line.png' %}" class="sns_share_icon_img">
-                  </a>
-                </span>
+            <div id="sns_share_row" class="row">
+              <div class="col-12">
+                <div id="sns_share_box" class="row">
+                  <div class="col-12 text-center sns_share_msg_col">
+                    <div id="sns_share_msg" class="row">
+                      <div class="col-12 text-center sns_share_msg_col">
+                        <span id="sns_share_mark_left">＼</span>結果をシェア<span id="sns_share_mark_right">／</span>
+                      </div>
+                    </div>
+                    <div id="sns_share_icon_row" class="row">
+                      <div class="col-12 text-center">
+                        <span class="sns_share_icon">
+                          <a class="sns_share_link"
+                            href="https://twitter.com/share?text=フレフレエンジニア&url=https://engineer.frefre.site/&hashtags=フレフレエンジニア"
+                            rel="nofollow noopener" target="_blank">
+                            <img src="{% static 'top/common_img/icon_twitter.png' %}" class="sns_share_icon_img">
+                          </a>
+                        </span>
+                        <span class="sns_share_icon">
+                          <a class="sns_share_link"
+                            href="https://www.facebook.com/share.php?u=https://engineer.frefre.site/"
+                            rel="nofollow noopener" target="_blank">
+                            <img src="{% static 'top/common_img/icon_facebook.png' %}" class="sns_share_icon_img">
+                          </a>
+                        </span>
+                        <span class="sns_share_icon">
+                          <a class="sns_share_link"
+                            href="https://social-plugins.line.me/lineit/share?url=https://engineer.frefre.site/"
+                            rel="nofollow noopener" target="_blank">
+                            <img src="{% static 'top/common_img/icon_line.png' %}" class="sns_share_icon_img">
+                          </a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -350,7 +344,7 @@
 
   $(document).ready(function () {
     const now = new Date(Date.now());
-    
+
     $("#year").text(now.getFullYear());
 
     $("[class^='category_choice']").on("click", function () {
@@ -383,8 +377,8 @@
       $(".choice_error_label").hide();
 
       let feeling_id = null;
-      $("[class^='feeling_choice']").each(function() {
-        if($(this).prop('checked') == true) {
+      $("[class^='feeling_choice']").each(function () {
+        if ($(this).prop('checked') == true) {
           feeling_id = $(this).attr('value');
           return
         }
@@ -398,33 +392,33 @@
         }
       });
 
-      if(feeling_id == null) {
+      if (feeling_id == null) {
         $(".feeling_choice_error_label").show();
         // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
-        setTimeout( function () {
-          if(document.getElementsByClassName("feeling_choice_error_label")[0]){
-            document.getElementsByClassName("feeling_choice_error_label")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
+        setTimeout(function () {
+          if (document.getElementsByClassName("feeling_choice_error_label")[0]) {
+            document.getElementsByClassName("feeling_choice_error_label")[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
-          if(document.getElementsByClassName("feeling_choice_error_label")[1]){
-            document.getElementsByClassName("feeling_choice_error_label")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
+          if (document.getElementsByClassName("feeling_choice_error_label")[1]) {
+            document.getElementsByClassName("feeling_choice_error_label")[1].scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
-        }, 100 ) ;
+        }, 100);
       }
 
-      if(category_id == null) {
+      if (category_id == null) {
         $(".category_choice_error_label").show();
         // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
-        setTimeout( function  () {
-            if (document.getElementsByClassName("category_choice_error_label")[0]){
-            document.getElementsByClassName("category_choice_error_label")[0].scrollIntoView({behavior: 'smooth', block: 'center'});
+        setTimeout(function () {
+          if (document.getElementsByClassName("category_choice_error_label")[0]) {
+            document.getElementsByClassName("category_choice_error_label")[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
-          if(document.getElementsByClassName("category_choice_error_label")[1]){
-            document.getElementsByClassName("category_choice_error_label")[1].scrollIntoView({behavior: 'smooth', block: 'center'});
-            }
-        }, 100 ) ;
+          if (document.getElementsByClassName("category_choice_error_label")[1]) {
+            document.getElementsByClassName("category_choice_error_label")[1].scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 100);
       }
 
-      if(feeling_id == null || category_id == null) {
+      if (feeling_id == null || category_id == null) {
         return;
       }
 
@@ -436,24 +430,24 @@
       document.addEventListener('touchmove', handle, { passive: false });
       document.addEventListener('mousewheel', handle, { passive: false });
 
-      $(".answer_text").each(function (){
+      $(".answer_text").each(function () {
         $(this).text("");
       });
 
       $("#furefure_msg_body_answer").hide();
       $(".answer_img").hide();
-      
+
       $("#furefure_msg_body_loading").fadeIn();
       $("#furefure_msg_row").fadeIn();
       $("#answer_row").fadeIn();
       $("#sns_share_row").fadeIn();
 
       // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
-      setTimeout( function () {
-        document.getElementById("furefure_msg_body_loading").scrollIntoView({behavior: 'smooth', block: 'center'});
-      }, 100 ) ;
+      setTimeout(function () {
+        document.getElementById("furefure_msg_body_loading").scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
 
-      setTimeout(function() {
+      setTimeout(function () {
         $.ajax({
           type: 'GET',
           url: "/api/answer/",
@@ -469,22 +463,22 @@
             $("#furefure_msg_body_answer").fadeIn();
             const answer = response[0];
 
-        $(".answer_text").each(function (){
-          $(this).text(answer["text"]);
-        });
+            $(".answer_text").each(function () {
+              $(this).text(answer["text"]);
+            });
 
-        $(`.answer_img_${answer["image_no"]}`).fadeIn();
+            $(`.answer_img_${answer["image_no"]}`).fadeIn();
 
-        // スクロール禁止解除
-        document.removeEventListener('touchmove', handle, { passive: false });
-        document.removeEventListener('mousewheel', handle, { passive: false });
-        })
-        .fail(function(xhr) { //通信が失敗したときのコールバックの処理を書く
+            // スクロール禁止解除
+            document.removeEventListener('touchmove', handle, { passive: false });
+            document.removeEventListener('mousewheel', handle, { passive: false });
+          })
+          .fail(function (xhr) { //通信が失敗したときのコールバックの処理を書く
 
-        })
-        .always(function (xhr, msg) { //通信結果にかかわらず実行する処理を書く
+          })
+          .always(function (xhr, msg) { //通信結果にかかわらず実行する処理を書く
 
-        });
+          });
       }, 1000);
     });
   });
