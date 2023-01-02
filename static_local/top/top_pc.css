@@ -72,43 +72,65 @@
     position: absolute;
     left: 5px;
     top: 0px;
-    width: 17%;
+    width: 14%;
     height: auto;
+    z-index: 1;
 }
 
 .speech_bubble2 {
     position: absolute;
     left: 0px;
     bottom: 0px;
-    width: 15%;
+    width: 12%;
     height: auto;
+    z-index: 1;
 }
 
 .speech_bubble3 {
     position: absolute;
     right: 0px;
     top: 0px;
-    width: 15%;
+    width: 12%;
     height: auto;
+    z-index: 1;
 }
 
 .speech_bubble4 {
     position: absolute;
     right: 0px;
     bottom: 0px;
-    width: 15%;
+    width: 12%;
     height: auto;
+    z-index: 1;
 }
 
 #furefure_msg_row {
     background: #F7FDFD;
-    background-image: url("/static/top/pc_img/pc_bg_answer.png");
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
     padding-bottom: 100px;
+    position: relative;
+    overflow: hidden;
+}
 
-    display: none;
+.bg_answer_left {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 300px;
+    height: auto;
+    opacity: 0.33;  /* figmaからダウンロードすると透過されていなかったのでCSSで透過設定 */
+    margin-top: 100px;
+    z-index: 0;
+}
+
+.bg_answer_right {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 300px;
+    height: auto;
+    opacity: 0.33;  /* figmaからダウンロードすると透過されていなかったのでCSSで透過設定 */
+    margin-top: 100px;
+    z-index: 0;
 }
 
 .choice_error_label {

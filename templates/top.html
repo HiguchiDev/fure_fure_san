@@ -228,59 +228,55 @@
           </div>
         </div>
       </div>
-      <div id="furefure_msg_row" class="row text-center">
-        <div class="d-block d-md-none">
-          <img src="{% static 'top/sp_img/sp_bg_answer_left.png' %}" class="bg_answer_left">
-          <img src="{% static 'top/sp_img/sp_bg_answer_right.png' %}" class="bg_answer_right">
+      <div class="d-block d-md-none">
+        <img src="{% static 'top/sp_img/sp_bg_answer_left.png' %}" class="bg_answer_left">
+        <img src="{% static 'top/sp_img/sp_bg_answer_right.png' %}" class="bg_answer_right">
+      </div>
+      <div class="d-none d-md-block">
+        <img src="{% static 'top/pc_img/pc_bg_answer_left.png' %}" class="bg_answer_left">
+        <img src="{% static 'top/pc_img/pc_bg_answer_right.png' %}" class="bg_answer_right">
+      </div>
+      <div class="col-12">
+        <div class="row" id="furefure_msg_title">
+          <div class="col-12 text-center">
+            フレフレさんからの
+            <span class="d-block d-md-none furefure_msg_title_new_line">
+              <br>
+            </span>
+            メッセージ
+          </div>
         </div>
-        <!-- <div class="d-none d-md-block">
-          <img src="{% static 'top/pc_img/speech_bubble1.png' %}" class="speech_bubble1 speech_bubble">
-          <img src="{% static 'top/pc_img/speech_bubble2.png' %}" class="speech_bubble2 speech_bubble">
-          <img src="{% static 'top/pc_img/speech_bubble3.png' %}" class="speech_bubble3 speech_bubble">
-          <img src="{% static 'top/pc_img/speech_bubble4.png' %}" class="speech_bubble4 speech_bubble">
-        </div> -->
-        <div class="col-12">
-          <div class="row" id="furefure_msg_title">
-            <div class="col-12 text-center">
-              フレフレさんからの
-              <span class="d-block d-md-none furefure_msg_title_new_line">
-                <br>
-              </span>
-              メッセージ
+        <div class="row" id="furefure_msg_body_loading">
+          <div class="col-12 text-center">
+            <div class="spinner-border" role="status" id="fure_fure_msg_loading">
+              <span class="visually-hidden">Loading...</span>
             </div>
           </div>
-          <div class="row" id="furefure_msg_body_loading">
-            <div class="col-12 text-center">
-              <div class="spinner-border" role="status" id="fure_fure_msg_loading">
-                <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="row" id="furefure_msg_body_answer">
+          <div class="d-block d-md-none">
+            <div class="row">
+              <div class="col-12 text-center answer_img_class">
+                <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
+                <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
+                <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
+              </div>
+              <div class="col-12 text-center">
+                <div class="answer_text text-break"></div>
               </div>
             </div>
           </div>
-          <div class="row" id="furefure_msg_body_answer">
-            <div class="d-block d-md-none">
-              <div class="row">
-                <div class="col-12 text-center answer_img_class">
-                  <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
-                  <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
-                  <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
-                </div>
-                <div class="col-12 text-center">
-                  <div class="answer_text text-break"></div>
-                </div>
+          <div class="d-none d-md-block">
+            <div class="row">
+              <div class="col-4 text-end answer_img_class">
+                <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
+                <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
+                <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
               </div>
-            </div>
-            <div class="d-none d-md-block">
-              <div class="row">
-                <div class="col-4 text-end answer_img_class">
-                  <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
-                  <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
-                  <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
-                </div>
-                <div class="col-6 text-start">
-                  <div class="answer_text text-break"></div>
-                </div>
-                <div class="col-2">
-                </div>
+              <div class="col-6 text-start">
+                <div class="answer_text text-break"></div>
+              </div>
+              <div class="col-2">
               </div>
             </div>
           </div>
@@ -453,8 +449,9 @@
       $(".answer_img").hide();
       
       $("#furefure_msg_body_loading").fadeIn();
-      $("#furefure_msg_row").fadeIn();
-      $("#answer_row").fadeIn();
+      $(".speech_bubble").fadeIn();
+      //$("#furefure_msg_row").fadeIn();
+      //$("#answer_row").fadeIn();
       $("#sns_share_row").fadeIn();
 
       // スクロール直後にボタンをクリックすると強制スクロールがキャンセルされてしまうので、遅延実行
