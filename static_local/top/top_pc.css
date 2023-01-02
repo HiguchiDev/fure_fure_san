@@ -38,7 +38,7 @@
 }
 
 .choice_row {
-    background: #20C9C5;
+    background: #20C6C2;
     border-radius: 16px;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -181,8 +181,8 @@
     border-radius: 16px;
     padding-top: 40px;
     padding-bottom: 48px;
-    margin-left: 100px;
-    margin-right: 100px;
+    width: 70%;
+    margin:auto
 }
 
 #sns_share_mark_left {
@@ -197,4 +197,8 @@
 
 .footer_link_msg_terms {
     margin-right: 55px;
+}
+
+.sp_sns_share_title {
+    display: none;
 }

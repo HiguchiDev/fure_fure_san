@@ -207,7 +207,6 @@
       </div>
     </div>
 
-
     <div id="answer_row" class="row">
       <div class="d-block d-md-none">
         <img src="{% static 'top/sp_img/speech_bubble1.png' %}" class="speech_bubble1 speech_bubble">
@@ -283,14 +282,28 @@
         </div>
       </div>
     </div>
-
     <div id="sns_share_row" class="row">
       <div class="col-12">
         <div id="sns_share_box" class="row">
           <div class="col-12 text-center sns_share_msg_col">
             <div id="sns_share_msg" class="row">
-              <div class="col-12 text-center sns_share_msg_col">
-                <span id="sns_share_mark_left">＼</span>結果をシェア<span id="sns_share_mark_right">／</span>
+              <div class="d-block d-md-none">
+                
+                <div class="col-12 text-center sns_share_msg_col">
+                  
+                  <span id="sp_sns_share_msg_msg">
+                    <img src="{% static 'top/sp_img/sns_share_line1.png' %}" id="sns_share_line1">
+                    このサービスを
+                    <img src="{% static 'top/sp_img/sns_share_line2.png' %}" id="sns_share_line2">
+                  </span><br>シェア
+                  
+                </div>
+                
+              </div>
+              <div class="d-none d-md-block">
+                <div class="col-12 text-center sns_share_msg_col">
+                  <span id="sns_share_mark_left">＼</span>このサービスをシェア<span id="sns_share_mark_right">／</span>
+                </div>
               </div>
             </div>
             <div id="sns_share_icon_row" class="row">

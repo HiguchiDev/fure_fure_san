@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;900&display=swap');
 
 #question_row {
-    background-color: #56D9D6;
+    background-color: #3CD1CE;
     z-index: 0;
     background-image: url("/static/top/pc_img/bg_question_mosaic.png");
     background-position: center top;
@@ -252,7 +252,7 @@
 }
 
 #footer_sign_row {
-    background-color: #56D9D6;
+    background-color: #3CD1CE;
 }
 
 .footer_link_msg {

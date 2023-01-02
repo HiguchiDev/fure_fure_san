@@ -37,7 +37,7 @@
 }
 
 .choice_row {
-    background: #20C9C5;
+    background: #20C6C2;
     border-radius: 16px;
     padding-top: 20px;
     margin-left: 5px;
@@ -115,7 +115,7 @@
 .bg_answer_left {
     position: absolute;
     left: 0px;
-    top: 0px;
+    top: 20px;
     width: 17%;
     height: auto;
     margin-top: 50px;
@@ -125,7 +125,7 @@
 .bg_answer_right {
     position: absolute;
     right: -11px;
-    top: 0px;
+    top: 100px;
     width: 17%;
     height: auto;
     margin-top: 50px;
@@ -179,12 +179,8 @@
     border-radius: 16px;
     padding-top: 40px;
     padding-bottom: 48px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top: 100px;
-    margin-bottom: 90px;
-    margin-left: 30px;
-    margin-right: 30px;
+    width: 90%;
+    margin:auto
 }
 
 .sns_share_icon_img {
@@ -195,12 +191,12 @@
 
 #sns_share_mark_left {
     color: #FFE000;
-    margin-right: 10px;
+
 }
 
 #sns_share_mark_right {
     color: #FFE000;
-    margin-left: 10px;
+
 }
 
 .sns_share_msg_col {
@@ -210,4 +206,24 @@
 
 .footer_link_msg_terms_col {
     margin-bottom: 16px;
+}
+
+#sp_sns_share_msg_msg {
+    position: relative;
+}
+
+#sns_share_line1 {
+    position: absolute;
+    left: -30px;
+    top: 40px;
+    height: 60%;
+    width: auto;
+}
+
+#sns_share_line2 {
+    position: absolute;
+    right: -30px;
+    top: 40px;
+    height: 60%;
+    width: auto;
 }
