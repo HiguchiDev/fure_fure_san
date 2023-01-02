@@ -202,3 +202,52 @@
 .sp_sns_share_title {
     display: none;
 }
+
+#header_row {
+    position: relative;
+    z-index: 1;}
+
+#header_link_row {
+    background-color: #89E4E2;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.header_link_icon {
+    width: 175px;
+    height: 100%;
+}
+
+.box{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#main_label {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 50px;
+    color: #20C9C5;
+}
+
+#sub_label {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 50px;
+    letter-spacing: 0.02em;
+    color: #20C9C5;
+}
+
+.policy_text{
+    font-family: 'Rounded Mplus 1c';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    color: #2B2F36;
+}
