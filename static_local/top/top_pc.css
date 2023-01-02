@@ -30,7 +30,7 @@
     .header_title {
         position: absolute;
         width: 36%;
-        height: 75%;
+        height: auto;
         top: 51%;
         left: 48%;
         transform: translateY(-50%) translateX(-50%);
