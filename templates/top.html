@@ -252,6 +252,10 @@
             </div>
           </div>
         </div>
+        <div class="row" id="furefure_msg_body_loading_dummy">
+          <div class="col-12 text-center">
+          </div>
+        </div>
         <div class="row" id="furefure_msg_body_answer">
           <div class="d-block d-md-none">
             <div class="row">
@@ -266,7 +270,7 @@
             </div>
           </div>
           <div class="d-none d-md-block">
-            <div class="row">
+            <div class="row d-flex align-items-center">
               <div class="col-4 text-end answer_img_class">
                 <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
                 <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
@@ -309,7 +313,7 @@
             <div id="sns_share_icon_row" class="row">
               <div class="col-12 text-center">
                 <span class="sns_share_icon">
-                  <a class="sns_share_link" href="https://twitter.com/share?text=エンジニアのあなたへ、メッセージが届いたワン！%0a応援メッセージが受け取れるWebサービス&url=https://engineer.frefre.site/&hashtags=フレフレエンジニア" rel="nofollow noopener" target="_blank">
+                  <a class="sns_share_link" href='https://twitter.com/share?text=可愛いわんちゃん"フレフレさん"からメッセージが届く、エンジニア向けほっこりWebサービス🐶💻&url=https://engineer.frefre.site/&hashtags=フレフレエンジニア' rel="nofollow noopener" target="_blank">
                     <img src="{% static 'top/common_img/icon_twitter.png' %}" class="sns_share_icon_img">
                   </a>
                 </span>
@@ -460,6 +464,7 @@
 
       $("#furefure_msg_body_answer").hide();
       $(".answer_img").hide();
+      $("#furefure_msg_body_loading_dummy").hide();
       
       $("#furefure_msg_body_loading").fadeIn();
       $(".speech_bubble").fadeIn();

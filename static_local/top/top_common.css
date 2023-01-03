@@ -173,6 +173,12 @@
     display: none;
 }
 
+#furefure_msg_body_loading_dummy {
+    padding-top: 110px;
+    padding-bottom: 113.78px;
+
+}
+
 .speech_bubble {
     display: none;
 }
@@ -265,6 +271,11 @@
     letter-spacing: 0.02em;
     transform: rotate(0.03deg); 
     color: #FFFFFF;
+}
+
+.footer_link_msg:hover {
+    color: #FFFFFF;
+    opacity: 0.8;
 }
 
 .footer_link_icon {
