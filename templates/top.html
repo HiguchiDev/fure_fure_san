@@ -338,8 +338,6 @@
 </html>
 
 {% block js %}
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"
-  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
 
   function get_category_choice_class_name(elem) {
@@ -371,10 +369,6 @@
   }
 
   $(document).ready(function () {
-    const now = new Date(Date.now());
-    
-    $("#year").text(now.getFullYear());
-
     $("[class^='category_choice']").on("click", function () {
       const clicked_category_class_name = get_category_choice_class_name($(this));
       $("[class^='category_choice']").each(function () {
