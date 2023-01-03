@@ -299,3 +299,9 @@
     position: relative;
     z-index: 1;
 }
+
+.img-container{
+    display:flex;/* flexbox */
+    justify-content:center; /* 水平方向 */
+    align-items: center; /* 垂直方向 */
+}
