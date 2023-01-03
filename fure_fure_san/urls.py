@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from top.views import AnswerViewSet, TopPageView, PolicyPageView
+from top.views import AnswerViewSet, TopPageView
+from privacypolicy.views import PolicyPageView
 
 
 defaultRouter = routers.DefaultRouter()

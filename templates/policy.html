@@ -1,45 +1,27 @@
-{% extends 'base.html' %}
+{% extends 'policy_terms.html' %}
 {% load static %}
 {% load mathfilters %}
 
 {% block meta_title %}
-フレフレエンジニア | 応援メッセージが受け取れるWebサービス
+プライバシーポリシー | フレフレエンジニア
 {% endblock %}
 
 {% block css %}
 <link href="{% static 'top/top_pc.css' %}" rel="stylesheet" media="screen and (min-width:768px)">
 <link href="{% static 'top/top_sp.css' %}" rel="stylesheet" media="screen and (max-width:767px)">
 <link href="{% static 'top/top_common.css' %}" rel="stylesheet">
+<link href="{% static 'policy_terms/policy_terms.css' %}" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;900&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block head_block %}
-<meta name="description" content="「フレフレエンジニア」は、選択肢を選ぶと、可愛いエンジニアの犬「フレフレさん」から回答が届く、ほっこりWebサービスです。"/>
+<meta name="description" content="Webサービス「フレフレエンジニア」のプライバシーポリシーです。"/>
 {% endblock %}
 
 <!DOCTYPE html>
 <html lang="ja">
-
-{% block header %}
-  <header>
-    <div class="container-fluid">
-      <div id="header_row" class="row">
-        <div class="col-12">
-          <div id="header_link_row" class="row text-center d-flex align-items-center">
-            <div class="">
-              <div class="col-12">
-                <a href="./">
-                  <img src="{% static 'top/common_img/policy_title.png' %}" class="header_link_icon">
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </header>
-{% endblock %}
 
 {% block contents %}
   <div class="container-fluid">
@@ -62,8 +44,45 @@
         
         <div class="row justify-content-center box">
             <div class="col-8 text-start">
-            <div id="sub_label">タイトル</div>
-            <span class="policy_text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+            <div id="sub_label">個人情報の収集</div>
+            <span class="policy_text">本サービスは、ユーザーの利用したブラウザや閲覧ページ、利用日時、IPアドレス、クッキー情報、端末の個体識別情報などの履歴情報および特性情報を、ユーザーが本サービスや提携先のサービスを利用、またはページを閲覧する際に収集します。</span>
+            </div>
+        </div>
+    
+        <div class="row justify-content-center box">
+            <div class="col-8 text-start">
+            <div id="sub_label">アクセス解析ツールについて</div>
+            <span class="policy_text">本サービスでは、Googleによるアクセス解析ツール「Google Analytics」を利用しています。<br>
+              なお、この「Google Analytics」の利用するトラフィックデータは匿名で収集されており、個人を特定するものではありません。</span>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center box">
+            <div class="col-8 text-start">
+            <div id="sub_label">個人情報の利用</div>
+            <span class="policy_text">本サービスでは、収集した個人情報を以下のような目的で利用することがあります。<br>
+              * 本サービスの運営における利用<br>
+              * ユーザーからのお問い合わせに回答を目的とした利用<br>
+              * 本サービスの改善や解析を目的とした利用<br>
+              * 上記の利用目的に付随する目的</span>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center box">
+            <div class="col-8 text-start">
+            <div id="sub_label">個人情報の第三者への開示</div>
+            <span class="policy_text">本サービスでは、個人情報は適切に管理し、以下に該当する場合を除いて第三者に開示することはありません。<br>
+              * 本人のご了解がある場合<br>
+              * 法令等への協力のため、開示が必要となる場合<br>
+              * 適切な個人情報管理に関する条項を持つ契約を締結した場合</span>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center box">
+            <div class="col-8 text-start">
+            <div id="sub_label">プライバシーポリシーの変更について</div>
+            <span class="policy_text">本ポリシーの内容は、ユーザーに通知することなく、変更することができるものとします。<br>
+              2023年2月1日</span>
             </div>
         </div>
         
@@ -72,9 +91,3 @@
   </div>
 {% endblock contents %}
 </html>
-
-{% block js %}
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"
-  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
-{% endblock %}
