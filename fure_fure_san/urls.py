@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from top.views import AnswerViewSet, TopPageView
+from top.views import AnswerViewSet, TopPageView, PolicyPageView
 
 
 defaultRouter = routers.DefaultRouter()
@@ -25,6 +25,7 @@ defaultRouter.register('answer',AnswerViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TopPageView.as_view()),
+    path('privacypolicy', PolicyPageView.as_view()),
     # defaultRouter をinclude する
     path('api/',include(defaultRouter.urls)),
 ]

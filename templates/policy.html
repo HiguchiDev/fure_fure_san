@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load mathfilters %}
+
+{% block meta_title %}
+フレフレエンジニア | 応援メッセージが受け取れるWebサービス
+{% endblock %}
+
+{% block css %}
+<link href="{% static 'top/top_pc.css' %}" rel="stylesheet" media="screen and (min-width:768px)">
+<link href="{% static 'top/top_sp.css' %}" rel="stylesheet" media="screen and (max-width:767px)">
+<link href="{% static 'top/top_common.css' %}" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block head_block %}
+<meta name="description" content="「フレフレエンジニア」は、選択肢を選ぶと、可愛いエンジニアの犬「フレフレさん」から回答が届く、ほっこりWebサービスです。"/>
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+{% block header %}
+  <header>
+    <div class="container-fluid">
+      <div id="header_row" class="row">
+        <div class="col-12">
+          <div id="header_link_row" class="row text-center d-flex align-items-center">
+            <div class="">
+              <div class="col-12">
+                <a href="">
+                  <img src="{% static 'top/common_img/policy_title.png' %}" class="header_link_icon">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </header>
+{% endblock %}
+
+{% block contents %}
+  <div class="container-fluid">
+    <div id="policy_row" class="row">
+      <div class="col-12">
+    
+        <div class="row justify-content-center box">
+            <div class="col-8 text-start">
+            <div id="main_label">プライバシーポリシー</div>
+            <span class="policy_text">「フレフレエンジニア」にて提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。</span>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center box">
+            <div class="col-8 text-start">
+            <div id="sub_label">個人情報の定義</div>
+            <span class="policy_text">「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとします。生存する個人に関する情報の中で、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報及び容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。</span>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center box">
+            <div class="col-8 text-start">
+            <div id="sub_label">タイトル</div>
+            <span class="policy_text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</span>
+            </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+{% endblock contents %}
+</html>
+
+{% block js %}
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+{% endblock %}

@@ -19,6 +19,8 @@ class TopPageView(TemplateView):
         ctx["feelings"] = Feeling.objects.all()
         return ctx
 
+class PolicyPageView(TemplateView):
+    template_name: str = "policy.html"
 
 class AnswerViewSet(viewsets.ReadOnlyModelViewSet):  # GetのみとするためReadOnlyを継承
     """
