@@ -251,55 +251,6 @@
     text-decoration:none
 }
 
-#footer_link_row {
-    background-color: #89E4E2;
-    padding-top: 34px;
-    padding-bottom: 34px;
-}
-
-#footer_sign_row {
-    background-color: #3CD1CE;
-}
-
-.footer_link_msg {
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 28px;
-
-    letter-spacing: 0.02em;
-    transform: rotate(0.03deg); 
-    color: #FFFFFF;
-}
-
-.footer_link_msg:hover {
-    color: #FFFFFF;
-    opacity: 0.8;
-}
-
-.footer_link_icon {
-    padding-bottom: 5px;
-}
-
-#footer_sign_row {
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 24px;
-
-    padding-top: 12px;
-    padding-bottom: 12px;
-    
-    color: #FFFFFF;
-}
-
-#footer_row {
-    position: relative;
-    z-index: 1;
-}
-
 .img-container{
     display:flex;/* flexbox */
     justify-content:center; /* 水平方向 */

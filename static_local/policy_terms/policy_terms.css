@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;900&display=swap');
+
 #header_row {
     position: relative;
     z-index: 1;}
@@ -19,7 +21,7 @@
 }
 
 #main_label {
-    font-family: 'Rounded Mplus 1c';
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 24px;
@@ -30,7 +32,7 @@
 }
 
 #sub_label {
-    font-family: 'Rounded Mplus 1c';
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
@@ -42,7 +44,7 @@
 }
 
 .policy_text{
-    font-family: 'Rounded Mplus 1c';
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
