@@ -19,9 +19,6 @@ class TopPageView(TemplateView):
         ctx["feelings"] = Feeling.objects.all()
         return ctx
 
-class PolicyPageView(TemplateView):
-    template_name: str = "policy.html"
-
 class AnswerViewSet(viewsets.ReadOnlyModelViewSet):  # GetのみとするためReadOnlyを継承
     """
     /api/answer/?format=json&category_id=X&feeling_id=X にアクセスするとjson形式で選択肢にあった回答を返却する。
