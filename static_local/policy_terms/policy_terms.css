@@ -21,7 +21,7 @@
     margin-bottom: 50px;
 }
 
-#main_label {
+.main_label {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-style: normal;
     font-weight: 900;
@@ -34,7 +34,7 @@
     transform: rotate(0.03deg);
 }
 
-#sub_label {
+.sub_label {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-style: normal;
     font-weight: 500;
