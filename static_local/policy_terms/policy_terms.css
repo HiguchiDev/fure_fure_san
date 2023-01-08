@@ -29,6 +29,7 @@
     display: flex;
     align-items: center;
     color: #20C9C5;
+    transform: rotate(0.03deg); 
 }
 
 #sub_label {
@@ -41,6 +42,7 @@
     align-items: center;
     letter-spacing: 0.02em;
     color: #20C9C5;
+    transform: rotate(0.03deg); 
 }
 
 .policy_text{
@@ -51,4 +53,5 @@
     line-height: 28px;
     letter-spacing: 0.02em;
     color: #2B2F36;
+    transform: rotate(0.03deg); 
 }
