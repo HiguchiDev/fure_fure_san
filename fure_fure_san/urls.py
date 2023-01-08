@@ -18,6 +18,7 @@ from django.urls import path, include
 from rest_framework import routers
 from top.views import AnswerViewSet, TopPageView
 from privacypolicy.views import PolicyPageView
+from terms.views import TermsView
 
 
 defaultRouter = routers.DefaultRouter()
@@ -27,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TopPageView.as_view()),
     path('privacypolicy', PolicyPageView.as_view()),
+    path('terms', TermsView.as_view()),
     # defaultRouter をinclude する
     path('api/',include(defaultRouter.urls)),
 ]

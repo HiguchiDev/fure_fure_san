@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'top',
     'privacypolicy',
+    'terms',
     'rest_framework',
     'django_filters',
     'mathfilters',

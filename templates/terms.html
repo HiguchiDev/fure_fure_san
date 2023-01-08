@@ -1,0 +1,202 @@
+{% extends 'base_policy_terms.html' %}
+{% load static %}
+{% load mathfilters %}
+
+{% block meta_title %}
+  利用規約 | フレフレエンジニア
+{% endblock %}
+
+{% block head_block %}
+  <meta name="description" content="Webサービス「フレフレエンジニア」の利用規約です。"/>
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+{% block contents %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+
+      <!--SP用 -->
+      <div class="d-block d-md-none">  
+        <div class="row justify-content-center box">
+          <div class="col-11 text-start">
+            <div class="main_label">利用規約</div>
+            <span class="policy_text">「フレフレエンジニア」にて提供するサービス（以下、「本サービス」といいます。）における利用条件について、以下のとおり利用規約（以下、「本規約」といいます。）を定めます。また、本サービスを利用する個人及び団体を以下、「ユーザー」といいます。</span>
+          </div>
+          <div class="col-1 d-none"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-11 text-start">
+            <div class="sub_label">利用規約の適用</div>
+            <span class="policy_text">本規約は、ユーザーが本サービスの利用に関わる全ての関係に適用されるものとします。ユーザーは本サービスを利用または訪問することによって、本規約を承諾いただいたものとみなします。</span>
+          </div>
+          <div class="col-1 d-none"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-11 text-start">
+            <div class="sub_label">ユーザーの責任</div>
+            <span class="policy_text">本サービスをユーザーが利用する場合、インターネットにアクセスする必要がありますが、そのための機器、ソフトウェア、通信手段はユーザーご自身が各自の責任と費用において適切に準備、設置、操作していただく必要があります。本サービスはユーザーのアクセス環境について一切関与せず、これらの準備、操作に関する一切の責任を負いません。</span>
+          </div>
+          <div class="col-1 d-none"></div>
+        </div>
+    
+        <div class="row justify-content-center box">
+          <div class="col-11 text-start">
+            <div class="sub_label">免責事項</div>
+            <span class="policy_text">本サービスは、ユーザーが本サービスを利用することで生じたあらゆる損害について一切の責任を負いません。</span>
+          </div>
+          <div class="col-1 d-none"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-11 text-start">
+            <div class="sub_label">禁止事項</div>
+            <span class="policy_text">ユーザーは、本サービスの利用にあたり、以下の行為を行うことを禁止します。<br>
+              * 法令または公序良俗に違反する行為<br>
+              * 犯罪行為に関連する行為<br>
+              * 本サービスのサーバーまたはネットワークの機能を破壊、妨害する行為<br>
+              * 本サービスの運営を妨害するおそれのある行為<br>
+              * 本サービスの改変、結合、リバースエンジニアリング、その他で本サービスを解析する行為<br>
+              * 本サービスのユーザーに関する個人情報等を収集または蓄積する行為<br>
+              * 本サービスに関連して、反社会的勢力に対して直接または間接に利益を供与する行為<br>
+              * その他、本サービスが不適切と判断する行為</span>
+          </div>
+          <div class="col-1 d-none"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-11 text-start">
+            <div class="sub_label">本サービスの提供の停止等</div>
+            <span class="policy_text">本サービスは、ユーザーに事前に通知することなく本サービスの全部または一部の提供を停止または中断することができるものとします。また本サービスは、本サービスの提供の停止または中断により、ユーザーまたは第三者が被ったいかなる不利益または損害についても、一切の責任を負わないものとします。</span>
+          </div>
+          <div class="col-1 d-none"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-11 text-start">
+            <div class="sub_label">財産権</div>
+            <span class="policy_text">本サービスは、本サービスに含まれる情報、及び知的財産権に関する財産権を保有しています。前項の権利に関連して問題が発生した場合、自己の費用と責任においてかかる問題を解決するとともに、本サービスに一切の迷惑または損害を与えないものとします。またその際に、ユーザーまたは第三者が被ったいかなる不利益または損害について、一切の責任を負わないものとします。</span>
+          </div>
+          <div class="col-1 d-none"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-11 text-start">
+            <div class="sub_label">個人情報の取扱い</div>
+            <span class="policy_text">本サービスの利用によって取得する個人情報については、「プライバシーポリシー」に従い適切に取り扱うものとします。</span>
+          </div>
+          <div class="col-1 d-none"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-11 text-start">
+            <div class="sub_label">利用規約の変更</div>
+            <span class="policy_text">本規約の内容は必要に応じて、ユーザーに通知することなく、変更することができるものとします。本サービスが別途定める場合を除いて、変更後の利用規約は、本サービスに掲載したときから効力を生じるものとします。<br>
+              2023年2月1日</span>
+          </div>
+          <div class="col-1 d-none"></div>
+        </div>
+      </div>
+
+      <!--PC用 -->
+      <div class="d-none d-md-block">        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div class="main_label">利用規約</div>
+            <span class="policy_text">「フレフレエンジニア」にて提供するサービス（以下、「本サービス」といいます。）における利用条件について、以下のとおり利用規約（以下、「本規約」といいます。）を定めます。また、本サービスを利用する個人及び団体を以下、「ユーザー」といいます。</span>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div class="sub_label">利用規約の適用</div>
+            <span class="policy_text">本規約は、ユーザーが本サービスの利用に関わる全ての関係に適用されるものとします。ユーザーは本サービスを利用または訪問することによって、本規約を承諾いただいたものとみなします。</span>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div class="sub_label">ユーザーの責任</div>
+            <span class="policy_text">本サービスをユーザーが利用する場合、インターネットにアクセスする必要がありますが、そのための機器、ソフトウェア、通信手段はユーザーご自身が各自の責任と費用において適切に準備、設置、操作していただく必要があります。本サービスはユーザーのアクセス環境について一切関与せず、これらの準備、操作に関する一切の責任を負いません。</span>
+          </div>
+          <div class="col-2"></div>
+        </div>
+    
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div class="sub_label">免責事項</div>
+            <span class="policy_text">本サービスは、ユーザーが本サービスを利用することで生じたあらゆる損害について一切の責任を負いません。</span>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div class="sub_label">禁止事項</div>
+            <span class="policy_text">ユーザーは、本サービスの利用にあたり、以下の行為を行うことを禁止します。<br>
+              * 法令または公序良俗に違反する行為<br>
+              * 犯罪行為に関連する行為<br>
+              * 本サービスのサーバーまたはネットワークの機能を破壊、妨害する行為<br>
+              * 本サービスの運営を妨害するおそれのある行為<br>
+              * 本サービスの改変、結合、リバースエンジニアリング、その他で本サービスを解析する行為<br>
+              * 本サービスのユーザーに関する個人情報等を収集または蓄積する行為<br>
+              * 本サービスに関連して、反社会的勢力に対して直接または間接に利益を供与する行為<br>
+              * その他、本サービスが不適切と判断する行為</span>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div class="sub_label">本サービスの提供の停止等</div>
+            <span class="policy_text">本サービスは、ユーザーに事前に通知することなく本サービスの全部または一部の提供を停止または中断することができるものとします。また本サービスは、本サービスの提供の停止または中断により、ユーザーまたは第三者が被ったいかなる不利益または損害についても、一切の責任を負わないものとします。</span>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div class="sub_label">財産権</div>
+            <span class="policy_text">本サービスは、本サービスに含まれる情報、及び知的財産権に関する財産権を保有しています。前項の権利に関連して問題が発生した場合、自己の費用と責任においてかかる問題を解決するとともに、本サービスに一切の迷惑または損害を与えないものとします。またその際に、ユーザーまたは第三者が被ったいかなる不利益または損害について、一切の責任を負わないものとします。</span>
+          </div>
+          <div class="col-2"></div>
+        </div>            
+        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div class="sub_label">個人情報の取扱い</div>
+            <span class="policy_text">本サービスの利用によって取得する個人情報については、「プライバシーポリシー」に従い適切に取り扱うものとします。</span>
+          </div>
+          <div class="col-2"></div>
+        </div>            
+        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div class="sub_label">利用規約の変更</div>
+            <span class="policy_text">本規約の内容は必要に応じて、ユーザーに通知することなく、変更することができるものとします。本サービスが別途定める場合を除いて、変更後の利用規約は、本サービスに掲載したときから効力を生じるものとします。<br>
+              2023年2月1日</span>
+          </div>
+          <div class="col-2"></div>
+        </div>            
+      </div>
+    </div>
+  </div>
+</div>
+  
+{% endblock contents %}
+</html>
