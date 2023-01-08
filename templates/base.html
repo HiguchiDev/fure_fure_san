@@ -29,6 +29,8 @@
   {% endblock %}
   {% block css %}
   {% endblock %}
+  <link href="{% static 'common/footer_pc.css' %}" rel="stylesheet" media="screen and (min-width:768px)">
+  <link href="{% static 'common/footer_sp.css' %}" rel="stylesheet" media="screen and (max-width:767px)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;900&display=swap" rel="stylesheet">

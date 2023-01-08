@@ -3,87 +3,159 @@
 {% load mathfilters %}
 
 {% block meta_title %}
-プライバシーポリシー | フレフレエンジニア
-{% endblock %}
-
-{% block css %}
-<link href="{% static 'common/footer_pc.css' %}" rel="stylesheet">
-<link href="{% static 'common/footer_sp.css' %}" rel="stylesheet">
-<link href="{% static 'policy_terms/policy_terms.css' %}" rel="stylesheet">
+  プライバシーポリシー | フレフレエンジニア
 {% endblock %}
 
 {% block head_block %}
-<meta name="description" content="Webサービス「フレフレエンジニア」のプライバシーポリシーです。"/>
+  <meta name="description" content="Webサービス「フレフレエンジニア」のプライバシーポリシーです。"/>
 {% endblock %}
 
 <!DOCTYPE html>
 <html lang="ja">
 
 {% block contents %}
-  <div class="container-fluid">
-    <div id="policy_row" class="row">
-      <div class="col-12">
-    
+<div class="container-fluid">
+  <div id="policy_row" class="row">
+    <div class="col-12">
+
+      <!--SP用 -->
+      <div class="d-block d-md-none">  
         <div class="row justify-content-center box">
-            <div class="col-8 text-start">
+          <div class="col-11 text-start">
             <div id="main_label">プライバシーポリシー</div>
             <span class="policy_text">「フレフレエンジニア」にて提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。</span>
-            </div>
+          </div>
         </div>
         
         <div class="row justify-content-center box">
-            <div class="col-8 text-start">
+          <div class="col-11 text-start">
             <div id="sub_label">個人情報の定義</div>
             <span class="policy_text">「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとします。生存する個人に関する情報の中で、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報及び容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。</span>
-            </div>
+          </div>
         </div>
         
         <div class="row justify-content-center box">
-            <div class="col-8 text-start">
+          <div class="col-11 text-start">
             <div id="sub_label">個人情報の収集</div>
             <span class="policy_text">本サービスは、ユーザーの利用したブラウザや閲覧ページ、利用日時、IPアドレス、クッキー情報、端末の個体識別情報などの履歴情報および特性情報を、ユーザーが本サービスや提携先のサービスを利用、またはページを閲覧する際に収集します。</span>
-            </div>
+          </div>
         </div>
     
         <div class="row justify-content-center box">
-            <div class="col-8 text-start">
+          <div class="col-11 text-start">
             <div id="sub_label">アクセス解析ツールについて</div>
             <span class="policy_text">本サービスでは、Googleによるアクセス解析ツール「Google Analytics」を利用しています。<br>
               なお、この「Google Analytics」の利用するトラフィックデータは匿名で収集されており、個人を特定するものではありません。</span>
-            </div>
+          </div>
         </div>
         
         <div class="row justify-content-center box">
-            <div class="col-8 text-start">
+          <div class="col-11 text-start">
             <div id="sub_label">個人情報の利用</div>
             <span class="policy_text">本サービスでは、収集した個人情報を以下のような目的で利用することがあります。<br>
               * 本サービスの運営における利用<br>
               * ユーザーからのお問い合わせに回答を目的とした利用<br>
               * 本サービスの改善や解析を目的とした利用<br>
               * 上記の利用目的に付随する目的</span>
-            </div>
+          </div>
         </div>
         
         <div class="row justify-content-center box">
-            <div class="col-8 text-start">
+          <div class="col-11 text-start">
             <div id="sub_label">個人情報の第三者への開示</div>
             <span class="policy_text">本サービスでは、個人情報は適切に管理し、以下に該当する場合を除いて第三者に開示することはありません。<br>
               * 本人のご了解がある場合<br>
               * 法令等への協力のため、開示が必要となる場合<br>
               * 適切な個人情報管理に関する条項を持つ契約を締結した場合</span>
-            </div>
+          </div>
         </div>
         
         <div class="row justify-content-center box">
-            <div class="col-8 text-start">
+          <div class="col-11 text-start">
             <div id="sub_label">プライバシーポリシーの変更について</div>
             <span class="policy_text">本ポリシーの内容は、ユーザーに通知することなく、変更することができるものとします。<br>
               2023年2月1日</span>
-            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--PC用 -->
+      <div class="d-none d-md-block">        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div id="main_label">プライバシーポリシー</div>
+            <span class="policy_text">「フレフレエンジニア」にて提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。</span>
+          </div>
+          <div class="col-2"></div>
         </div>
         
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div id="sub_label">個人情報の定義</div>
+            <span class="policy_text">「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとします。生存する個人に関する情報の中で、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報及び容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。</span>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div id="sub_label">個人情報の収集</div>
+            <span class="policy_text">本サービスは、ユーザーの利用したブラウザや閲覧ページ、利用日時、IPアドレス、クッキー情報、端末の個体識別情報などの履歴情報および特性情報を、ユーザーが本サービスや提携先のサービスを利用、またはページを閲覧する際に収集します。</span>
+          </div>
+          <div class="col-2"></div>
+        </div>
+    
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div id="sub_label">アクセス解析ツールについて</div>
+            <span class="policy_text">本サービスでは、Googleによるアクセス解析ツール「Google Analytics」を利用しています。<br>
+              なお、この「Google Analytics」の利用するトラフィックデータは匿名で収集されており、個人を特定するものではありません。</span>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div id="sub_label">個人情報の利用</div>
+            <span class="policy_text">本サービスでは、収集した個人情報を以下のような目的で利用することがあります。<br>
+              * 本サービスの運営における利用<br>
+              * ユーザーからのお問い合わせに回答を目的とした利用<br>
+              * 本サービスの改善や解析を目的とした利用<br>
+              * 上記の利用目的に付随する目的</span>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div id="sub_label">個人情報の第三者への開示</div>
+            <span class="policy_text">本サービスでは、個人情報は適切に管理し、以下に該当する場合を除いて第三者に開示することはありません。<br>
+              * 本人のご了解がある場合<br>
+              * 法令等への協力のため、開示が必要となる場合<br>
+              * 適切な個人情報管理に関する条項を持つ契約を締結した場合</span>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        
+        <div class="row justify-content-center box">
+          <div class="col-2"></div>
+          <div class="col-8 text-start">
+            <div id="sub_label">プライバシーポリシーの変更について</div>
+            <span class="policy_text">本ポリシーの内容は、ユーザーに通知することなく、変更することができるものとします。<br>
+              2023年2月1日</span>
+          </div>
+          <div class="col-2"></div>
+        </div>            
       </div>
     </div>
   </div>
+</div>
+  
 {% endblock contents %}
 </html>
