@@ -26,12 +26,20 @@
         <div class="col-12">
           <div id="title_mosaic" class="row">
             <div class="col-12">
-              <div class="row">
-                <picture class="remove_width_padding">
-                  <source srcset="{% static 'top/pc_img/yellow_icon_pc.png' %}" media="(min-width: 768px)" />
-                  <source srcset="{% static 'top/sp_img/yellow_icon_sp.png' %}" media="(max-width: 767px)" />
-                  <img src="" alt="" class="header_yellow_icon" />
-                </picture>
+              <div class="d-block d-md-none">
+                <div class="row">
+                  <picture class="remove_width_padding">
+                    <!-- <source srcset="{% static 'top/pc_img/yellow_icon_pc.png' %}" media="(min-width: 768px)" /> -->
+                    <source srcset="{% static 'top/sp_img/yellow_icon_sp.png' %}" media="(max-width: 767px)" />
+                    <img src="" alt="" class="header_yellow_icon" />
+                  </picture>
+                </div>
+              </div>
+              <div class="d-none d-md-block">
+                <div class="row">
+                  <img src="{% static 'top/pc_img/yellow_icon_pc_left.png' %}" id="yellow_icon_pc_left" class="remove_width_padding">
+                  <img src="{% static 'top/pc_img/yellow_icon_pc_right.png' %}" id="yellow_icon_pc_right" class="remove_width_padding">
+                </div>
               </div>
             </div>
             <div class="col-12">

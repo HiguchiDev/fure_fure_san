@@ -1,5 +1,7 @@
 #title_row {
     position: relative;
+    min-height: 600px;
+    max-height: 600px;
 }
 
 #title_mosaic {
@@ -8,6 +10,8 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 600px;
+    max-height: 600px;
 }
 
 .remove_width_padding {
@@ -15,15 +19,33 @@
     padding-right: 0px;
 }
 
-@media only screen and (min-width: 768px) {
+#yellow_icon_pc_left {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 600px;
+    width: auto;
+}
+
+#yellow_icon_pc_right {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 600px;
+    width: auto;
+}
+
+/* @media only screen and (min-width: 768px) {
     .header_yellow_icon {
-        width: 100%;
+        width: auto;
         height: 100%;
+        min-height: 600px;
+        max-height: 600px;
         background-position: center center;
         background-size: 100% auto;
         background-repeat: no-repeat;
     }
-}
+} */
 
 @media only screen and (min-width: 768px) {
     .header_title {
