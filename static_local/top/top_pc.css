@@ -19,7 +19,6 @@
     .header_yellow_icon {
         width: 100%;
         height: 100%;
-        padding: 74px 0px;
         background-position: center center;
         background-size: 100% auto;
         background-repeat: no-repeat;
@@ -29,10 +28,10 @@
 @media only screen and (min-width: 768px) {
     .header_title {
         position: absolute;
-        width: 36%;
+        width: 52%;
         height: auto;
-        top: 51%;
-        left: 48%;
+        top: 50%;
+        left: 50%;
         transform: translateY(-50%) translateX(-50%);
     }
 }
