@@ -7,8 +7,8 @@
 
 #header_link_row {
     background-color: #89E4E2;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .header_link_icon {
@@ -31,6 +31,8 @@
     align-items: center;
     color: #20C9C5;
     transform: rotate(0.03deg);
+
+    padding-bottom: 18px;
 }
 
 .sub_label {
@@ -44,6 +46,8 @@
     letter-spacing: 0.02em;
     color: #20C9C5;
     transform: rotate(0.03deg);
+
+    padding-bottom: 18px;
 }
 
 .policy_text{

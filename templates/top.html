@@ -44,11 +44,12 @@
             </div>
             <div class="col-12">
               <div class="row">
-                <picture class="remove_width_padding">
-                  <source srcset="{% static 'top/pc_img/title_pc.png' %}" media="(min-width: 768px)" />
-                  <source srcset="{% static 'top/sp_img/title_sp.png' %}" media="(max-width: 767px)" />
-                  <img src="" alt="" class="header_title" />
-                </picture>
+                <div class="d-block d-md-none">
+                  <h1><img src="{% static 'top/sp_img/title_sp.png' %}" alt="フレフレエンジニア | 応援メッセージが受け取れるWebサービス" class="header_title" /></h1>
+                </div>
+                <div class="d-none d-md-block">
+                  <h1><img src="{% static 'top/pc_img/title_pc.png' %}" alt="フレフレエンジニア | 応援メッセージが受け取れるWebサービス" class="header_title" /></h1>
+                </div>             
               </div>
             </div>
           </div>
@@ -68,16 +69,16 @@
         </div>
         <div class="row">
           <div class="col-12 text-center">
-            <div id="question_about_you">あなたのことを教えてください</div>
+            <h2 id="question_about_you">あなたのことを教えてください</h2>
           </div>
         </div>
-        <div class="row choice_title">
+        <div class="row choice_title_row">
           <div class="col-12 text-center">
             <img src="{% static 'top/common_img/choice_title.png' %}" class="choice_title_icon">
             <span class="d-block d-md-none choice_title_new_line">
               <br>
             </span>
-            当てはまる"状況"はありますか？
+            <h3 class="choice_title" style="display:inline;">当てはまる"状況"はありますか？</h3>
           </div>
         </div>
         <div class="row choice_row">
@@ -138,13 +139,13 @@
           </div>
         </div>
 
-        <div class="row choice_title">
+        <div class="row choice_title_row">
           <div class="col-12 text-center">
             <img src="{% static 'top/common_img/choice_title.png' %}" class="choice_title_icon">
             <span class="d-block d-md-none choice_title_new_line">
               <br>
             </span>
-            当てはまる"気持ち"はありますか？
+            <h3 class="choice_title" style="display:inline;">当てはまる"気持ち"はありますか？</h3>
           </div>
         </div>
         <div class="row choice_row">
@@ -241,13 +242,13 @@
         <img src="{% static 'top/pc_img/pc_bg_answer_right.png' %}" class="bg_answer_right">
       </div>
       <div class="col-12">
-        <div class="row" id="furefure_msg_title">
+        <div class="row" >
           <div class="col-12 text-center">
-            フレフレさんからの
+            <h2 id="furefure_msg_title">フレフレさんからの
             <span class="d-block d-md-none furefure_msg_title_new_line">
               <br>
             </span>
-            メッセージ
+            メッセージ</h2>
           </div>
         </div>
         <div class="row" id="furefure_msg_body_loading">
@@ -282,7 +283,7 @@
                   <img src="{% static 'top/common_img/answer1.png' %}" class="answer_img_1 answer_img">
                   <img src="{% static 'top/common_img/answer2.png' %}" class="answer_img_2 answer_img">
                   <img src="{% static 'top/common_img/answer3.png' %}" class="answer_img_3 answer_img">
-                  <span class="answer_text text-wrap text-break text-start">ああああああああああああああああああああああああああああああああああああああああああ</span>
+                  <span class="answer_text text-wrap text-break text-start"></span>
                 </div>
               </div>
               <div class="col-2"></div>

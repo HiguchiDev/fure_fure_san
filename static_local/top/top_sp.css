@@ -36,6 +36,15 @@
     }
 }
 
+.choice_title_icon {
+    margin-bottom: 13px;
+}
+
+.choice_title_row{
+    margin-top: 67px;
+    margin-bottom: 32px;
+}
+
 .choice_row {
     background: #20C6C2;
     border-radius: 16px;

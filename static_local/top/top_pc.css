@@ -60,6 +60,16 @@
     }
 }
 
+.choice_title_icon {
+    padding-bottom: 10px;
+    margin-right: 5px;
+}
+
+.choice_title_row{
+    margin-top: 80px;
+    margin-bottom: 32px;
+}
+
 .choice_row {
     background: #20C6C2;
     border-radius: 16px;
